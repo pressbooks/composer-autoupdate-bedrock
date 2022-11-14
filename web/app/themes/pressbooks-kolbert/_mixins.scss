@@ -1,0 +1,756 @@
+/*
+Theme Name: Kolbert
+Theme URI: https://pressbooks.com/themes/pressbooks-kolbert
+Description: Named for Elizabeth Kolbert, this is a classic theme suited equally well for fiction and non-fiction.
+Author: Pressbooks (Book Oven Inc.)
+Author URI: https://pressbooks.com
+Copyright 2011-2017 Book Oven Inc. (Pressbooks.com) code@pressbooks.com
+Version: 1.3.1
+Template: pressbooks-book
+Tags: Literary, Non-fiction
+*/
+
+@if $type == 'epub' {
+  @import "fonts-epub";
+} @else if $type == 'prince' {
+  @import "fonts-prince";
+} @else if $type == 'web' {
+  @import "fonts-web";
+}
+
+//SASS COLOR: GENERAL
+
+$color1: inherit;
+$color2: inherit;
+/* $color2: #D61331; /* titles, headers, captions, pullquotes */
+$color3: black;
+$color4: white;
+$color5: $color1;
+$color6: #D8D8D8;
+$color7: $color1;
+$color8: $color1;
+
+
+//MIXINS: TITLE PAGE
+
+@mixin halftitle {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin booktitle {
+  color: $color2;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin booksubtitle {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin bookauthor {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin bookpublisher {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin bookpublishercity {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+//MIXINS: FRONT-MATTER/PART/CHAPTER/BACK-MATTER TITLES
+
+@mixin frontmattertitle {
+  color: $color2;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin frontmatterauthor {
+  @include chapterauthor;
+}
+@mixin frontmattersubtitle {
+  @include chaptersubtitle;
+}
+
+@mixin partnumber {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+}
+@mixin parttitle {
+  color: $color2;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  @include SpecialBorders;
+}
+@mixin chapternumber {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-right: 45%;
+  margin-left: 45%;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid;
+}
+@mixin chaptertitle {
+  color: $color2;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  margin-left: 0;
+  margin-right: 0;
+  hyphens: none;
+  -webkit-hyphens: none;
+  @include SpecialBorders;
+}
+@mixin chaptersubtitle {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin chapterauthor {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin chapteraphorism {
+  color: $color1;
+  font-family: $font-2;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: lighter;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin backmattertitle {
+  color: $color2;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+//MIXINS: BODYHEADERS
+
+@mixin head1 {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin head2 {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin head3 {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin head4 {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin head5 {
+  color: $color1;
+  font-family: $font-2;
+  text-align: left;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin head6 {
+  color: $color1;
+  font-family: $font-2;
+  text-align: left;
+  font-size: 0.95em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+//MIXINS: OTHER SPECIAL THINGS
+
+@mixin copyrighttext {
+  color: $color1;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin dedicationtext {
+  color: $color1;
+  font-family: $font-1;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin epigraphtext {
+  color: $color1;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin blockquotetext {
+  color: $color1;
+  font-family: $font-1;
+  text-align: justify;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+}
+@mixin textboxtext {
+  color: $color1;
+  font-family: $font-1;
+  text-align: justify;
+  font-size: 0.9em;
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+}
+@mixin pullquotetext {
+  color: $color2;
+  font-family: $font-2;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin firstcharacter {
+  color: $color2;
+  font-family: $font-2;
+  font-size: 3em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin footnote {
+  color: $color1;
+  font-family: $font-1;
+  font-size: 0.85em;
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+}
+@mixin endnoteshead {
+  color: $color1;
+  font-family: $font-2;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tabletext {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.8em;
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+}
+
+//RUNNING HEADS AND FEET
+
+@mixin frontmatterpagenumber {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+@mixin pagenumber {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin runningheadleft {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin runningheadright {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin runningfootleft {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.6em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin runningfootright {
+  color: $color1;
+  font-family: $font-2;
+  font-size: 0.6em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+//MIXINS: TABLE OF CONTENTS
+
+@mixin tocfrontmattertitle {
+  color: $color1;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocfrontmattersubtitle {
+  color: $color5;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocfrontmatterauthor {
+  color: $color5;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocpartnumber {
+  color: $color1;
+  font-family: $font-2;
+  text-align: left;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocparttitle {
+  color: $color1;
+  font-family: $font-2;
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocchapternumber {
+  color: $color1;
+  font-family: $font-1;
+  font-size: 1em;
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocchaptertitle {
+  color: $color1;
+  font-family: $font-1;
+  font-size: 1em;
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocchaptersubtitle {
+  color: $color1;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocchapterauthor {
+  color: $color1;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocbackmattertitle {
+  @include tocfrontmattertitle;
+}
+@mixin tocbackmattersubtitle {
+  @include tocfrontmattersubtitle;
+ }
+@mixin tocbackmatterauthor {
+  @include tocfrontmatterauthor;
+}
+@mixin tocpagenumber {
+  color: $color1;
+  font-family: $font-1;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+@mixin tocfrontmatterpagenumber {
+  color: $color1;
+  font-family: $font-1;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+//MIXINS: IMAGE CAPTIONS
+
+@mixin wpcaptiontext {
+  color: $color2;
+  font-family: $font-1;
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+//MIXINS: VARIOUS THINGS!
+
+@mixin SpecialBorders {
+}

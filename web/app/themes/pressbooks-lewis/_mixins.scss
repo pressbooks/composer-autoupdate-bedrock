@@ -1,0 +1,19 @@
+/*
+Theme Name: Lewis
+Theme URI: https://pressbooks.com/themes/pressbooks-lewis
+Description: Named for Canadian diplomat and writer Stephen Lewis, this theme is built for nonfiction, but can work for fiction as well.
+Author: Pressbooks (Book Oven Inc.)
+Author URI: https://pressbooks.com
+Copyright 2011-2015 Book Oven Inc. (Pressbooks.com) code@pressbooks.com
+Version: 1.7.1
+Template: pressbooks-book
+Tags: Academic, Literary, Nonfiction
+*/
+
+@if $type == 'epub' {
+	@import "fonts-epub";
+} @else if $type == 'prince' {
+	@import "fonts-prince";
+} @else if $type == 'web' {
+	@import "fonts-web";
+}

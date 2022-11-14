@@ -1,0 +1,10 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Baskerville", "Times", $serif-epub;
+$font-2: "Lato", "Helvetica", $sans-serif-epub;
+$font-3: $font-1;
+
+@import "LatoFont";

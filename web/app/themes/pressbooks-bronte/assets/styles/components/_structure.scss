@@ -1,0 +1,33 @@
+// Structure
+// Page Numbers
+$numbering-position: 'bottom-center' !default;
+$first-numbering-position: 'bottom-center' !default;
+
+// Running Content
+$page-margin-top: 2.5cm !default;
+$page-margin-inside: 2.5cm !default;
+$page-margin-bottom: 2.5cm !default;
+$page-margin-outside: 2.5cm !default;
+
+$runninghead-left-font-size: 0.8em !default;
+$runninghead-right-font-size: 0.7em !default;
+
+$runninghead-left-font-family: $font-1 !default;
+$runninghead-right-font-family: $font-1 !default;
+
+$runninghead-left-text-transform: normal !default;
+$runninghead-right-text-transform: uppercase !default;
+
+$runninghead-left-font-style: italic !default;
+$runninghead-right-font-style: normal !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/structure';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/structure/general';
+@import 'components/structure/recto-verso';
+@import 'components/structure/numbering';
+@import 'components/structure/content-strings';
+@import 'components/structure/running-content';
+

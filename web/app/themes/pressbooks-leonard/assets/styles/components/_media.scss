@@ -1,0 +1,32 @@
+// Media
+// Images
+$image-wrapper-margin-top: 1em !default;
+$image-wrapper-margin-bottom: 1em !default;
+
+// Image Captions
+$image-caption-text-align: center !default;
+$image-caption-margin-top: (epub: .3em, prince: .3em, web: .3em) !default;
+$image-caption-line-height: (epub: 1.2em, prince: 1.65em, web: 1.5em) !default;
+$image-caption-padding-bottom: 0 !default;
+
+// Interactive Content
+$interactive-content-font-size: 1em !default;
+$interactive-content-font-style: normal !default;
+$interactive-content-line-height: 1.65em !default;
+$interactive-content-text-indent: 0 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.wp-caption.alignnone .wp-caption-text {
+  text-align: left;
+}
+
+@if $type == 'web' {
+  .wp-caption.alignnone figcaption {
+    text-align: left !important;
+  }
+}

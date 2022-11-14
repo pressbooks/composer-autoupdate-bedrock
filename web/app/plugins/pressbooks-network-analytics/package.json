@@ -1,0 +1,52 @@
+{
+ "name": "@pressbooks/pressbooks-network-analytics",
+ "description": "Pressbooks plugin to provide fancy charts & filterable, searchable lists.",
+ "scripts": {
+   "install-build-tools": "npm install --no-save pressbooks-build-tools",
+   "build": "mix --production",
+   "lint:scripts": "eslint \"assets/src/scripts/*.js\"",
+   "lint:fix-scripts": "eslint \"assets/src/scripts/*.js\" --fix",
+   "lint:styles": "stylelint \"assets/src/styles/**/*.scss\" scss",
+   "lint:fix-styles": "stylelint \"assets/src/styles/**/*.scss\" scss --fix",
+   "lint": "npm run -s lint:scripts && npm run -s lint:styles",
+   "start": "mix watch",
+   "test": "npm run lint",
+   "fix": "eslint \"assets/src/scripts/*.js\" --fix && stylelint \"assets/src/styles/**/*.scss\" scss --fix"
+ },
+ "engines": {
+  "node": ">= 14"
+ },
+ "dependencies": {
+  "chart.js": "^2.9.4",
+  "chartjs-chart-treemap": "^0.2.3",
+  "chartjs-plugin-datalabels": "^1.0.0",
+  "color": "^4.2.3",
+  "tabulator-tables": "^4.5.2"
+ },
+ "devDependencies": {
+  "pressbooks-build-tools": "^4.0.0"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/pressbooks/pressbooks-network-analytics.git"
+ },
+ "author": "Book Oven Inc. <code@pressbooks.com>",
+ "license": "GPL-3.0-or-later",
+ "bugs": {
+  "url": "https://github.com/pressbooks/pressbooks-network-analytics/issues"
+ },
+ "homepage": "https://github.com/pressbooks/pressbooks-network-analytics/",
+ "eslintConfig": {
+  "extends": "./node_modules/pressbooks-build-tools/config/eslint.js",
+  "rules": {
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns": "off",
+    "jsdoc/require-param-description": "off",
+    "jsdoc/no-undefined-types": "off",
+    "no-unused-vars": "off"
+  }
+ },
+ "stylelint": {
+  "extends": "./node_modules/pressbooks-build-tools/config/stylelint.js"
+ }
+}

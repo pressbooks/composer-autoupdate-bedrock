@@ -1,0 +1,55 @@
+{
+	"name": "pressbooks/pressbooks-network-analytics",
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-plugin",
+	"description": "Pressbooks Network Analytics",
+	"homepage": "https://github.com/pressbooks/pressbooks-network-analytics",
+	"authors": [
+		{
+			"name": "Book Oven Inc.",
+			"email": "code@pressbooks.com",
+			"homepage": "https://pressbooks.org"
+		}
+	],
+	"keywords": ["ebooks", "publishing", "webbooks"],
+	"support": {
+		"email": "code@pressbooks.com",
+		"issues":
+			"https://github.com/pressbooks/pressbooks-network-analytics/issues/",
+		"source": "https://github.com/pressbooks/pressbooks-network-analytics/"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require": {
+		"php": "^7.4|8.0.*",
+		"composer/installers": "^2.1",
+    "guzzlehttp/guzzle": "~7.4",
+		"phpcompatibility/php-compatibility": "^9.3"
+	},
+	"require-dev": {
+    "pressbooks/coding-standards": "^1.1",
+    "yoast/phpunit-polyfills": "^1.0.1"
+	},
+	"scripts": {
+		"test": [
+			"vendor/bin/phpunit --configuration phpunit.xml"
+		],
+    "test-coverage": [
+      "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover coverage.xml --coverage-html=./coverage-reports"
+    ],
+		"standards": [
+			"vendor/bin/phpcs --standard=phpcs.ruleset.xml *.php inc/ bin/"
+		],
+		"fix": [
+			"vendor/bin/phpcbf --standard=phpcs.ruleset.xml *.php inc/ bin/"
+		],
+		"localize": [
+			"wp-pot -s \"**/*.php\" -o languages/pressbooks-network-analytics.pot -p \"Pressbooks\" -t \"Pressbooks (Book Oven Inc.) <code@pressbooks.com>\"",
+			"bash bin/i18n.sh"
+		]
+	}
+}

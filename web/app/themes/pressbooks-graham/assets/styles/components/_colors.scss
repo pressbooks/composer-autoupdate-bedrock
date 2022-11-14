@@ -1,0 +1,17 @@
+// Colors
+
+$color-3: black !default;
+$color-4:rgb(238, 238, 238) !default; //shaded
+$color-5: #d8d8d8 !default;
+$color-6: #e6e6e6 !default;
+
+// Textbox
+$textbox-border-color: $color-3 !default;
+$sidebar-color: $color-6 !default;
+$shaded-color: $color-4 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';

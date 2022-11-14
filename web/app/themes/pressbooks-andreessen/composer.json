@@ -1,0 +1,19 @@
+{
+    "name": "pressbooks/pressbooks-andreessen",
+    "description": "Named for Internet pioneer Marc Andreessen, this theme is built for nonfiction, reports, white papers, manuals, and other types of not-so-bookish content. Fonts include Noticia Text and Open Sans.",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "academic",
+        "non-fiction",
+        "textbook"
+    ]
+}

@@ -1,0 +1,27 @@
+.banner {
+  padding-bottom: 6em;
+  text-align: center;
+  background: $header-bg;
+}
+
+.custom-logo-link img {
+  width: auto;
+  max-height: 100px;
+  margin: 25px 0;
+}
+
+.brand {
+  @extend h1;
+  display: block;
+  margin: 20px 0;
+  font-size: 3.75em;
+}
+
+.link-wrap {
+  margin-top: 20px;
+  text-align: center;
+
+  @media (min-width: $screen-md-min) {
+    text-align: right;
+  }
+}

@@ -1,0 +1,15 @@
+@import '_font-stack-prince'; // Dynamically generated
+
+$serif-prince: serif !default;
+$sans-serif-prince: sans-serif !default;
+
+$font-1: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times", $serif-prince;
+$font-2: "Great Vibes", "Cinzel", "Georgia", "Times New Roman", "Times", $serif-prince;
+$font-3: "Belleza", "Georgia", $serif-prince;
+$font-4: "Bergamot Ornaments", fantasy;
+
+@import "BellezaFont";
+@import "BergamotOrnamentsFont";
+@import "CinzelFont";
+@import "GreatVibesFont";
+@import "SortsMillGoudyFont";

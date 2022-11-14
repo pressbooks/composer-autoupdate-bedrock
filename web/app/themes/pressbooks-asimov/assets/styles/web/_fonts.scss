@@ -1,0 +1,18 @@
+@import 'font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+// Insert custom fonts for your theme into the font stacks below. Always end the
+// stack with $serif-web or $sans-serif-web, as appropriate—this allows custom
+// language support to be added dynamically.
+
+$font-1: 'PT Serif', 'Times', $serif-web;
+$font-2: 'Exo 2', 'Helvetica', $sans-serif-web;
+$font-3: $font-1;
+
+// Add import rules for any referenced fonts you below. You must use Google
+// Fonts or an equivalent over https. For example, to import Alegreya Sans, use:
+// @import 'https://fonts.googleapis.com/css?family=Alegreya+Sans';
+
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Exo+2:400,300,300italic,400italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic");

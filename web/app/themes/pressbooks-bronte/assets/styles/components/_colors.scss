@@ -1,0 +1,52 @@
+// Colors
+$color-1: initial !default;
+$color-2: black !default;
+$color-3: #a4a4a4 !default; //second hightlight color, or black
+$color-4: rgb(238, 238, 238) !default; //shaded
+
+// Headers
+$h3-color: $color-2 !default;
+$h4-color: $color-2 !default;
+$h5-color: $color-2 !default;
+$h6-color: $color-2 !default;
+
+// Title Page
+$title-page-publisher-color: $color-2 !default;
+$title-page-publisher-city-color: $color-2 !default;
+
+// Front Matter
+$dedication-para-color: $color-2 !default;
+$epigraph-para-color: $color-2 !default;
+
+// TOC
+
+
+// Running Content
+$runninghead-color: $color-2 !default;
+$runningfoot-color: $color-2 !default;
+$page-number-color: $color-2 !default;
+
+// Part
+
+
+// Chapter
+$chapter-number-color: $color-3 !default;
+$chapter-subtitle-color: $color-3 !default;
+$chapter-aphorism-color: $color-2 !default;
+$chapter-author-color: $color-2 !default;
+
+// Media
+$image-caption-text-color: $color-3 !default;
+
+// Table
+
+// Misc
+$dt-color: $color-1 !default;
+
+$first-character-color: $color-3 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';

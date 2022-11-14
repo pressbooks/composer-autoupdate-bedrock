@@ -1,0 +1,29 @@
+// Colors
+$color-4: rgb(230, 230, 230) !default;
+$color-5: #a4a4a4 !default;
+$color-6: rgb(216, 216, 216) !default;
+
+@if $type == 'epub' {
+    $chapter-subtitle-color: $color-5 !default;
+}
+
+$title-page-subtitle-color: $color-5 !default;
+$chapter-subtitle-color: $color-5 !default;
+$part-number-color: $color-5 !default;
+$chapter-number-color: $color-5 !default;
+$first-character-color: $color-5 !default;
+$image-caption-text-color: $color-5 !default;
+$sidebar-color: $color-4 !default;
+$shaded-color: $color-6 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';
+
+@if $type == 'epub' {
+    .front-matter .chapter-subtitle {
+        color:#a4a4a4;
+    }
+ }

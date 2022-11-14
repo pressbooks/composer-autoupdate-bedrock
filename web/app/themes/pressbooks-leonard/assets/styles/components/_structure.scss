@@ -1,0 +1,25 @@
+// Structure
+// Running Content
+$runninghead-left-letter-spacing: 1px !default;
+$runninghead-left-word-spacing: 1px !default;
+
+$runninghead-right-letter-spacing: 1px !default;
+$runninghead-right-word-spacing: 1px !default;
+
+// Page Numbers
+$numbering-position: 'bottom-outside' !default;
+$first-numbering-position: 'bottom-outside' !default;
+$running-content-position: 'top-outside' !default;
+
+$page-number-font-size: 0.7em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/structure';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/structure/general';
+@import 'components/structure/recto-verso';
+@import 'components/structure/numbering';
+@import 'components/structure/content-strings';
+@import 'components/structure/running-content';
+
