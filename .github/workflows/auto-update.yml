@@ -2,7 +2,7 @@ name: Pressbooks Auto updater
 
 on:
   schedule:
-    - cron: '*/5 * * * *' #UTC
+    - cron: '0 0 * * *' #UTC
 
 jobs:
   composer_update_job:
