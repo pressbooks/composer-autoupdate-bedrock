@@ -1,0 +1,9 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Baskerville", "Palatino", $serif-epub;
+$font-2: "Belleza", "Verdana", $sans-serif-epub;
+
+@import "BellezaFont";

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset>
+    <!-- Use Pressbooks Coding Standards -->
+	<rule ref="vendor/pressbooks/coding-standards">
+		<!-- Disable rules Pressbooks Network Analytics disagrees with -->
+		<exclude name="WordPress.WP.PreparedSQL.NotPrepared"/>
+		<exclude name="Squiz.Commenting"/>
+		<exclude name="Generic.Commenting"/>
+		<exclude name="WordPress.DB.PreparedSQL"/>
+		<exclude name="WordPress.DB.RestrictedClasses.mysql__PDO"/>
+		<exclude name="WordPress.NamingConventions.ValidVariableName"/>
+		<exclude name="Pressbooks.Security.EscapeOutput"/>
+		<exclude name="Pressbooks.Security.ValidatedSanitizedInput"/>
+		<exclude name="Pressbooks.Security.NonceVerification.Missing"/>
+	</rule>
+    <rule ref="PSR1.Methods.CamelCapsMethodName">
+        <!-- Exclude classes that override WP Core: -->
+    </rule>
+    <!-- Disable Side Effects and MissingNamespace rules for bootstrapping files: -->
+    <rule ref="PSR1.Files.SideEffects">
+        <exclude-pattern>/pressbooks-network-analytics.php</exclude-pattern>
+    </rule>
+    <rule ref="HM.Functions.NamespacedFunctions.MissingNamespace">
+        <exclude-pattern>/pressbooks-network-analytics.php</exclude-pattern>
+    </rule>
+	<!-- Exceptions for crons  -->
+	<rule ref="HM.Files.NamespaceDirectoryName.NoIncDirectory">
+		<exclude-pattern>/bin/*</exclude-pattern>
+	</rule>
+    <!-- Disable all rules for these files: -->
+    <exclude-pattern>*.blade.php</exclude-pattern>
+	<!-- Run against the PHPCompatibility ruleset -->
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.3-7.4"/>
+</ruleset>

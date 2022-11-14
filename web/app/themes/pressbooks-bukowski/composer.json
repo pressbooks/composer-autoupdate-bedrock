@@ -1,0 +1,17 @@
+{
+    "name": "pressbooks/pressbooks-bukowski",
+    "description": "Named for poet, drinker, post-office clerk, novelist, and lowlife laureate, Chalres Bukowski. We've used a title font that might have been scrawled on the back of bar napkin, not quite appropriately called Covered By Your Grace, by Kimberly Geswein; and PT Serif by Paratype for the body.",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "genre fiction"
+    ]
+}

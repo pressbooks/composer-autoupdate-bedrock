@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ruleset>
+  <!-- Use Pressbooks Coding Standards -->
+  <rule ref="vendor/pressbooks/coding-standards">
+    <!-- Disable rules Pressbooks Plugins Config disagrees with -->
+    <!-- TODO: These exclusion rules should be removed and fixed in future release -->
+    <exclude name="Pressbooks.Security.EscapeOutput.OutputNotEscaped"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase"/>
+    <exclude name="Squiz.Commenting"/>
+    <exclude name="Generic.Commenting.DocComment.MissingShort"/>
+  </rule>
+  <!-- Disable Side Effects and Missing Namespace rules for bootstrapping files: -->
+  <rule ref="PSR1.Files.SideEffects">
+    <exclude-pattern>inc/class-plugins-config.php</exclude-pattern>
+  </rule>
+  <!-- Run against the PHPCompatibility ruleset -->
+  <rule ref="PHPCompatibility"/>
+  <config name="testVersion" value="7.3-7.4"/>
+</ruleset>

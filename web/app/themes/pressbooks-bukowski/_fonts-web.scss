@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "PT Serif", "Droid Serif", "Times", $serif-web;
+$font-2: "Covered By Your Grace", "Baskerville", "Droid Serif", $serif-web;
+$font-3: $font-1;
+
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Covered+By+Your+Grace|Droid+Serif:400,400italic,700,700italic&subset=latin,latin-ext");

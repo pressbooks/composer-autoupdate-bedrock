@@ -1,0 +1,19 @@
+{
+    "name": "pressbooks/pressbooks-austen",
+    "type": "wordpress-theme",
+    "description": "Named for English author Jane Austen, this is a traditional book theme, with serif fonts, that works well for fiction and simple-layout non-fiction.",
+    "keywords": [
+        "genre fiction",
+        "literary"
+    ],
+    "license": "gpl-3.0-or-later",
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2"
+    }
+}

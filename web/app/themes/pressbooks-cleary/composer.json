@@ -1,0 +1,17 @@
+{
+    "name": "pressbooks/pressbooks-cleary",
+    "description": "Named for Beverly Cleary, this theme is suited for books for younger readers. Title font is Griffy, by Neapolitan Type.",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "genre fiction"
+    ]
+}

@@ -1,0 +1,286 @@
+# Copyright (C) 2020 Pressbooks (Book Oven Inc.)
+# This file is distributed under the same license as the Pressbooks SELF-e plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Pressbooks SELF-e 1.5.5\n"
+"Report-Msgid-Bugs-To: https://github.com/pressbooks/pressbooks-selfe/\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-08-12T17:28:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.3.0\n"
+"X-Domain: pressbooks-selfe\n"
+
+#. Plugin Name of the plugin
+msgid "Pressbooks SELF-e"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/pressbooks/pressbooks-selfe"
+msgstr ""
+
+#. Description of the plugin
+msgid "Indie Author Project integration for Pressbooks. Indie Author Project was formerly known as SELF-e."
+msgstr ""
+
+#. Author of the plugin
+msgid "Pressbooks (Book Oven Inc.)"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://pressbooks.com/"
+msgstr ""
+
+#: inc/admin/class-page.php:28
+#: inc/admin/class-page.php:29
+#: inc/admin/class-page.php:87
+#: inc/admin/class-page.php:166
+#: inc/admin/class-page.php:176
+msgid "Submit to the Indie Author Project"
+msgstr ""
+
+#: inc/admin/class-page.php:71
+msgid "EPUB"
+msgstr ""
+
+#: inc/admin/class-page.php:74
+msgid "EPUB 3"
+msgstr ""
+
+#: inc/admin/class-page.php:77
+msgid "PDF"
+msgstr ""
+
+#: inc/admin/class-page.php:82
+msgid "No export files were found in a compatible format. Please export your book as EPUB, EPUB3 or PDF ( digital distributon ) and return to this page to complete your submission."
+msgstr ""
+
+#: inc/admin/class-page.php:88
+msgid "Pressbooks can submit your EPUB or PDF to the <a href=\"https://indieauthorproject.com/#moreinfo\">Indie Author Project</a> self-publishing service. Please complete the information below before submitting."
+msgstr ""
+
+#: inc/admin/class-page.php:89
+msgid "Book Information"
+msgstr ""
+
+#. translators: %s: Book info url
+#: inc/admin/class-page.php:93
+msgid "This information comes from your book&rsquo;s <a href=\"%s\">Book Information</a> page. (<strong>IMPORTANT NOTE:</strong> Changes you make here will <strong>NOT</strong> be reflected on the Book Information page.)"
+msgstr ""
+
+#: inc/admin/class-page.php:99
+msgid "Title*"
+msgstr ""
+
+#: inc/admin/class-page.php:100
+msgid "Subtitle"
+msgstr ""
+
+#: inc/admin/class-page.php:107
+msgid "Author*"
+msgstr ""
+
+#: inc/admin/class-page.php:108
+msgid "Contributing Author(s)"
+msgstr ""
+
+#: inc/admin/class-page.php:109
+msgid "Editor"
+msgstr ""
+
+#: inc/admin/class-page.php:110
+msgid "Translator"
+msgstr ""
+
+#: inc/admin/class-page.php:111
+msgid "Volume"
+msgstr ""
+
+#: inc/admin/class-page.php:112
+msgid "ISBN"
+msgstr ""
+
+#: inc/admin/class-page.php:113
+msgid "Publication Date*"
+msgstr ""
+
+#: inc/admin/class-page.php:114
+msgid "Publisher"
+msgstr ""
+
+#: inc/admin/class-page.php:115
+msgid "Description*"
+msgstr ""
+
+#: inc/admin/class-page.php:119
+msgid "Choose an audience&hellip;"
+msgstr ""
+
+#: inc/admin/class-page.php:120
+msgid "Children"
+msgstr ""
+
+#: inc/admin/class-page.php:121
+msgid "Young Adult"
+msgstr ""
+
+#: inc/admin/class-page.php:122
+msgid "Adult"
+msgstr ""
+
+#: inc/admin/class-page.php:125
+msgid "Target Audience*"
+msgstr ""
+
+#: inc/admin/class-page.php:129
+msgid "Categories*"
+msgstr ""
+
+#: inc/admin/class-page.php:130
+msgid "Language*"
+msgstr ""
+
+#: inc/admin/class-page.php:134
+msgid "Submission Details"
+msgstr ""
+
+#: inc/admin/class-page.php:135
+msgid "This information is required to complete your Indie Author Project submission and will be saved in case you need to resubmit your book at a later date."
+msgstr ""
+
+#: inc/admin/class-page.php:139
+msgid "Vendor"
+msgstr ""
+
+#: inc/admin/class-page.php:139
+msgid "Enter the full legal name of the book&rsquo;s vendor."
+msgstr ""
+
+#: inc/admin/class-page.php:140
+msgid "Format*"
+msgstr ""
+
+#: inc/admin/class-page.php:141
+msgid "First Name*"
+msgstr ""
+
+#: inc/admin/class-page.php:142
+msgid "Last Name*"
+msgstr ""
+
+#: inc/admin/class-page.php:143
+msgid "Email*"
+msgstr ""
+
+#: inc/admin/class-page.php:144
+msgid "Library*"
+msgstr ""
+
+#: inc/admin/class-page.php:147
+msgid "Country*"
+msgstr ""
+
+#: inc/admin/class-page.php:154
+msgid "Region*"
+msgstr ""
+
+#: inc/admin/class-page.php:165
+msgid "By clicking \"%1$s\" below, you agree to the %2$s."
+msgstr ""
+
+#: inc/admin/class-page.php:170
+msgid "IAP Terms and Conditions"
+msgstr ""
+
+#: inc/admin/class-page.php:210
+#: inc/admin/class-page.php:219
+msgid "Delete Row"
+msgstr ""
+
+#: inc/admin/class-page.php:229
+msgid "Add Row"
+msgstr ""
+
+#: inc/admin/class-page.php:390
+msgid "Title"
+msgstr ""
+
+#: inc/admin/class-page.php:391
+msgid "Publication Date"
+msgstr ""
+
+#: inc/admin/class-page.php:392
+msgid "Target Audience"
+msgstr ""
+
+#: inc/admin/class-page.php:393
+msgid "Description"
+msgstr ""
+
+#: inc/admin/class-page.php:394
+msgid "Language"
+msgstr ""
+
+#: inc/admin/class-page.php:395
+msgid "Categories"
+msgstr ""
+
+#: inc/admin/class-page.php:396
+msgid "Author"
+msgstr ""
+
+#: inc/admin/class-page.php:397
+msgid "First Name"
+msgstr ""
+
+#: inc/admin/class-page.php:398
+msgid "Last Name"
+msgstr ""
+
+#: inc/admin/class-page.php:399
+msgid "Email"
+msgstr ""
+
+#: inc/admin/class-page.php:400
+msgid "Library"
+msgstr ""
+
+#: inc/admin/class-page.php:401
+msgid "Country"
+msgstr ""
+
+#: inc/admin/class-page.php:402
+msgid "Region"
+msgstr ""
+
+#: inc/admin/class-page.php:403
+msgid "Format"
+msgstr ""
+
+#: inc/admin/class-page.php:421
+msgid "You did not complete the following required field(s):"
+msgstr ""
+
+#. translators: %s: Submission status
+#: inc/admin/class-page.php:468
+msgid "Error %s: Your submission failed! Please verify all fields and try again."
+msgstr ""
+
+#: inc/admin/class-page.php:473
+msgid "Your submission was successful! You will receive a confirmation shortly."
+msgstr ""
+
+#: pressbooks-selfe.php:21
+msgid "Cannot find Pressbooks install."
+msgstr ""
+
+#: pressbooks-selfe.php:34
+msgid "Dependencies Missing"
+msgstr ""
+
+#: pressbooks-selfe.php:35
+msgid "Please run <code>composer install</code> from the root of the Pressbooks SELF-e plugin directory."
+msgstr ""

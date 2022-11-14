@@ -1,0 +1,10 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Palatino", "Baskerville", "Georgia", $serif-epub;
+$font-2: "Special Elite", "Palatino", "Baskerville", "Georgia", $serif-epub;
+$font-3: "Arial", $sans-serif-epub;
+
+@import "SpecialEliteFont";

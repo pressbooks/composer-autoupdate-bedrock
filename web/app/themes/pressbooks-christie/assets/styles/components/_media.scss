@@ -1,0 +1,48 @@
+// Media
+@if $type == 'web' {
+    $image-caption-line-height: 1.3em !default;
+}
+
+// Images
+$image-wrapper-margin-bottom: 1em !default;
+$image-wrapper-margin-top: 1em !default;
+
+$image-caption-font-size: 0.7em !default;
+$image-caption-font-family: $font-2 !default;
+$image-caption-line-height: 1.9em !default;
+$image-caption-padding-bottom: 0em !default;
+
+$image-alignright-margin-left: 2em !default;
+$image-alignleft-margin-right: 2em !default;
+
+$floated-image-wrapper-margin-top: 1em !default;
+
+// Interactive Content
+$interactive-content-font-size: 1em !default;
+$interactive-content-font-style: normal !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+%img {
+    margin-bottom: 0em;
+}
+
+.wp-caption-text {
+    margin-top: 0.45em;
+    text-align: justify;
+}
+
+.interactive-content p {
+    text-indent: 0;
+    line-height: 1.7em;
+}
+
+@if $type == 'epub' {
+    .wp-caption-text {
+        margin-bottom: 1em;
+    }
+}

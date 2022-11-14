@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "Alegreya", "Amiri", $serif-web;
+$font-2: "Alegreya Sans", "Amiri", $sans-serif-web;
+$font-3: "Alegreya Sans SC", "Amiri", $sans-serif-web;
+
+@import url("https://fonts.googleapis.com/css?family=Amiri:400,700italic,700,400italic|Alegreya+Sans:400,300,700,300italic,400italic,700italic|Alegreya+Sans+SC:400,300,400italic,300italic,700,700italic|Alegreya:400,400italic,700,700italic&subset=arabic,latin");

@@ -1,0 +1,24 @@
+// Media
+// Images
+
+// Image Captions
+$image-caption-font-size: 0.9em !default;
+$image-caption-font-weight: 300 !default;
+$image-caption-text-align: left !default;
+$image-caption-line-height: (prince: 1.5em, epub: 1.5em, web: 1.5em) !default;
+
+// Interactive Content
+$interactive-content-text-indent: 0 !default;
+$interactive-content-font-style: normal !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.wp-caption-text {
+  font-size: 0.9em;
+  color: #a4a4a4;
+  margin-top: 5px;
+}

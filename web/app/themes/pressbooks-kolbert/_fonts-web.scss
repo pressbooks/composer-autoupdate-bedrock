@@ -1,0 +1,11 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "Baskerville", "Droid Serif", "Times", $serif-web;
+$font-2: "Playfair Display", "Baskerville", "Droid Serif", $serif-web;
+$font-3: $font-1;
+
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic&subset=latin,latin-ext");
+

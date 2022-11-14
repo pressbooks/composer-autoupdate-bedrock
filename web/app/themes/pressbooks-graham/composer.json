@@ -1,0 +1,20 @@
+{
+    "name": "pressbooks/pressbooks-graham",
+    "type": "wordpress-theme",
+    "description": "Named for Benjamin Graham, this classic theme with some modern elements is suitable for serious non-fiction, academic non-fiction, and literary fiction.",
+    "keywords": [
+        "academic",
+        "non-fiction",
+        "textbook"
+    ],
+    "license": "gpl-3.0-or-later",
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2"
+    }
+}

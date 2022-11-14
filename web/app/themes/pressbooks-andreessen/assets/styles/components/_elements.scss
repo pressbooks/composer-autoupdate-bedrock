@@ -1,0 +1,249 @@
+// Elements
+@if $type == 'web' {
+  $hx-line-height: 1.1em !default;
+
+  $h1-font-family: $font-2 !default;
+
+  $hx-padding-bottom: 0.5em !default;
+  $hx-border-bottom-style: solid !default;
+  $hx-border-bottom-width: 0.5px !default;
+
+  $blockquote-line-height: 1.2em !default;
+
+  $ul-margin-top: 0em !default;
+  $ul-margin-left: (epub: 1em, prince: 0em, web: 1em) !default;
+  $ul-margin-bottom: 0em !default;
+  $ul-padding-left: 1em !default;
+  $ul-ul-margin-top: 0em !default;
+  $li-li-margin-top: 0em !default;
+
+  $ol-margin-left: (epub: 1em, prince: 2em, web: 1em) !default;
+  $ol-padding-left: 1em !default;
+  $ol-margin-top: 0em !default;
+  $ol-margin-bottom: 0em !default;
+  $ol-ol-margin-top: 0em !default;
+}
+
+@if $type == 'epub' {
+    $hx-margin-top: 2em !default;
+    $hx-margin-bottom: 1em !default;
+    $hx-line-height: 1.1em !default;
+
+    $hx-padding-bottom: 0.5em !default;
+    $hx-border-bottom-style: solid !default;
+    $hx-border-bottom-width: 0.5px !default;
+
+    $h1-font-size: 1.2em !default;
+
+    $h2-font-size: 1em !default;
+
+    $h3-font-size: 1em !default;
+
+    $h4-font-size: 1em !default;
+
+    $h5-font-size: 1em !default;
+
+    $h6-font-size: 1em !default;
+
+    $blockquote-margin-left: 5% !default;
+    $blockquote-margin-top: 1em !default;
+    $blockquote-line-height: 1em !default;
+    $blockquote-margin-right: 5% !default;
+
+    $ul-padding-left: 1em !default;
+
+    $ol-padding-left: 1em !default;
+    $ol-margin-top: 0em !default;
+    $ol-margin-bottom: 0em !default;
+
+    $para-no-indent-margin-top: 0em !default;
+
+    $section-break-space-margin-top: 0em !default;
+
+    $table-font-size: 0.8em !default;
+    $table-td-padding-top: 0.3em !default;
+    $table-td-padding-bottom: 0.3em !default;
+    $table-td-padding-right: 0.3em !default;
+    $table-td-padding-left: 0.3em !default;
+    $table-th-padding-top: 0.3em !default;
+    $table-th-padding-right: 0.3em !default;
+    $table-th-padding-bottom: 0.3em !default;
+    $table-th-padding-left: 0.3em !default;
+    $table-line-height: 1em;
+  }
+
+// Body
+$body-font-size: (epub: medium, prince: 10pt, web: 14pt) !default;
+$body-line-height: (epub: 1.4em, prince: 1.4em, web: 1.8em) !default;
+
+// Headers
+$hx-line-height: 1.4em !default;
+$hx-margin-top: 1.5em !default;
+$hx-margin-bottom: 1em !default;
+$hx-padding-bottom: 0.5em !default;
+$hx-border-bottom-style: solid !default;
+$hx-border-bottom-width: 0.5px !default;
+$hx-border-bottom-color: initial !default;
+
+// H1
+$h1-align: left !default;
+$h1-font-family: $font-2 !default;
+$h1-font-weight: bold !default;
+$h1-text-transform: uppercase !default;
+$h1-font-size: 1.2em !default;
+$h1-border-bottom-color: $color-3 !default;
+$h1-line-height: 1.4em !default;
+
+// H2
+$h2-align: left !default;
+$h2-font-family: $font-2 !default;
+$h2-font-size: 1em !default;
+$h2-text-transform: uppercase !default;
+$h2-border-bottom-color: $color-3 !default;
+
+// H3
+$h3-align: left !default;
+$h3-font-size: 1em !default;
+$h3-border-bottom-color: $color-4 !default;
+$h3-font-family: $font-2 !default;
+$h3-font-weight: bold !default;
+$h3-font-style: normal !default;
+
+// H4
+$h4-align: left !default;
+$h4-font-size: 1em !default;
+$h4-font-family: $font-2 !default;
+$h4-font-weight: bold !default;
+$h4-font-style: italic !default;
+$h4-border-bottom-color: $color-2 !default;
+
+// H5
+$h5-align: left !default;
+$h5-font-family: $font-2 !default;
+$h5-font-weight: normal !default;
+$h5-font-size: 1em !default;
+$h5-font-style: none !default;
+$h5-border-bottom-color: $color-4 !default;
+
+// H6
+$h6-margin-bottom: 1.1em !default;
+$h6-align: left !default;
+$h6-font-family: $font-2 !default;
+$h6-font-size: 1em !default;
+$h6-font-style: italic !default;
+$h6-font-weight: normal !default;
+$h6-border-bottom-color: $color-4 !default;
+
+// Seperators
+$hr-width: 30% !default;
+$hr-margin-top: 2em !default;
+$hr-margin-bottom: 4em !default;
+$hr-border-style: solid !default;
+$hr-border-width: 0.5px !default;
+$hr-border-color: $color-2 !default;
+
+$section-break-margin-top: 1em !default;
+$section-break-margin-bottom: 1em !default;
+
+// Lists
+
+// Blockquotes
+$blockquote-margin-left: 1em !default;
+$blockquote-margin-top: 1em !default;
+$blockquote-margin-bottom: 1.2em !default;
+$blockquote-padding-left: (epub: 0em, prince: 0em, web: 1em) !default;
+$blockquote-line-height: 1.3em !default;
+$blockquote-margin-right: 1em !default;
+$blockquote-align: justify !default;
+
+// Cite
+$cite-font-size: 1em !default;
+$cite-text-transform: Normal !default;
+$cite-font-style: italic !default;
+$cite-font-variant: none !default;
+
+// Tables
+$table-font-size: 0.7em !default;
+$table-border-width: 0px !default;
+$table-td-padding-top: 5px !default;
+$table-td-padding-bottom: 5px !default;
+$table-td-padding-right: 5px !default;
+$table-td-padding-left: 5px !default;
+$table-th-padding-top: 5px !default;
+$table-th-padding-right: 5px !default;
+$table-th-padding-bottom: 5px !default;
+$table-th-padding-left: 5px !default;
+$table-align: left !default;
+
+$table-tr-border-bottom-width: (epub: 1px, prince: 1px, web: 1px) !default;
+$table-tr-border-bottom-style: (epub: solid, prince: solid, web: solid) !default;
+$table-th-border-bottom-width: (epub: 1px, prince: 1px, web: 1px) !default;
+$table-th-border-bottom-style: (epub: solid, prince: solid, web: solid) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/elements';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/elements';
+
+.front-matter h1 {
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.chapter h1{
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.chapter h2{
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+@if $type != 'epub' {
+  .numberless & {
+    .chapter-number::before {
+      display: none;
+    }
+    .chapter-number {
+      display: none;
+    }
+  }
+}
+
+.blockquote,
+blockquote {
+  border-left: 5px solid #b2d3e0;
+  padding-left: 1em;
+  word-spacing: normal;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0
+}
+
+@if $type == 'prince' {
+  table {
+    width: 100%;
+  }
+}
+
+@if $type == 'web' {
+  h6 {
+   word-spacing: normal;
+   letter-spacing: normal;
+ }
+
+ ul {
+   margin-bottom: 0em !important;
+ }
+
+ ol ol {
+  margin-top: 0em ;
+  margin-bottom: 0em ;
+}
+
+}

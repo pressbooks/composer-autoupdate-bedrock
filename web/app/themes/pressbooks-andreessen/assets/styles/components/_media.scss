@@ -1,0 +1,53 @@
+// Media
+// Image Captions
+$image-caption-font-family: $font-2 !default;
+$image-caption-font-weight: normal !default;
+$image-caption-font-style: italic !default;
+$image-caption-font-size: 0.9em !default;
+$image-caption-line-height: 1.5em !default;
+$image-caption-margin-top: (epub: 0.5em, prince: 0.5em, web: 0.5em) !default;
+
+// Images
+$image-alignright-margin-left: 1em !default;
+$image-alignleft-margin-right: 1em !default;
+
+// Interactive Content
+$interactive-content-font-style: normal !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.wp-caption,
+.wp-nocaption {
+    &.alignright {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    &.alignleft {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+  }
+
+  .wp-caption-text {
+    text-indent: 0em;
+  }
+
+  .interactive-content {
+    font-size: 0.81em;
+    line-height: 1.8em;
+    padding-left: 1.48cm;
+    padding-top: 1.475cm;
+    padding-right: 1.475cm;
+    padding-bottom: 1.6cm;
+    text-align: justify;
+  }
+
+  @if $type == "web" {
+    p.wp-caption-text {
+      text-indent: 0em !important;
+    }
+  }

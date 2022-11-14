@@ -1,0 +1,13 @@
+@import '_font-stack-prince'; // Dynamically generated
+
+$serif-prince: serif !default;
+$sans-serif-prince: sans-serif !default;
+
+$font-1: "PT Serif", "Cardo", "Crimson Text", "Baskerville", "Times", $serif-prince;
+$font-2: "Covered By Your Grace", $serif-prince;
+$font-3: $font-1;
+
+@import "CardoFont";
+@import "CoveredByYourGraceFont";
+@import "CrimsonTextFont";
+@import "PTSerifFont";
