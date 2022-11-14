@@ -1,13 +1,15 @@
-name: "Compouser Update Automerge"
+name: "Auto merge"
 
 on:
   pull_request:
+    types: [opened]
+    branches: [main]
+      
 
 jobs:
   worker:
     runs-on: ubuntu-latest
-
-    if: github.actor == 'kawax/composer-update-action'
+    if: startsWith(github.event.pull_request.title, 'Composer update with') 
     steps:
       - name: automerge
         uses: actions/github-script@0.2.0
