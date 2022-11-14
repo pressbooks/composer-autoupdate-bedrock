@@ -6,15 +6,25 @@ on:
 
 jobs:
   composer_update_job:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [8.0]
+        os: [ubuntu-20.04]
     name: composer update
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup PHP with Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          tools: composer
+          php-version: ${{ matrix.php }}
       - name: Add HTTP basic auth credentials
         run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json  
       - name: composer update action
-        uses: kawax/composer-update-action@master
+        uses: kawax/composer-update-action@v2
         env:
           GITHUB_TOKEN: ${{github.token}}
           COMPOSER_PACKAGES: 'pressbooks/*'
