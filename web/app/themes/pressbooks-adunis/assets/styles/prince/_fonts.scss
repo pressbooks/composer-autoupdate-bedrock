@@ -1,0 +1,13 @@
+@import '_font-stack-prince'; // Dynamically generated
+
+$serif-prince: serif !default;
+$sans-serif-prince: sans-serif !default;
+
+$font-1: "Alegreya", "Baskerville", "Times", "Amiri", $serif-prince;
+$font-2: "Alegreya Sans", "Helvetica", "Amiri", $sans-serif-prince;
+$font-3: "Alegreya Sans SC", "Helvetica", "Amiri", $sans-serif-prince;
+
+@import "AlegreyaFont";
+@import "AlegreyaSansFont";
+@import "AlegreyaSansSCFont";
+@import "AmiriFont";

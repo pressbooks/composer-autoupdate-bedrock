@@ -1,0 +1,12 @@
+@import '_font-stack-prince'; // Dynamically generated
+
+$serif-prince: serif !default;
+$sans-serif-prince: sans-serif !default;
+
+$font-1: 'Libre Baskerville', 'Baskerville', $serif-prince;
+$font-2: 'Open Sans', 'Lato', 'Helvetica', $sans-serif-prince;
+$font-3: $font-2;
+
+@import "LatoFont";
+@import "LibreBaskervilleFont";
+@import "OpenSansFont";

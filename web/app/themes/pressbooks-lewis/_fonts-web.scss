@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "Droid Serif", "Georgia", $serif-web;
+$font-2: $font-1;
+$font-3: "Belleza", "Verdana", $sans-serif-web;
+
+@import url("https://fonts.googleapis.com/css?family=Belleza|Droid+Serif:400,400italic,700,700italic&subset=latin,latin-ext");

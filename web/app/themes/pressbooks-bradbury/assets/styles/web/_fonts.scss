@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "PT Serif", "Baskerville", "Georgia", "Times", serif;
+$font-2: "Open Sans", "Helvetica", "Ariel", sans-serif;
+$font-3: $font-2;
+
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Open+Sans:400italic,700italic,400,300,700&subset=latin,latin-ext");

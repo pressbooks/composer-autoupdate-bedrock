@@ -1,0 +1,19 @@
+{
+    "name": "pressbooks/pressbooks-bradbury",
+    "type": "wordpress-theme",
+    "description": "Named for Ray Bradbury, this fire-resistant theme is built for academic nonfiction, with smaller fonts and tight leading.",
+    "keywords": [
+        "academic",
+        "non-fiction"
+    ],
+    "license": "gpl-3.0-or-later",
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2"
+    }
+}

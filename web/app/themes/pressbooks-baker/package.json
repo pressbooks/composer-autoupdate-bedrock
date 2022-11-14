@@ -1,0 +1,21 @@
+{
+  "name": "@pressbooks/pressbooks-baker",
+  "license": "gpl-3.0-or-later",
+  "version": "2.0.0",
+  "engines": {
+    "node": ">= 16"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "install-build-tools": "npm install --no-save pressbooks-build-tools",
+    "fix": "npm run -s fix:styles",
+    "fix:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js --fix \"assets/styles/**/*.scss\" --syntax scss",
+    "lint": "npm run -s lint:styles",
+    "lint:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js  \"assets/styles/**/*.scss\" --syntax scss",
+    "test": "npm run -s lint"
+  },
+  "stylelint": {
+    "extends": "./node_modules/pressbooks-build-tools/config/stylelint.js"
+  }
+}

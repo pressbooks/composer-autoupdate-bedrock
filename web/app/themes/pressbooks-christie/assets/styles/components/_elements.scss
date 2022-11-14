@@ -1,0 +1,177 @@
+// Elements
+
+@if $type == 'epub' {
+
+    $hx-margin-top: 1em !default; 
+    $hx-line-height: 1.3em !default; 
+    $hx-margin-bottom: .75em !default; 
+
+    $body-font-weight: 500 !default;
+
+    $h1-font-weight: normal !default;
+
+    $h2-font-size: 1.2em !default;
+    $h2-font-weight: normal !default;
+   
+    $h3-font-weight: normal !default;
+    $h3-font-size: 1.1em !default; 
+
+    $h4-text-transform: none !default;
+    $h4-font-weight: normal !default;
+    $h4-font-size: 1em !default;
+    $h4-margin-top: 1em !default; 
+
+    $h5-text-transform: none !default;
+    $h5-font-weight: normal !default;
+    $h5-font-style: normal !default;
+    $h5-font-size: 0.75em !default;
+
+    $h6-margin-top: 1em !default; 
+    $h6-font-weight: normal !default;
+    $h6-font-size: 0.67em !default;
+
+    $blockquote-margin-right: 3em !default;
+    $blockquote-margin-left: 3em !default;
+    $blockquote-margin-top: 1em !default;
+    $blockquote-margin-bottom: 1em !default;
+
+    $ul-padding-left: 1.5em !default;
+    $ol-padding-left: 1em !default;
+    $ol-margin-left: 1em !default;
+
+    $blockquote-align: justify !default;
+    $footnote-padding-left: 2em !default;
+  } 
+
+// Headers
+$hx-margin-top: 1em !default; 
+$hx-line-height: 1.4em !default; 
+$hx-margin-bottom: 0.9782608695652174em !default; 
+
+// Body
+$body-font-size: (epub: medium, prince: 11.5pt, web: 14pt) !default;
+$body-line-height: (epub: normal, prince: 1.3em, web: 1.8em) !default;
+$body-font-family: $font-1 !default;
+$body-font-weight: 500 !default;
+
+// H1
+$h1-font-family: $font-2 !default;
+$h1-text-transform: normal !default;
+$h1-font-size: 1.3em !default;
+$h1-margin-top: 1.05em !default;
+$h1-margin-bottom: 0.7em !default; 
+
+// H2
+$h2-font-family: $font-2 !default;
+$h2-text-transform: none !default;
+$h2-font-weight: bold !default;
+$h2-font-size: 1.2em !default;
+$h2-margin-top: 1.1em !default;
+$h2-margin-bottom: 0.8em !default; 
+
+// H3
+$h3-font-family: $font-2 !default;
+$h3-font-size: 1.1em !default;
+$h3-margin-top: 1.1em !default;
+$h3-font-style: normal !default;
+$h3-font-weight: bold !default;
+$h3-margin-bottom: 0.9em !default; 
+
+// H4
+$h4-font-family: $font-2 !default;
+$h4-font-weight: normal !default;
+$h4-text-transform: uppercase !default;
+$h4-font-size: .8em !default;
+$h4-margin-top: 1.725em !default; 
+$h4-align: center !default;
+$h4-margin-bottom: 1.2em !default; 
+
+// H5
+$h5-font-family: $font-2 !default;
+$h5-font-weight: normal !default;
+$h5-text-transform: uppercase !default;
+$h5-font-size: .8em !default;
+$h5-font-style: italic !default;
+$h5-align: center !default;
+$h5-margin-top: 1.725em !default; 
+$h5-margin-bottom: 1.275em !default; 
+
+// H6
+$h6-font-family: $font-2 !default;
+$h6-font-weight: bold !default;
+$h6-font-size: .695em !default;
+$h6-align: center !default;
+$h6-margin-top: 2.7em !default;  
+$h6-margin-bottom: 1.4em !default; 
+
+// Cite
+$cite-text-transform: capitalize !default;
+$cite-font-size: 1em !default;
+$cite-font-style: italic !default;
+$cite-font-variant: normal !default;
+
+// Blockquotes
+$blockquote-line-height: 1.445em !default;
+$blockquote-align: left !default;
+$blockquote-margin-top: 1em !default;
+$blockquote-margin-bottom: 1.25em !default;
+
+// Lists
+$ul-margin-bottom: 1em !default;
+$ul-margin-top: 0em !default;
+$ul-padding-left: 1.5em !default; 
+$ul-margin-left: (epub: 2em, prince: 2em, web: 0) !default;
+$ul-ul-margin-top: 0em !default;
+
+$li-li-margin-top: 0em !default;
+
+$ol-margin-bottom: 1em !default;
+$ol-margin-top: 0em !default;
+$ol-margin-left: (epub: 1em, prince: 1.5em, web: 0) !default;
+$ol-ol-margin-top: 0em !default;
+
+$dd-font-style: normal !default;
+
+// Tables
+$table-font-size: 0.8em !default;
+$table-td-padding-top: 0.41em !default;
+$table-td-padding-bottom: 0.41em !default;
+$table-td-padding-right: 0.41em !default;
+$table-td-padding-left: 0.41em !default;
+$table-th-padding-top: 0.41em !default;
+$table-th-padding-right: 0.41em !default;
+$table-th-padding-bottom: 0.41em !default;
+$table-th-padding-left: 0.41em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/elements';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/elements';
+
+p.indent {
+    text-indent: 1.5em;
+}
+
+h3 ~ ul {
+    margin-top: 1.2em;
+}
+
+h3 ~ ol {
+    margin-top: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 
+}
+
+address {
+    margin-bottom: 1em;
+}

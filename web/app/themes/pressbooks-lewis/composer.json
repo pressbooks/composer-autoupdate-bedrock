@@ -1,0 +1,12 @@
+{
+    "name": "pressbooks/pressbooks-lewis",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "keywords": [
+        "academic",
+        "literary",
+        "nonfiction"
+    ]
+}

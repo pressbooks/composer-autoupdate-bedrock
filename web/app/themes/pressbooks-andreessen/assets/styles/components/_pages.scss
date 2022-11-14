@@ -1,0 +1,107 @@
+// Pages
+
+@if $type == 'epub' {
+  $title-subtitle-margin-top: 1em !default;
+}
+
+// Title Page Margin
+$title-title-margin-top: (epub: 2em, prince: 2cm, web: 3em) !default;
+
+// Title Page Title
+$title-title-align: left !default;
+$title-title-text-transform: none !default;
+$title-title-font-style: italic !default;
+$title-title-font-family: $font-3 !default;
+$title-title-letter-spacing: 1px !default;
+$title-title-word-spacing: 2px !default;
+$title-title-font-size: (epub: 1.5em, prince: 3em, web: 1.75em) !default;
+$title-title-margin-left: 1cm !default;
+$title-title-margin-right: .25cm !default;
+$title-title-border-bottom-width: (epub: 0.5px, prince: 0.5px, web: 0.5px) !default;
+$title-title-border-bottom-style: solid !default;
+$title-title-border-bottom-color: $color-3 !default;
+$title-title-padding-bottom: (epub: 0.5em, prince: 0.5em, web: 0.5em) !default;
+
+// Title Page Subtitle
+$title-subtitle-align: left !default;
+$title-subtitle-font-style: none !default;
+$title-subtitle-font-family: $font-2 !default;
+$title-subtitle-letter-spacing: 1px !default;
+$title-subtitle-word-spacing: 2px !default;
+$title-subtitle-font-size: (epub: 1.2em, prince: 1.2em, web: 1.25em) !default;
+$title-subtitle-font-weight: bold !default;
+$title-subtitle-text-transform: uppercase !default;
+$title-subtitle-margin-top: -1.15em !default;
+$title-subtitle-margin-left: 1cm !default;
+$title-subtitle-margin-right: .5cm !default;
+$title-subtitle-border-bottom-width: 0px !default;
+$title-subtitle-border-bottom-style: none !default;
+$title-subtitle-padding-bottom: 0 !default;
+
+// Title Page Author
+$title-author-align: left !default;
+$title-author-text-transform: uppercase !default;
+$title-author-font-family: $font-1 !default;
+$title-author-letter-spacing: 1px !default;
+$title-author-word-spacing: 2px !default;
+$title-author-font-size: (epub: 1em, prince: 1em, web: 1em) !default;
+$title-author-margin-top: (epub: 2em, prince: 1.5em, web: 2em) !default;
+$title-author-margin-right: .5cm !default;
+$title-author-margin-left: 1cm !default;
+$title-author-border-bottom-width: (epub: 0, prince: 0, web: 0) !default;
+$title-author-bottom-style: (epub: none, prince: none, web: none) !default;
+
+// Title Page Publisher
+$title-publisher-logo-text-align: left !default;
+
+$title-publisher-font-size: 1em !default;
+$title-publisher-align: left !default;
+$title-publisher-font-style: normal !default;
+$title-publisher-font-weight: normal !default;
+$title-publisher-text-transform: normal !default;
+$title-publisher-word-spacing: normal !default;
+$title-publisher-letter-spacing: normal !default;
+$title-publisher-font-family: $font-1 !default;
+$title-publisher-margin-top: (epub: 3.75cm, prince: 3.75cm, web: 3.75cm) !default;
+$title-publisher-margin-left: (epub: 1cm, prince: 1cm, web: 1cm) !default;
+$title-publisher-margin-bottom: 0em !default;
+$title-publisher-border-bottom-width: (epub: 0, prince: 0, web: 0) !default;
+$title-publisher-border-bottom-style: none !default;
+
+$title-publisher-city-font-size: 1em !default;
+$title-publisher-city-align: left !default;
+$title-publisher-city-font-family: $font-1 !default;
+$title-publisher-city-text-transform: normal !default;
+$title-publisher-city-letter-spacing: normal !default;
+$title-publisher-city-word-spacing: normal !default;
+$title-publisher-city-margin-left: (epub: 1cm, prince: 1cm, web: 1cm) !default;
+$title-publisher-city-border-bottom-width: (epub: 0, prince: 0, web: 0) !default;
+$title-publisher-city-bottom-style: (epub: none, prince: none, web: none) !default;
+
+// Copyright and Section License Page
+$copyright-margin-left: (epub: 0, prince: 1cm, web: 0) !default;
+
+$section-license-font-style: normal !default;
+$section-license-margin-top: 1em !default;
+
+// Dedication
+$dedication-align: left !default;
+$dedication-font-style: italic !default;
+
+// Epigraph
+$epigraph-align: left !default;
+$epigraph-font-style: italic !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/pages';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/pages';
+
+.publisher {
+  float: none;
+}
+
+.publisher-city {
+  float: none;
+}

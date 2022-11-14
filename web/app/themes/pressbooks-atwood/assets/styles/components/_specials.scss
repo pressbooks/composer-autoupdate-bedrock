@@ -1,0 +1,110 @@
+// Special Elements
+
+@if $type == 'epub' {
+    $textbox-border-style: dotted !default;
+    $textbox-margin-left: 2em !default;
+    $textbox-margin-right: 2em !default;
+    $textbox-margin-bottom: 2em !default;
+    $textbox-margin-top: 2em !default;
+    $textbox-padding-top: 2em !default;
+    $textbox-padding-right: 2em !default;
+    $textbox-padding-bottom: 2em !default;
+    $textbox-padding-left: 2em !default;
+
+    $pullquote-margin-top: 1em !default;
+    $pullquote-margin-bottom: 1em !default;
+
+    $footnote-line-height: 1.1em !default;
+}
+
+@if $type == 'web' {
+    $sidebar-margin-left: 0.75em !default;
+    $textbox-border-style: solid !default;
+    $textbox-padding-top: .5em !default;
+    $textbox-padding-right: .5em !default;
+    $textbox-padding-bottom: .5em !default;
+    $textbox-padding-left: .5em !default;
+}
+
+// First Character
+$first-character-font-weight: normal !default;
+
+// Seperators
+$hr-break-symbols-margin-top: 1.4em !default;
+$hr-break-symbols-margin-bottom: 1.66em !default;
+$hr-break-symbols-font-size: 1.66em !default;
+$hr-border-width: 1px !default;
+
+// Textbox
+$textbox-border-style: none !default;
+$textbox-line-height: 1.575em !default;
+$textbox-padding-top: 1cm !default;
+$textbox-padding-right: 1cm !default;
+$textbox-padding-bottom: 1cm !default;
+$textbox-padding-left: 1cm !default;
+$textbox-header-font-size: 0.9em !default;
+$textbox-margin-left: 0 !default;
+$textbox-margin-right: 0 !default;
+$textbox-margin-bottom: 1.15em !default;
+$textbox-text-align: justify !default;
+
+// EDU Textboxes
+$edu-header-font-size: 1em !default;
+$edu-header-font-size-multiplier: 1.1 !default;
+
+// Footnotes
+$footnote-block-margin-top: 1em !default;
+$footnote-line-height: 1.3em !default;
+$footnote-font-size: (epub: 0.7em, prince: 0.73rem, web: 0.9em) !default;
+$footnote-align: (epub: justify, prince: justify, web: justify) !default;
+
+// Pullquotes
+$pullquote-border-top: none !default;
+$pullquote-border-bottom: none !default;
+$pullquote-padding-top: 0.425em !default;
+$pullquote-padding-bottom: 0.425em !default;
+$pullquote-line-height: 1.35em !default;
+$pullquote-font-family: $font-2 !default;
+$pullquote-margin-top: 1em !default;
+$pullquote-margin-bottom: 1.2em !default;
+
+// Columns
+$column-twocolumn-font-size: 0.8em !default;
+
+// Sidebars
+$sidebar-padding-top: 0.75em !default;
+$sidebar-padding-right: 0.75em !default;
+$sidebar-padding-bottom: 0.75em !default;
+$sidebar-padding-left: 0.75em !default;
+$sidebar-margin-left: 0.75em !default;
+$sidebar-font-size: 0.8em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/specials';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/specials';
+
+.sidebar ul {
+  padding-left: 0;
+}
+
+@if $type == 'prince' {
+  .footnote {
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+  }
+}
+
+@if $type == 'epub' {
+  .textbox ol {
+    margin-left: 0;
+  }
+}
+
+@if $type == 'web' {
+  .sidebar ul {
+    padding-left: 1em;
+  }
+}

@@ -1,0 +1,10 @@
+// Colors
+$color-4: #e6e6e6 !default;
+
+$first-character-color: #848484 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';

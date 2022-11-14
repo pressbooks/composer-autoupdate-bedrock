@@ -1,0 +1,101 @@
+// Special Elements
+@if $type == 'epub' {
+    $textbox-border-style: dotted !default;
+    $textbox-margin-top: 2em !default;
+    $textbox-margin-bottom: 2em !default;
+    $textbox-margin-right: 2em !default;
+    $textbox-margin-left: 2em !default;
+    $edu-textbox-border-style: dotted !default;
+}
+
+// Section Breaks
+$hr-margin-top: .7em !default;
+$hr-margin-bottom: .7em !default;
+$hr-break-symbols-font-size: 18pt !default;
+$hr-break-symbols-margin-top: 1em !default;
+$hr-break-symbols-margin-bottom: 1.75em !default;
+$section-break-space-margin-top: 1em !default;
+$section-break-margin-bottom: 1em !default;
+
+// Dropcap
+$first-character-font-family: $font-1 !default;
+$first-character-font-size: 3em !default;
+$first-character-font-weight: normal !default;
+
+// Textboxes
+$textbox-font-size: 0.9em !default;
+$textbox-text-align: justify !default;
+$textbox-line-height: 1.5em !default;
+$textbox-font-weight: 300 !default;
+$textbox-margin-top: 1em !default;
+$textbox-margin-bottom: 1em !default;
+$textbox-padding-top: 1cm !default;
+$textbox-padding-right: 1cm !default;
+$textbox-padding-bottom: 1cm !default;
+$textbox-padding-left: 1cm !default;
+
+$edu-header-font-size: .9em !default;
+$edu-textbox-margin-left: (epub: 2em, prince: 0, web: 0) !default;
+$edu-textbox-margin-right: (epub: 2em, prince: 0, web: 0) !default;
+
+// Footnotes
+$footnote-font-size: (epub: 0.8em, prince: 0.7rem, web: 0.8em) !default;
+$footnote-line-height: 1.1em !default;
+$footnote-align: (epub: justify, prince: justify, web: justify) !default;
+
+// PullQuotes
+$pullquote-font-family: $font-2 !default;
+$pullquote-padding-top: 0.425em !default;
+$pullquote-padding-bottom: 0.425em !default;
+
+// Columns
+$column-twocolumn-font-size: 0.8em !default;
+$column-twocolumn-text-align: justify !default;
+
+// Sidebar
+$sidebar-font-size: 0.8em !default;
+$sidebar-margin-left: .75em !default;
+$sidebar-padding-top: .75em !default;
+$sidebar-padding-right: .75em !default;
+$sidebar-padding-bottom: .75em !default;
+$sidebar-padding-left: .75em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/specials';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/specials';
+
+.textbox ol {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.4em;
+}
+
+.textbox.sidebar {
+    margin-left: 1em;
+    padding: 1.5em;
+    line-height: 1.5em;
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+@if $type == "epub" {
+    .textbox.sidebar {
+        margin-top: .75em;
+        margin-right: .75em;
+        margin-bottom: .75em;
+    }
+
+    .textbox ol {
+        margin-left: -1.5em;
+        margin-right: 0.5em;
+    }
+
+    .textbox ul {
+        margin-left: 1em;
+        padding-left: 1em;
+    }
+}

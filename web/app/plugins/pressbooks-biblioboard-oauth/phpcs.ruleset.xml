@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ruleset>
+	<!-- Use Pressbooks Coding Standards -->
+	<rule ref="vendor/pressbooks/coding-standards">
+		<!-- TODO: remove these exclusions and fix in future release -->
+		<exclude name="Squiz.Commenting"/>
+		<exclude name="Generic.Commenting.DocComment"/>
+		<exclude name="Pressbooks.Security.EscapeOutput.OutputNotEscaped"/>
+		<exclude name="Pressbooks.Security.ValidatedSanitizedInput.InputNotSanitized"/>
+		<exclude name="Pressbooks.Security.ValidatedSanitizedInput.MissingUnslash"/>
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+		<exclude name="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase"/>
+	</rule>
+	<!-- Disable Side Effects and MissingNamespace rules for bootstrapping files: -->
+	<rule ref="PSR1.Files.SideEffects">
+		<exclude-pattern>/pressbooks-biblioboard-oauth.php</exclude-pattern>
+	</rule>
+	<!-- Disable all rules for these files: -->
+	<exclude-pattern>*.blade.php</exclude-pattern>
+	<!-- Run against the PHPCompatibility ruleset -->
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.4-"/>
+</ruleset>

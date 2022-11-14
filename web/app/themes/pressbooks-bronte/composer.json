@@ -1,0 +1,18 @@
+{
+    "name": "pressbooks/pressbooks-bronte",
+    "description": "Named for Emily Bronte, this theme is designed for literary fiction, romance, memoirs. It's got decorative title font (Great Vibes), but otherwise a classic design.",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "genre fiction",
+        "literary"
+    ]
+}

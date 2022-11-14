@@ -1,0 +1,60 @@
+// Table of Contents
+
+@if $type == 'epub' {
+  $toc-front-matter-font-style: italic !default;
+
+  $toc-part-title-font-family: $font-2 !default;
+
+  $toc-part-number-font-weight: bold !default;
+  $toc-part-title-font-weight: bold !default;
+}
+
+// TOC Page Number
+$toc-page-number-font-size: .9em !default;
+
+// TOC Front Matter
+$toc-front-matter-margin-top: (epub: 3px, prince: 0.3em) !default;
+$toc-front-matter-page-number-font-style: italic !default;
+$toc-front-matter-title-font-size: 0.9em !default;
+$toc-front-matter-title-font-style: italic !default;
+
+// TOC Part Number
+$toc-part-number-font-size: 1em !default;
+$toc-part-number-font-family: $font-3 !default;
+
+// TOC Part Title
+$toc-part-title-font-size: (epub: 1.2em, prince: 1.2em, web: 1em) !default;
+$toc-part-title-font-family: $font-3 !default;
+
+// TOC Chapter Number
+$toc-chapter-number-font-size: .9em !default;
+$toc-chapter-margin-top: (epub: 0.25em, prince: 0.3em) !default;
+
+// TOC Chapter Title
+$toc-chapter-title-font-size: .9em !default;
+
+// TOC Chapter Subtitle
+$toc-chapter-subtitle-font-size: 0.85em !default;
+$toc-chapter-subtitle-font-style: normal !default;
+$toc-chapter-subtitle-margin-top: (epub: 0, prince: 0, web: 0.4em) !default;
+
+// TOC Chapter Author
+$toc-chapter-author-font-size: 0.85em !default;
+$toc-chapter-author-font-style: italic !default;
+$toc-chapter-author-margin-top: (epub: 0, prince: 0, web: 0) !default;
+
+// TOC Back Matter
+$toc-back-matter-margin-top: (epub: 0, prince: 0.3em) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/toc';
+
+// Add custom SCSS below these imports and includes.
+// @import 'components/toc/center';
+@import 'components/toc/left';
+
+#toc .part {
+  margin-bottom: -1em;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}

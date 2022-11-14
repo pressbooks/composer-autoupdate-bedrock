@@ -1,0 +1,7 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+
+$font-1: "Baskerville", "Georgia", "Times", $serif-epub;
+$font-2: "Palatino", "Baskerville", "Georgia", "Times", $serif-epub;
+$font-3: $font-1;

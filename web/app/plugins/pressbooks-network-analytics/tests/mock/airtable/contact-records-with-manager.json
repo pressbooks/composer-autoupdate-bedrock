@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "id": "recRq7XdCIdOxMbdC",
+      "fields": {
+        "Name": "user 0000022",
+        "Email": "user_0000022@example.org",
+        "Network Manager": true,
+        "Networks": [
+          "rec7GytThG1hX9VeN"
+        ],
+        "Networks 2": "Wisconsin Technical College Digital Press",
+        "Plan": [
+          "Titanium"
+        ],
+        "Server": [
+          "recwQ9bX6drX41cHH"
+        ]
+      },
+      "createdTime": "2020-02-03T14:28:16.000Z"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+// Media
+// Images
+$image-caption-font-family: $font-2 !default;
+$image-caption-font-weight: lighter !default;
+$image-caption-font-size: 0.7em !default;
+
+$image-wrapper-margin-top: 1em !default;
+$image-wrapper-margin-bottom: 1em !default;
+
+$image-alignright-margin-left: 2em !default;
+$image-alignleft-margin-right: 2em !default;
+
+// Interactive Content
+$interactive-content-font-size: 1em !default;
+$interactive-content-font-style: normal !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.wp-caption-text {
+    margin-top: 5px;
+}

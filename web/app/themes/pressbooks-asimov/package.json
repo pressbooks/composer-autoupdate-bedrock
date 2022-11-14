@@ -1,0 +1,25 @@
+{
+  "name": "@pressbooks/pressbooks-asimov",
+  "description": "Named for Isaac Asimov, this is a theme for sci-fi, but will work for thrillers, literary fiction, YA, and a few others, I'm sure. Title fonts are Exo2 by Natanael Gama, body font is PT Serif by ParaType.",
+  "author": "Pressbooks (Book Oven Inc.)",
+  "engines": {
+    "node": ">= 16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pressbooks/pressbooks-asimov.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "install-build-tools": "npm install --no-save pressbooks-build-tools",
+    "fix": "npm run -s fix:styles",
+    "fix:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js --fix \"assets/styles/**/*.scss\" --syntax scss",
+    "lint": "npm run -s lint:styles",
+    "lint:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js  \"assets/styles/**/*.scss\" --syntax scss",
+    "test": "npm run -s lint"
+  },
+  "stylelint": {
+    "extends": "./node_modules/pressbooks-build-tools/config/stylelint.js"
+  }
+}
