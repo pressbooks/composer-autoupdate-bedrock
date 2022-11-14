@@ -1,0 +1,11 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Cardo", "Baskerville", "Times", $serif-epub;
+$font-2: "Open Sans", "Helvetica", $sans-serif-epub;
+$font-3: $font-2;
+
+@import "CardoFont";
+@import "OpenSansFont";

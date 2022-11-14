@@ -1,0 +1,44 @@
+// Media
+@if $type == "epub" {
+    $image-caption-text-align: center !default;
+}
+
+@if $type == "web" {
+    $image-caption-text-align: center !default;
+}
+
+// Images
+$image-wrapper-margin-bottom: 1em !default;
+$image-wrapper-margin-top: 1em !default;
+
+$floated-image-wrapper-margin-top: 1em !default;
+$floated-image-wrapper-margin-bottom: 1em !default;
+
+$image-alignleft-margin-right: 1em !default;
+$image-alignright-margin-left: 1em !default;
+$image-alignleft-caption-text-align: left !default;
+
+$interactive-content-font-style: normal !default;
+$interactive-content-line-height: 1.575em !default;
+$interactive-content-font-size: 0.9em !default;
+$interactive-content-padding-top: 1cm !default;
+$interactive-content-padding-right: 1cm !default;
+$interactive-content-padding-bottom: 1.5cm !default;
+$interactive-content-padding-left: 1cm !default;
+$interactive-content-text-align: (epub: justify, prince: justify, web: justify) !default;
+
+$image-caption-line-height: (epub: 1.2, prince: 1.575em, web: 1.2em) !default;
+$image-caption-text-align: left !default;
+$image-caption-text-indent: (epub: 0, prince: 0, web: 0) !default;
+$image-caption-margin-top: (epub: 0.5em, prince: 0.5em, web: 0.5em) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.wp-caption-text {
+  margin-bottom: 2em;
+  padding: 0;
+}

@@ -1,0 +1,64 @@
+@use "sass:color";
+
+div.oauth {
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.button.oauth {
+  text-align: center;
+}
+
+div.oauth.oauth-register .button {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  color: #222;
+  font: normal 0.75em "Droid Sans", sans-serif;
+  margin-left: 15px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #3a3a3a;
+    border-color: #3a3a3a;
+    color: #ddd;
+    text-decoration: none;
+  }
+}
+
+.oauth-reset {
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#login #nav {
+	display: none;
+}
+
+.home #login_error { /* stylelint-disable-line */
+  width: 90%;
+  margin: 0 auto;
+}
+
+div.provider-status {
+  border-style: solid;
+  border-width: 1px;
+  padding: 0 15px;
+
+  &.active {
+    background-color: #e9ffe9;
+    border-color: color.scale(#e9ffe9, $lightness: -10%);
+  }
+
+  &.inactive {
+    background-color: #ffe9e9;
+    border-color: color.scale(#e9ffe9, $lightness: -10%);
+  }
+}

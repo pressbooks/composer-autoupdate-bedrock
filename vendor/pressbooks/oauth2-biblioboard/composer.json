@@ -1,0 +1,35 @@
+{
+    "name": "pressbooks/oauth2-biblioboard",
+    "description": "BiblioBoard OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "license": "MIT",
+    "minimum-stability": "beta",
+ 	  "authors": [
+        {
+            "name": "Book Oven Inc.",
+            "email": "code@pressbooks.com",
+            "homepage": "https://pressbooks.com",
+            "role": "Developer"
+        }
+	   ],
+    "require": {
+        "league/oauth2-client": "^2.0"
+    },
+    "require-dev": {
+      "eloquent/liberator": "^2.0",
+      "eloquent/phony": "^0.14.1",
+      "jakub-onderka/php-parallel-lint": "~0.9",
+      "phpunit/phpunit": "^5.0",
+      "squizlabs/php_codesniffer": "^2.0",
+      "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "League\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "League\\OAuth2\\Client\\Test\\": "tests/src/"
+        }
+    }
+}

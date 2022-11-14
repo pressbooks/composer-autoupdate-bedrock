@@ -1,0 +1,1 @@
+jQuery(document).ready((function(o){let e=o("body"),p=o("#pb-oauth-wrap"),t=o("#loginform"),a=o('<div class="pb-oauth-clear"></div>');t.append(a),1===o("#loginform > p.forgetmenot").length&&a.append(o("p.forgetmenot"),o("p.submit")),t.append(p),e.addClass("pb-oauth-repositioned")}));

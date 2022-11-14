@@ -1,0 +1,41 @@
+// Colors
+$color-1: (
+  epub: initial,
+  prince: initial,
+  web: #373d3f
+) !default;
+$color-2: $color-1 !default;
+$color-3: black !default;
+$color-4:rgb(216, 216, 216) !default; //shaded
+$color-5: #d8d8d8 !default;
+$color-6: #e6e6e6 !default;
+
+@if $type == "epub" {
+    $textbox-border-color: $color-3 !default;
+}
+
+@if $type == "web" {
+  $h4-color: $color-1 !default;
+  $h5-color: $color-1 !default;
+  $h6-color: $color-1 !default;
+}
+
+// Pages
+$title-page-publisher-color: $color-3 !default;
+$title-page-publisher-city-color: $color-3 !default;
+
+// Textbox
+$textbox-background-color: white !default;
+$textbox-shaded-background-color: $color-5 !default;
+$textbox-border-color: #595959 !default;
+$sidebar-color: $color-6 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';
+
+.textbox.shaded {
+  border-color: $color-5;
+}

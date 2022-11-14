@@ -1,0 +1,225 @@
+// Special Elements
+@if $type == 'epub' {
+    $footnote-block-margin-top: 1em !default;
+
+    $pullquote-font-weight: bold !default;
+    $pullquote-width: 80% !default;
+
+    $textbox-border-style: dotted !default;
+    $edu-textbox-border-style: dotted !default;
+    $textbox-font-size: 0.8em !default;
+    $textbox-font-family: $font-1 !default;
+
+    $column-twocolumn-font-size: 0.8em !default;
+}
+
+@if $type == 'web' {
+  $pullquote-font-weight: bold !default;
+  $pullquote-width: 80% !default;
+}
+
+// Section Breaks
+$hr-margin-top: 1em !default;
+$hr-margin-bottom: 1em !default;
+$hr-break-symbols-font-size: 18pt !default;
+$hr-break-symbols-margin-top: 1.2em !default;
+$hr-break-symbols-margin-bottom: 2em !default;
+$section-break-space-margin-top: 1.1em !default;
+$section-break-margin-bottom: 1em !default;
+
+// Dropcap
+$first-character-font-family: $font-2 !default;
+$first-character-font-size: 3em !default;
+$first-character-font-weight: normal !default;
+
+// Textboxes
+$textbox-font-family: $font-2 !default;
+$textbox-font-weight: lighter !default;
+$textbox-font-size: 0.9em !default;
+$textbox-font-style: normal !default;
+$textbox-border-style: solid !default;
+$textbox-line-height: 1.25em !default;
+$textbox-text-indent: 0 !default;
+$textbox-margin-top: (epub: 2em, prince: 1em, web: 2em) !default;
+$textbox-margin-bottom: (epub: 2em, prince: 1.2em, web: 2em) !default;
+$textbox-margin-right: (epub: 2em, prince: 0, web: 2em) !default;
+$textbox-margin-left: (epub: 2em, prince: 0, web: 2em) !default;
+$textbox-padding-top: (epub: 2em, prince: 1cm, web: 2em) !default;
+$textbox-padding-right: (epub: 2em, prince: 1cm, web: 2em) !default;
+$textbox-padding-bottom: (epub: 2em, prince: 2em, web: 2em) !default;
+$textbox-padding-left: (epub: 2em, prince: 1cm, web: 2em) !default;
+
+$edu-textbox-border-style: solid !default;
+$edu-textbox-margin-right: (epub: 2em, prince: 0, web: 0em) !default;
+$edu-textbox-margin-left: (epub: 2em, prince: 0, web: 0em) !default;
+
+$edu-header-font-style: italic !default;
+$edu-header-font-weight: normal !default;
+$edu-header-font-size: 1.1em !default;
+$edu-header-font-size-multiplier: 1.4 !default;
+
+// Footnotes
+$footnote-line-height: 1.1em !default;
+$footnote-font-size: (epub: 0.9em, prince: 0.7rem, web: 0.9em) !default;
+$footnote-font-weight: lighter !default;
+
+$footnote-block-border-top: 1px solid #525252 !default;
+
+// Pullquotes
+$pullquote-font-family: $font-2 !default;
+$pullquote-padding-top: 0.425em !default;
+$pullquote-padding-bottom: 0.425em !default;
+$pullquote-font-weight: lighter !default;
+
+// Columns
+$column-twocolumn-font-size: 0.8em !default;
+$column-margin-bottom: 1.2em !default;
+$column-text-indent: (epub: 0, prince: 1em, web: 0) !default;
+
+// Sidebar
+$sidebar-font-size: 0.8em !default;
+$sidebar-line-height: 1.4em !default;
+$sidebar-padding-top: 1em !default;
+$sidebar-padding-right: 1em !default;
+$sidebar-padding-bottom: 1em !default;
+$sidebar-padding-left: 1em !default;
+$sidebar-margin-left: .75em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/specials';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/specials';
+
+.textbox ol {
+  font-size: 0.9em;
+  margin-left: 1.75em;
+  margin-right: 1.75em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.5em;
+}
+
+.textbox li + li {
+  margin-top: 0.5em;
+}
+
+.textbox.sidebar {
+  padding: 2em;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.sidebar ul {
+  margin-left: 0em;
+  margin-right: 0em;
+}
+
+.textbox ul {
+  font-size: 0.9em;
+  margin-left: 0em;
+  margin-right: 0em;
+}
+
+.footnote {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  font-family: $font-2;
+  padding-left: 1em;
+  font-weight: lighter;
+}
+
+.textbox p {
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 2em;
+}
+
+@if $type == "epub" {
+    .textbox,
+    .textbox p,
+    .twocolumn,
+    .twocolumn p  {
+        text-align: justify;
+    }
+
+    .textbox {
+      font-size: 1em;
+      font-family: $font-1 !important;
+    }
+
+    .textbox p {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0.5em;
+      padding-bottom: 0em;
+    }
+
+    .textbox ol {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .textbox ul {
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-left: 1em;
+    }
+
+    .footnote {
+      margin-top: 0;
+      margin-left: 0;
+      font-family: $font-2;
+      padding-left: 0;
+      font-weight: normal !important;
+    }
+
+    .footnotes {
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+
+    .footnotes ol li {
+        font-size: 0.9em !important;
+    }
+}
+
+@if $type == "web" {
+    .twocolumn,
+    .twocolumn p {
+        text-align: justify;
+    }
+
+    .footnote {
+      margin-top: 0;
+      margin-left: 0;
+      font-family: $font-2;
+      padding-left: 0;
+      font-weight: normal !important;
+    }
+
+    hr.before-footnotes {
+      width: 100%;
+    }
+
+    .textbox p {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0.5em;
+      padding-bottom: 0em;
+    }
+
+    blockquote,
+    .blockquote {
+      padding-bottom: 0 !important;
+    }
+
+    .sidebar ul {
+      font-size: .9em !important;
+    }
+
+}

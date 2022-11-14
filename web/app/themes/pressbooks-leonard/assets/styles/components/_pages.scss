@@ -1,0 +1,131 @@
+// Pages
+
+@if $type == "epub" {
+  $title-title-letter-spacing: 1px !default;
+  $title-title-word-spacing: 2px !default;
+  $title-title-font-family: $font-2 !default;
+
+  $title-subtitle-font-family: $font-2 !default;
+
+  $title-author-text-transform: none !default;
+  $title-author-font-family: $font-2 !default;
+
+  $title-publisher-font-family: $font-2 !default;
+  $title-publisher-font-size: .9em !default;
+
+  $title-publisher-city-font-size: 0.875em !default;
+  $title-publisher-city-font-style: italic !default;
+  $title-publisher-city-font-family: $font-2 !default;
+
+  $section-license-margin-top: 0 !default;
+  $section-license-margin-bottom: 0.5em !default;
+  $section-license-image-margin-top: 0 !default;
+  $section-license-image-margin-bottom: 0.5em !default;
+}
+
+@if $type == "web" {
+  $title-subtitle-font-family: $font-2 !default;
+}
+
+// Half Title
+$title-half-title-block-margin-top: (epub: 2em, prince: 0, web: 3em) !default;
+$title-half-title-font-size: 2.1em !default;
+$title-half-title-align: right !default;
+$title-half-title-letter-spacing: 1px !default;
+
+// Title Page Title
+$title-title-font-size:(epub: 2em, prince: 3em, web: 2em) !default;
+$title-title-align: right !default;
+$title-title-text-transform: uppercase !default;
+$title-title-line-height: 1.2em !default;
+$title-title-margin-top: (epub: 2em, prince: 4cm, web: 2em) !default;
+$title-title-letter-spacing: 2px !default;
+$title-title-word-spacing: 3px !default;
+
+// Title Page Subtitle
+$title-subtitle-font-size:(epub: 1.5em, prince: 1.5em, web: 1.2em) !default;
+$title-subtitle-margin-top: -.4em !default;
+$title-subtitle-align: right !default;
+$title-subtitle-font-style: normal !default;
+$title-subtitle-letter-spacing: 1px !default;
+
+// Title Page Author
+$title-author-font-size:(epub: 1.2em, prince: 1.5em, web: 1.5em) !default;
+$title-author-margin-top: (epub: 2em, prince: 2cm, web: 2em) !default;
+$title-author-text-transform: uppercase !default;
+$title-author-font-weight: lighter !default;
+$title-author-align: right !default;
+$title-author-letter-spacing: 1px !default;
+$title-author-word-spacing: 1px !default;
+
+// Title Page Publisher
+$title-publisher-align: right !default;
+$title-publisher-font-weight: normal !default;
+$title-publisher-font-size: 1em !default;
+$title-publisher-margin-top: (epub: 1em, prince: 0, web: 4em) !default;
+$title-publisher-margin-bottom: (epub: 0.5em, prince: 1.75em, web: 0.5em) !default;
+$title-publisher-float: (epub: bottom, prince: bottom, web: bottom) !default;
+
+// Title Page Publisher City
+$title-publisher-city-align: right !default;
+$title-publisher-city-font-size: 0.83em !default;
+$title-publisher-city-letter-spacing: 1px !default;
+$title-publisher-city-word-spacing: normal !default;
+$title-publisher-city-text-transform: none !default;
+$title-publisher-city-float: (epub: bottom, prince: bottom, web: bottom) !default;
+$title-publisher-city-padding-bottom: (epub: 0, prince: 5em, web: 0) !default;
+
+//Dedication
+$dedication-font-style: italic !default;
+
+//Epigraph
+$epigraph-font-style: normal !default;
+
+// Copyright
+$copyright-font-size: 0.9em !default;
+$copyright-line-height: 1.3em !default;
+$copyright-margin-top: (epub: 2em, prince: 4cm, web: 2em) !default;
+
+// Section License
+$section-license-font-style: normal !default;
+$section-license-image-margin-bottom: 0 !default;
+$section-license-font-size: .9em !default;
+$section-license-margin-top: 1em !default;
+$section-license-line-height: 1.3em !default;
+
+// Bibliography
+$bibliography-padding-left: 1.5em !default;
+$bibliography-text-indent: -1.5em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/pages';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/pages';
+
+#half-title-page .title {
+  margin-left: 2em;
+}
+
+.license-attribution img {
+  height: 1.5em;
+  width: auto;
+}
+
+#copyright-page p {
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+@if $type == 'web' {
+  [data-type='subtitle'] {
+    font-family: $font-2 !important;
+    font-size: 1em !important;
+  }
+
+  [data-type='author'] {
+    font-family: $font-2 !important;
+    font-size: 1.5em !important;
+    margin-top: 1.5em !important;
+  }
+}

@@ -1,0 +1,739 @@
+$type: 'prince';
+@import 'mixins', 'page-structure', 'prince-toc', 'pdf-house-style';
+
+
+//=====================================================
+//SASS: RUNNING HEAD/FEET CONTENT VARIABLE DECLARATIONS
+//-----------------------------------------------------
+/* ==============================================
+PAGE STRUCTURE: RUNNING HEADS/FEET & PAGE NUMBERS
+-------------------------------------------------
+/* NOTE: per Chicago Manual, front-matter/backmatter running heads/feet should be SECTION-TITLE
+NOTE: string options are:
+- book-title
+- book-subtitle
+- book-author
+- book-publisher
+- book-publisher-city
+- part-number
+- part-title
+- chapter-number
+- section-title (note this is: frontmatter/chapter/backmatter title OR short-chapter-title if such a thing exists)
+- chapter-author
+- chapter-subtitle
+---------------------------*/
+
+$FrontMatterRunningContentLeft: string(section-title);
+$FrontMatterRunningContentRight: string(section-title);
+$IntroductionRunningContentLeft: string(section-title);
+$IntroductionRunningContentRight: string(section-title);
+$PartRunningContentLeft: string(book-author);
+$PartRunningContentRight: string(book-title);
+$ChapterRunningContentLeft: string(book-author);
+$ChapterRunningContentRight: string(book-title);
+$BackMatterRunningContentLeft: string(section-title);
+$BackMatterRunningContentRight: string(section-title);
+
+
+//=========================================================
+//SASS: PAGE STRUCTURE (HEADERS/FOOTERS) MIXIN DECLARATIONS
+//SASS OPTIONS ARE:
+//-RunningHeadOutside
+//-RunningHeadCenter
+//-RunningHeadInside
+//-RunningFootOutside
+//---------------------------------------------------------
+
+@include RunningHeadCenter;
+
+/* PAGE - GENERAL */
+
+@page {
+  margin-top: 2.25cm;
+  margin-bottom: 2.25cm;
+  margin-left: 2.25cm;
+  margin-right: 2.25cm;
+}
+
+@page {
+  @top {
+    padding-top: .4in;
+  }
+  @top-left-corner {
+    padding-top: .4in;
+  }
+  @top-left {
+    padding-top: .4in;
+  }
+  @top-center {
+    padding-top: .4in;
+  }
+  @top-right {
+    padding-top: .4in;
+  }
+  @top-right-corner {
+    padding-top: .4in;
+  }
+}
+
+@page {
+  @bottom {
+    padding-bottom: .4in;
+  }
+  @bottom-left-corner {
+    padding-bottom: .4in;
+  }
+  @bottom-left {
+    padding-bottom: .4in;
+  }
+  @bottom-center {
+    padding-bottom: .4in;
+  }
+  @bottom-right {
+    padding-bottom: .4in;
+  }
+  @bottom-right-corner {
+    padding-bottom: .4in;
+  }
+}
+
+/* FOOTNOTES PAGE SETTINGS */
+
+@page {
+    @footnotes {
+    padding-top: 1em;
+  }
+}
+
+/* PAGE GROUPINGS */
+
+div.type-1 {
+  page: type-1;
+  prince-page-group: start;
+}
+div.type-2 {
+  page: type-2;
+  prince-page-group: start;
+}
+div.type-3 {
+  page: type-3;
+  prince-page-group: start;
+}
+div.type-4 {
+  page: type-4;
+  prince-page-group: start;
+}
+div.type-5 {
+  page: type-5;
+  prince-page-group: start;
+}
+
+/* PAGE SETTINGS: RECTO / VERSO CHAPTER OPENINGS */
+
+div.front-matter {
+  page-break-before: right;
+}
+div.front-matter + div.front-matter {
+  page-break-before: right;
+}
+div.chapter {
+  page-break-before: right;
+}
+div.chapter + div.chapter {
+  page-break-before: right;
+}
+div.part {
+  page-break-before: right;
+}
+div.back-matter {
+  page-break-before: right;
+}
+div.back-matter + div.back-matter {
+  page-break-before: right;
+}
+
+/* ==========
+TITLEPAGE(S)
+============== */
+
+/* HALFTITLE PAGE */
+
+#half-title-page > .title {
+  @include halftitle;
+  margin-left: 0;
+  margin-top: 2cm;
+}
+
+/* TITLE PAGE */
+
+#title-page {
+  height: 100%;
+  page-break-before: right;
+}
+#title-page > .title {
+  @include booktitle;
+  margin-top: 2cm;
+}
+#title-page > .subtitle {
+  @include booksubtitle;
+}
+#title-page > .author {
+  @include bookauthor;
+  margin-top: 2cm;
+}
+#title-page > div.pb-publogo-wrap {
+  position: fixed;
+  bottom: 1.85cm;
+  width: 90%;
+  margin: 0 0 0 -45%;
+  left: 50%;
+}
+img.pb-publogo {
+  width: 35px;
+  height: auto;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  display: block;
+  float: none;
+}
+img.pb-publogo-wide {
+  width: 140px;
+  height: auto;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  display: block;
+}
+#title-page > .publisher {
+  @include bookpublisher;
+  position: fixed;
+  display: block;
+  bottom: 1cm;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+#title-page > .publisher-city {
+  @include bookpublishercity;
+  position: fixed;
+  bottom: 0.5cm;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+/* =========================================
+TITLES:
+FRONT-MATTER, PARTS, CHAPTER, BACK-MATTER
+============================================= */
+
+/* DISPLAY NONE
+REMOVES TITLE OUTPUTS/CHAPTER NUMBERS ETC.*/
+
+.display-none,
+.front-matter-number,
+.front-matter-number.dedication,
+.back-matter-number {
+  display: none;
+  visibility: hidden;
+}
+
+/* BEFORE TITLE */
+
+.before-title .front-matter-title-wrap {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+/* PART TITLES */
+
+.part-title-wrap {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.part-title-wrap .part-number {
+  @include partnumber;
+  display: block;
+  page-break-after: avoid;
+}
+.part-number::before {
+  text-transform: uppercase;
+content: $part + " ";
+}
+.part-number::after {
+
+}
+.part-title-wrap .part-title {
+  @include parttitle;
+  page-break-after: avoid;
+}
+
+/* FRONT-MATTER TITLES */
+
+.front-matter-title-wrap {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  text-align: left;
+}
+.front-matter-title-wrap .front-matter-title {
+  @include frontmattertitle;
+  display: block;
+  margin-bottom: 0.5em;
+  padding-bottom: 1.5em;
+}
+
+.ugc.front-matter-ugc .chapter-subtitle {
+  @include frontmattersubtitle;
+}
+
+/* CHAPTER TITLES */
+
+.chapter-title-wrap {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  text-align: center;
+}
+.chapter-number {
+  @include chapternumber;
+  display: inline-block;
+}
+
+.chapter-title-wrap .chapter-title {
+  @include chaptertitle;
+  display: block;
+  margin-bottom: 0.5em;
+  padding-bottom: 1.5em;
+}
+div.ugc .chapter-subtitle {
+  @include chaptersubtitle;
+  display: block;
+  column-span: all;
+  margin: -1.5cm 0 3em;
+  padding-top: 0.2em;
+}
+div.ugc .chapter-author {
+  @include chapterauthor;
+  display: block;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-bottom: 1.5cm;
+}
+.chapter-subtitle + .chapter-author {
+  margin-top: -1cm;
+}
+.chapter-title + .chapter-author {
+  margin-top: -1cm;
+}
+.aphorism {
+  @include chapteraphorism;
+  text-indent: 0;
+  margin-bottom: 2em;
+}
+.aphorism cite {
+    display: block;
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: normal;
+}
+.aphorism cite::before {
+  content: "–";
+}
+
+/* BACKMATTER TITLES */
+
+.back-matter-title-wrap {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  text-align: left;
+}
+.back-matter-title-wrap .back-matter-title {
+  @include backmattertitle;
+  display: block;
+  margin-bottom: 0.5em;
+  padding-bottom: 1.5em;
+}
+
+/* BODY STYLES */
+
+/* OTHER SPECIAL FRONT-MATTER
+============================== */
+
+/* COPYRIGHT  */
+
+#copyright-page .ugc p {
+  @include copyrighttext;
+  line-height: 1.2em;
+  text-indent: 0 !important;
+  margin-bottom: 1em;
+}
+#copyright-page > .ugc {
+  margin-top: 2cm;
+}
+
+/*   DEDICATION  */
+
+div.dedication {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+.dedication p {
+  @include dedicationtext;
+  margin-bottom: 1em;
+}
+
+/*   EPIGRAPH */
+
+div.epigraph {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.epigraph p {
+  @include epigraphtext;
+  margin-bottom: 1em;
+}
+
+.ugc.back-matter-ugc {
+  margin-top: 2cm;
+}
+/* GENERAL STYLES
+=========================== */
+
+body {
+  font-family: $font-1;
+  font-size: 12.5pt;
+  font-weight: normal;
+  line-height: 1.4;
+  color: $color1;
+}
+a {
+  color: $color5;
+  text-decoration: none;
+}
+
+/* PARAGRAPHS */
+
+p {
+  text-align: justify;
+  margin-bottom: 0;
+  prince-hyphenate-lines: 2;
+  orphans: 1;
+  widows: 2;
+}
+p + p,
+.indent {
+  text-indent: 1em;
+  margin-top: 0;
+}
+p.nonindent,
+p.no-indent {
+  text-indent: 0;
+  margin-top: 1em;
+}
+
+/*  BODY HEADERS */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5em;
+  column-count: 1;
+}
+div.ugc h1, div.ugc h2, div.ugc h3, div.ugc h4, div.ugc h5, div.ugc h6 {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+div.ugc h1 {
+  @include head1;
+}
+div.ugc h2 {
+  @include head2;
+}
+div.ugc h3 {
+  @include head3;
+}
+div.ugc h4  {
+  @include head4;
+}
+div.ugc h5 {
+  @include head5;
+}
+div.ugc h6 {
+  @include head6;
+}
+div.ugc h1 + p,
+div.ugc h2 + p,
+div.ugc h3 + p,
+div.ugc h4 + p,
+div.ugc h5 + p {
+  margin-top: 0;
+}
+
+/* ORDERED AND UNORDERED LISTS */
+
+ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+
+ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+ul li + li {
+  margin-top: 0.5em;
+}
+
+/* BLOCKQUOTES */
+
+div.blockquote,
+blockquote {
+  @include blockquotetext;
+  margin: 1em;
+}
+
+.type-2 blockquote,
+.type-2 .blockquote {
+  font-family: $font-1;
+}
+
+blockquote.bq_2 {
+  @include blockquotetext;
+  margin: 1em;
+}
+blockquote.bq_2 p {
+  text-align: left;
+  hyphens: none;
+}
+
+/* TABLES */
+
+table {
+  @include tabletext;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  max-width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* DEFINITION LISTS */
+
+dt {
+  font-weight: bold;
+}
+dt, dd {
+  display: inline;
+  margin: 0;
+}
+dd:after {
+  content: "\A";
+  white-space: pre;
+}
+
+/* FOOTNOTES
+* @see: http://www.princexml.com/doc/8.1/footnotes/
+==================================================== */
+
+.footnote {
+  @include footnote;
+  font-size: 8pt;
+  display: none;
+  display: footnote;
+  display: prince-footnote;
+  position: footnote;
+  counter-increment: footnote;
+  footnote-style-position: outside;
+  margin-left: 0;
+  line-height: 1.15em;
+  text-indent: 0em;
+  text-align: justify;
+}
+sup.endnote {
+  line-height: 1em;
+  vertical-align: top;
+}
+.endnotes {
+  line-height: 1.1em;
+  text-align: justify;
+}
+.endnotes h3 {
+  @include endnoteshead;
+  margin-left: -1.5em;
+}
+
+/* ASIDES, PULLQUOTES & TEXTBOXES
+================================== */
+.aside {
+  @include pullquotetext;
+  font-style: italic;
+}
+div.textbox {
+  @include textbox;
+  @include textboxtext;
+}
+
+.textbox p,
+.textbox2 p {
+  @include textboxtext;
+  margin-bottom: 0.5em;
+  text-indent: 0;
+}
+.pullquote {
+  @include pullquotetext;
+  line-height: 1.2em;
+  width: 100%;
+  text-indent: 0;
+  margin: 0 0 1.2em;
+  border-top: none;
+  border-bottom: none;
+}
+.pullquote-left {
+  @include pullquotetext;
+  float: left;
+  line-height: 1.2em;
+  width: 45%;
+  margin: 1em;
+  text-indent: 0;
+  border-top: none;
+  border-bottom: none;
+}
+.pullquote-right {
+  @include pullquotetext;
+  float: right;
+  line-height: 1.2em;
+  width: 45%;
+  margin: 1em;
+  text-indent: 0;
+  border-top: none;
+  border-bottom: none;
+}
+.pullquote-outside {
+  @include pullquotetext;
+  float: outside;
+  line-height: 1.2em;
+  width: 50%;
+  margin: 1em 0 1em;
+  text-indent: 0;
+  border-top: none;
+  border-bottom: none;
+}
+.pullquote + p,
+.pullquote-right + p,
+.pullquote-left + p,
+.pullquote-outside + p {
+  text-indent: 1.5em;
+  margin-top: -0.15em;
+}
+
+/* IMAGES
+========== */
+
+.float-top {
+  float: top;
+}
+.float-bottom {
+  float: bottom;
+}
+.inside {
+  float: inside;
+  margin-inside: -1.5cm;
+  margin-outside: 0;
+}
+.outside {
+  float: outside;
+  margin-outside: -1.5cm;
+  margin-inside: 0;
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+.alignleft {
+  float: left;
+  margin: 1em 1em 1em 0;
+}
+.alignright {
+  float: right;
+  margin: 1em 0 1em 1em;
+}
+.aligncenter {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
+.publisher-logo {
+  width: 30px;
+  height: auto;
+  padding: 10px;
+}
+div.aligncenter {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
+img.aligncenter {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
+.wp-caption {
+  height: auto;
+  max-width: 100%;
+  margin: 1em 0;
+  float: column-top;
+  column-span: 2;
+}
+.wp-caption-text {
+  @include wpcaptiontext;
+  margin-top: 5px;
+  margin-bottom: 2em;
+}
+.image-wide {
+  float: top;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* SPECIAL */
+
+/* DROPCAPS */
+
+div.chapter-ugc > p:first-of-type::first-letter {
+  float: left;
+  font-family: $font-2;
+  color: $color2;
+  font-size: 3.5em;
+  line-height: 1em;
+  padding-right: 5px;
+  margin-right: 0;
+  margin-top: -5px;
+  margin-bottom: -8px;
+  background-color: white;
+}
+
+.firstcharacter {
+  @include firstcharacter;
+  float: none;
+  line-height: 1em;
+  padding-right: 0;
+  margin-top: 0;
+}
+.firstcharacter2 {
+  @include firstcharacter;
+  color: $color1;
+  font-weight: 300;
+  padding-right: 3px;
+  margin-right: 0;
+}
+
+
+/* TABLE OF CONTENTS */
+//SASS: YOU CAN @INCLUDE FROM FROM SASS-MIXINS-PRINCE-TOC
+
+@include TocLeft;

@@ -1,0 +1,51 @@
+{
+	"name"       : "pressbooks/pressbooks-biblioboard-oauth",
+	"description": "Allows users to login or register on a Pressbooks network by authenticating via the BiblioBoard OAuth 2.0 provider.",
+	"homepage"   : "https://pressbooks.com/",
+	"type"       : "wordpress-plugin",
+	"license"    : "GPL-3.0",
+	"authors"    : [
+		{
+			"name"    : "Book Oven Inc.",
+			"email"	  : "code@pressbooks.com"
+		}
+  ],
+  "config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+  },
+   "repositories": [
+     {
+       "type": "composer",
+       "url": "https://repo.packagist.com/pressbooks/"
+     }
+   ],
+	"require": {
+    "php": "^7.4|8.0.*",
+    "pressbooks/oauth2-biblioboard": "^2.0",
+    "pressbooks/mix": "^2.1",
+		"phpcompatibility/php-compatibility": "^9.3"
+  },
+  "require-dev": {
+		"pressbooks/coding-standards": "^1.1",
+		"yoast/phpunit-polyfills": "^1.0.1"
+	},
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit --configuration phpunit.xml"
+    ],
+    "test-coverage": [
+      "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover coverage.xml"
+    ],
+    "standards": [
+      "vendor/bin/phpcs --standard=phpcs.ruleset.xml *.php inc/ bin/"
+    ],
+    "fix": [
+      "vendor/bin/phpcbf --standard=phpcs.ruleset.xml *.php inc/ bin/"
+    ],
+    "readme": [
+      "vendor/bin/wp2md -i readme.txt -o README.md"
+    ]
+  }
+}

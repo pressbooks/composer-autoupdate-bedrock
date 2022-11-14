@@ -1,0 +1,61 @@
+// Table of Contents
+$toc-base-line-height: (epub: 1.2, prince: 1.2em) !default;
+
+// TOC Page Number
+
+// TOC Front Matter
+$toc-front-matter-title-font-size: .9em !default;
+$toc-front-matter-page-number-font-size: 1em !default;
+$toc-front-matter-margin-top: (epub: 0.5em, prince: 0.55em) !default;
+
+// TOC Front Matter Subtitle
+$toc-front-matter-subtitle-font-family: $font-2 !default;
+$toc-front-matter-subtitle-font-style: normal !default;
+$toc-front-matter-subtitle-font-size: 1em !default;
+
+// TOC Front Matter Author
+$toc-front-matter-author-font-family: $font-2 !default;
+$toc-front-matter-author-font-size: 1em !default;
+$toc-front-matter-author-font-weight: bold !default;
+
+// TOC Part Number
+$toc-part-number-font-family: $font-2 !default;
+$toc-part-number-text-transform: normal !default;
+$toc-part-number-font-weight: bold !default;
+$toc-part-number-font-size: (epub: 1em, prince: 1em, web: 1em) !default;
+
+// TOC Part Title
+$toc-part-title-font-family: $font-2 !default;
+$toc-part-title-text-transform: normal !default;
+$toc-part-title-font-weight: bold !default;
+$toc-part-title-font-size: (epub: 1em, prince: 1em, web: 1em) !default;
+
+// TOC Chapter Number
+$toc-chapter-number-font-family: $font-2 !default;
+$toc-chapter-number-after-content: '.\A0\A0\A0\A0\A0' !default;
+$toc-left-chapter-number-after-content: '.\A0\A0\A0\A0\A0' !default;
+
+// TOC Chapter Title
+$toc-chapter-title-font-family: $font-2 !default;
+$toc-chapter-margin-top: (epub: .5em, prince: 1em) !default;
+
+// TOC Chapter Subtitle
+$toc-chapter-subtitle-font-family: $font-2 !default;
+$toc-chapter-subtitle-margin-top: (epub: 0em, prince: 0em, web: 0.4em) !default;
+$toc-chapter-subtitle-font-style: normal !default;
+
+// TOC Chapter Author
+$toc-chapter-author-font-family: $font-2 !default;
+$toc-chapter-author-margin-top: (epub: 0em, prince: 0em, web: 0.4em) !default;
+$toc-chapter-author-font-weight: bold !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/toc';
+
+// Add custom SCSS below these imports and includes.
+// @import 'components/toc/center';
+@import 'components/toc/left';
+
+#toc span.toc-chapter-title {
+    width: 75%;
+}

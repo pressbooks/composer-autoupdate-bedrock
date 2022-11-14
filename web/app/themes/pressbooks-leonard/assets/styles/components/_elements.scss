@@ -1,0 +1,167 @@
+// Elements
+
+@if $type == 'epub' {
+  $para-indent: 1em !default;
+
+  $hx-margin-top: 1em !default;
+  $hx-margin-bottom: .5em !default;
+
+  $h1-font-family: $font-2 !default;
+  $h2-font-family: $font-2 !default;
+  $h3-font-family: $font-2 !default;
+  $h4-font-family: $font-2 !default;
+  $h5-font-family: $font-2 !default;
+  $h6-font-family: $font-2 !default;
+
+  $h4-text-transform: normal !default;
+
+  $blockquote-margin-top: 1em !default;
+  $blockquote-margin-right: 3em !default;
+  $blockquote-margin-bottom: 1em !default;
+  $blockquote-margin-left: 3em !default;
+}
+
+@if $type == 'web' {
+  $cite-font-size: 1em !default;
+
+  $hx-line-height: 1.4em !default;
+
+  $blockquote-line-height: 1.2em !default;
+  $blockquote-font-size: 0.8em !default;
+  $blockquote-margin-top: 1.2em !default;
+  $blockquote-margin-right: 2em !default;
+  $blockquote-margin-bottom: 1.2em !default;
+  $blockquote-margin-left: 2em !default;
+}
+
+// Paragraph
+$para-indent: 1.5em !default;
+$para-align: (epub: initial, prince: justify, web: justify) !default;
+
+// Body
+$body-font-size: (epub: medium, prince: 11.5pt, web: 14pt) !default;
+$body-line-height: (epub: 1.4em, prince: 1.3em, web: 1.8em) !default;
+
+// Headers
+$hx-line-height: 1.2em !default;
+$hx-margin-top: 1.15em !default;
+$hx-margin-bottom: 15px !default;
+$hx-letter-spacing: (epub: 1px, prince: 1px, web: 1px) !default;
+$hx-word-spacing: (epub: 2px, prince: normal, web: normal) !default;
+
+// H1
+$h1-font-size: 1.2em !default;
+$h1-align: center !default;
+$h1-font-weight: normal !default;
+$h1-letter-spacing: (epub: 1px, prince: 1px, web: 1px) !default;
+$h1-word-spacing: (epub: 2px, prince: normal, web: normal) !default;
+
+// H2
+$h2-font-size: 1.1em !default;
+$h2-align: center !default;
+$h2-letter-spacing: (epub: 1px, prince: 1px, web: 1px) !default;
+$h2-margin-top: 1.2em !default;
+
+// H3
+$h3-font-size: 1em !default;
+$h3-align: center !default;
+$h3-font-style: normal !default;
+$h3-letter-spacing: 1px !default;
+$h3-margin-top: 1.25em !default;
+
+// H4
+$h4-font-size:  .95em !default;
+$h4-align: center !default;
+$h4-text-transform: none !default;
+$h4-letter-spacing: (epub: 1px, prince: 1px, web: 1px) !default;
+$h4-margin-top: 1.5em !default;
+
+// H5
+$h5-font-size: 0.88em !default;
+$h5-font-style: normal !default;
+$h5-align: center !default;
+$h5-letter-spacing: (epub: 1px, prince: 1px, web: 1px) !default;
+$h5-margin-top: 1.575em !default;
+
+// H6
+$h6-font-size: 0.85em !default;
+$h6-margin-top: 2.15em !default;
+$h6-align: center !default;
+$h6-font-family: $font-3 !default;
+$h6-letter-spacing: (epub: 1px, prince: 1px, web: 1px) !default;
+
+// Cite
+$cite-font-size: 1em !default;
+$cite-text-transform: none !default;
+$cite-font-style: italic !default;
+$cite-font-variant: normal !default;
+
+// Tables
+$table-line-height: 1.1em;
+$table-font-size: 0.8em !default;
+$table-th-padding-top: 5px !default;
+$table-th-padding-right: 5px !default;
+$table-th-padding-bottom: 5px !default;
+$table-th-padding-left: 5px !default;
+$table-td-padding-top: 5px !default;
+$table-td-padding-right: 5px !default;
+$table-td-padding-bottom: 5px !default;
+$table-td-padding-left: 5px !default;
+
+// Blockquote
+$blockquote-line-height: 1.45em !default;
+$blockquote-margin-top: 1.1em !default;
+$blockquote-margin-right: 1em !default;
+$blockquote-margin-bottom: 1.25em !default;
+$blockquote-margin-left: 1em !default;
+
+// Lists
+$ul-margin-left: (epub: 1em, prince: 1.75em, web: 1em) !default;
+$ul-padding-left: (epub: 1em, prince: 1.75em, web: 1em) !default;
+
+$ol-margin-left: (epub: 1em, prince: 1.75em, web: 1em) !default;
+$ol-padding-left: (epub: 1em, prince: 1.75em, web: 1em) !default;
+
+$li-li-margin-top: 0 !default;
+$ol-ol-margin-top: 0 !default;
+$ul-ul-margin-top: 0 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/elements';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/elements';
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0
+}
+
+table + p {
+  margin-top: 1em;
+}
+
+.blockquote p {
+  line-height: 1.45em;
+}
+
+@if $type == 'web' {
+  dl dd {
+    line-height: 1.4em;
+  }
+
+  ol.harvard li::before,
+  ol.legal li::before,
+  ol.decimal li::before {
+    display: inline !important;
+  }
+
+  blockquote p,
+  blockquote div,
+  .blockquote div,
+  .blockquote p {
+    line-height: 1.45em;
+    font-size: 1em;
+  }
+}

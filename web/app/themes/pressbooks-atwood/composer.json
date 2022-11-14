@@ -1,0 +1,20 @@
+{
+    "name": "pressbooks/pressbooks-atwood",
+    "type": "wordpress-theme",
+    "description": "A classic theme, named for Margaret Atwood, using serif fonts for chapter openings as well as body. This theme will suit both fiction and nonfiction, in just about any guise: literary, science-fiction, romance, and more.",
+    "keywords": [
+        "genre fiction",
+        "literary",
+        "non-fiction"
+    ],
+    "license": "gpl-3.0-or-later",
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2"
+    }
+}

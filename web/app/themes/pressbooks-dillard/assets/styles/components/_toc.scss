@@ -1,0 +1,113 @@
+// Table of Contents
+
+@if $type == 'epub' {
+  $toc-part-number-font-weight: bold !default;
+  $toc-part-title-font-weight: bold !default;
+}
+
+// Margins
+$toc-center-margin-left: 0cm !default;
+$toc-center-margin-right: 0cm !default;
+
+$toc-section-margin-top: 0.325em !default;
+
+$toc-block-margin-top: (
+  epub: 1.5em,
+  prince: 2em
+) !default;
+
+// Front Matter
+$toc-front-matter-title-font-style: italic !default;
+$toc-front-matter-margin-top: (epub: 0, prince: 0.275em) !default;
+$toc-front-matter-title-font-size: .9em !default;
+$toc-front-matter-page-number-font-size: 1em !default;
+
+$toc-front-matter-page-number-before-content: '\A0\A0\A0\A0' !default;
+
+// Parts
+$toc-part-line-height: (epub: 1.2, prince: 0.92em) !default;
+
+$toc-part-number-font-size: 1em !default;
+$toc-part-number-font-weight: normal !important !default;
+$toc-part-number-font-family: $font-2 !default;
+$toc-part-number-font-style: normal !default;
+
+$toc-part-line-height: (epub: 1.2em, prince: 0.92em) !default;
+$toc-part-title-font-family: $font-2 !default;
+$toc-part-title-font-size: (epub: 1.2em, prince: 1.175em, web: 1em) !default;
+$toc-part-title-font-weight: normal !default;
+
+// Chapters
+$toc-chapter-margin-top: (epub: 0.25em, prince: 0.75em) !default;
+
+// Chapter Title
+$toc-chapter-title-font-size: 0.9em !default;
+
+// Chapter Number
+$toc-chapter-number-font-size: 1em !default;
+
+// Chapter Subtitle
+$toc-chapter-subtitle-font-size: 0.7em !default;
+
+// Chapter Author
+$toc-chapter-author-font-size: 0.7em !default;
+$toc-chapter-author-font-style: italic !default;
+
+// Page Numbers
+$toc-page-number-font-size: 1em !default;
+
+// TOC Center Display
+$toc-center-left-gutter: 0.5cm !default;
+$toc-center-right-gutter: 0.5cm !default;
+$toc-page-number-before-content: '\A0\A0' !default; // Add space between title and page number
+$toc-center-chapter-title-display: inline-block !default; // Display chapter titles as inline blocks
+$toc-center-subtitle-display: inline-block !default; // Display chapter subtitles as inline blocks
+$toc-center-author-display: inline-block !default; // Display chapter authors as inline blocks
+$toc-center-subsection-display: inline-block !default; // Display chapter subsection titles as inline blocks
+$toc-center-title-width: auto !default; // Make title widths auto instead of 100%
+$toc-center-page-number-display: inline-block !default; // Display page numbers inline
+$toc-center-part-number-after-content: "." !default; // Add space between part number and part title
+$toc-center-chapter-number-display: inline-block !default; // Display chapter numbers as inline blocks
+$toc-center-chapter-number-after-content: ".\A0\A0\A0\A0" !default; // Add space between chapter number and chapter title
+
+// Back Matter
+$toc-back-matter-margin-top: (
+  epub: 0.25em,
+  prince: 0.3em
+) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/toc';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/toc/center';
+
+.part a::before {
+  font-weight: normal !important;
+}
+
+#toc .part a::before {
+  line-height: 0.9em;
+}
+
+#toc .chapter-author{
+  display: none; 
+}
+
+#toc li.part + li.back-matter {
+  margin-top: 1.5em;
+}
+
+#toc .chapter-subtitle{
+  display: none;
+}
+
+@if $type == 'epub' {
+
+  #toc .part {
+    margin-bottom: .5em;
+}
+  .toc-chapter-title {
+    margin-bottom: 0.3em;
+  }
+}

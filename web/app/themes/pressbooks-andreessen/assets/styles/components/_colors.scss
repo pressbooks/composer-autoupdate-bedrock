@@ -1,0 +1,77 @@
+// Colors
+$color-1: inherit;
+$color-2: #2393BD; /* titles, headers, captions, pullquotes */ /* TURQUOISE BLUE */
+$color-3: #135169; /* alternate color: #0B303D;  ~ DARK BLUE ACCENT */
+$color-4: #5DA4BF;  /* LIGHT BLUE ACCENT */
+$color-5: $color-1;
+$color-6: #A4A4A4;
+$color-7: #b2d3e0; /* Very light blue */
+$color-8: #eff8fb;
+
+$shade-color-1: #eee;
+
+@if $type == "web" {
+    $textbox-border-color: $color-1 !default;
+}
+
+// Title Pages
+$title-page-title-color: $color-2 !default;
+$title-page-author-color: $color-3 !default;
+$title-page-publisher-color: $color-4 !default;
+$title-page-publisher-city-color: $color-4 !default;
+
+// TOC
+$toc-title-color: $color-2 !default;
+$toc-chapter-number-color: $color-3 !default;
+$toc-part-number-color: $color-3 !default;
+
+// Headers
+$h1-color: $color-3 !default;
+$h2-color: $color-3 !default;
+$h4-color: $color-2 !default;
+$h5-color: $color-4 !default;
+$h6-color: $color-4 !default;
+
+// Front Matter
+$front-matter-title-color: $color-2 !default;
+
+$dedication-para-color: $color-1 !default;
+
+$epigraph-para-color: $color-1 !default;
+
+// Page Numbers
+$page-number-color: $color-2 !default;
+
+// Textboxes
+$textbox-border-color: $color-4 !default;
+$textbox-background-color: $color-7 !default;
+$textbox-shaded-background-color:$color-8 !default;
+
+$sidebar-color: #e6e6e6 !default;
+
+$line-color-1: $color-2 !default;
+
+// Images
+$image-caption-text-color: $color-2 !default;
+
+@if $type == 'epub' {
+    $textbox-background-color: $color-8 !default;
+}
+
+@if $type == 'web' {
+    $front-matter-title-color: $color-2 !default;
+}
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';
+
+table.shaded {
+  background-color: #eee !important;
+}
+
+dt {
+    color: $color-4;
+}

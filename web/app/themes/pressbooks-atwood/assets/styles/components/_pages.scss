@@ -1,0 +1,116 @@
+// Pages
+
+@if $type == 'epub'{
+    $title-publisher-align: center !default;
+    $title-publisher-city-align: center !default;
+
+    $title-publisher-font-size: 0.9em !default;
+    $title-publisher-font-weight: normal !default;
+    $title-publisher-margin-bottom: .5em !default;
+
+    $title-publisher-city-font-weight: normal !default;
+}
+
+@if $type == 'web'{
+    $title-publisher-align: center !default;
+    $title-publisher-font-weight: normal !default;
+    $title-publisher-city-font-weight: normal !default;
+    $title-publisher-city-align: center !default;
+}
+
+// Half Title Page
+$title-half-title-block-margin-top: (epub: 2em, prince: 2cm, web: 3em) !default;
+
+// Title Page Title
+$title-title-font-size:(epub: 2em, prince: 2.5em, web: 1.75em) !default;
+$title-title-margin-top: (epub: 2em, prince: 2cm, web: 3em) !default;
+$title-title-margin-bottom: (epub: 0, prince: 0cm, web: 3em) !default;
+$title-title-border-bottom-width: (epub: 0, prince: 3px, web: 0) !default;
+$title-title-border-bottom-style: (epub: none, prince: solid, web: none) !default;
+$title-title-border-bottom-color: $color-3 !default;
+$title-title-padding-bottom: (epub: 0, prince: 1em, web: 0) !default;
+
+// Title Page Subtitle
+$title-subtitle-font-size:(epub: 1.5em, prince: 1.5em, web: 1.25em) !default;
+$title-subtitle-margin-top: -.7em !default;
+$title-subtitle-font-style: none !default;
+$title-subtitle-font-family: $font-2 !default;
+
+// Title Page Author
+$title-author-text-transform: none !default;
+$title-author-letter-spacing: normal !default;
+$title-author-word-spacing: normal !default;
+
+// Publisher
+$title-publisher-align: left !default;
+$title-publisher-font-size: 1.1em !default;
+$title-publisher-font-weight: bold !default;
+$title-publisher-text-transform: normal !default;
+$title-publisher-letter-spacing: normal !default;
+$title-publisher-word-spacing: normal !default;
+$title-publisher-line-height: 1.575em !default;
+$title-publisher-margin-bottom: 1.5em !default;
+
+// Publisher City
+$title-publisher-city-align: left !default;
+$title-publisher-city-font-size: 0.9em !default;
+$title-publisher-city-text-transform: normal !default;
+$title-publisher-city-letter-spacing: normal !default;
+$title-publisher-city-word-spacing: normal !default;
+$title-publisher-city-font-weight: bold !default;
+
+// Section License
+$section-license-align: center !default;
+$section-license-font-style: normal !default;
+$section-license-margin-top: 1em !default;
+$section-license-image-margin-bottom: 0.2em !default;
+$section-license-line-height: 1.35em !default;
+
+// Copyright
+$copyright-align: center !default;
+$copyright-font-family: $font-2 !default;
+$copyright-line-height: 1.35em !default;
+
+// Dedication
+$dedication-line-height: 1.57em !default;
+
+// Epigraph
+$epigraph-align: left !default;
+$epigraph-line-height: 1.57em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/pages';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/pages';
+
+.title {
+  border-bottom: 3px solid #d8d8d8; // Variables Exist, they need to be fixed
+}
+
+#half-title-page .title{
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.publisher {
+  float: none; //Variable should be added
+}
+
+.publisher-city {
+  float: none; //Variable should be added
+}
+
+@if $type == 'epub' {
+  .title {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@if $type == 'web' {
+  .title {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

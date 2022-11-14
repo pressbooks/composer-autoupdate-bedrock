@@ -1,0 +1,13 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Alegreya", "Amiri", $serif-epub;
+$font-2: "Alegreya Sans", "Amiri", $sans-serif-epub;
+$font-3: "Alegreya Sans SC", "Amiri", $sans-serif-epub;
+
+@import "AlegreyaFont";
+@import "AlegreyaSansFont";
+@import "AlegreyaSansSCFont";
+@import "AmiriFont";

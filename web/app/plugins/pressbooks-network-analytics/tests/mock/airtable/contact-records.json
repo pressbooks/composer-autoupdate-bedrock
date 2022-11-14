@@ -1,0 +1,62 @@
+{
+  "records": [
+    {
+      "id": "rec9jft4gfYIEJaXt",
+      "fields": {
+        "Name": "Kim Johnson",
+        "Email": "kim.sowd@th2js.edu",
+        "Network Manager": true,
+        "Networks": [
+          "recrCW6lbEfygEcck"
+        ],
+        "Networks 2": "Wisconsin Technical College Digital Press",
+        "Plan": [
+          "Titanium"
+        ],
+        "Server": [
+          "recwQ9bX6drX41cHH"
+        ]
+      },
+      "createdTime": "2020-02-03T14:28:16.000Z"
+    },
+    {
+      "id": "recEN8b7xA7w18DtA",
+      "fields": {
+        "Name": "Nic Math",
+        "Email": "nmath@lml4.edu",
+        "Network Manager": true,
+        "Networks": [
+          "recrCW6lbEfygEcck"
+        ],
+        "Networks": [],
+        "Networks 2": "Wisconsin Technical College Digital Press",
+        "Plan": [
+          "Titanium"
+        ],
+        "Server": [
+          "recwQ9bX6drX41cHH"
+        ]
+      },
+      "createdTime": "2020-02-03T14:28:16.000Z"
+    },
+    {
+      "id": "recRq7XdCIdOxMbdC",
+      "fields": {
+        "Name": "Rachel Tresd",
+        "Email": "Rachdk@dmskkas.edu",
+        "Network Manager": true,
+        "Networks": [
+          "recrCW6lbEfygEcck"
+        ],
+        "Networks 2": "Wisconsin Technical College Digital Press",
+        "Plan": [
+          "Titanium"
+        ],
+        "Server": [
+          "recwQ9bX6drX41cHH"
+        ]
+      },
+      "createdTime": "2020-02-03T14:28:16.000Z"
+    }
+  ]
+}

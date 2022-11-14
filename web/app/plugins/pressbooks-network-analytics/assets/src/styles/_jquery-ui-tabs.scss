@@ -1,0 +1,31 @@
+#tabs {
+  padding: 0;
+  background: none;
+  border-width: 0;
+
+
+  .ui-tabs-nav {
+    padding-left: 0;
+    background: transparent;
+    border-width: 0 0 1px;
+    border-color: rgb(34 36 38 / 15%);
+    border-radius: 0;
+
+    .ui-state-active {
+      border-color: rgb(34 36 38 / 15%);
+    }
+
+  }
+
+  .ui-tabs-panel {
+    background: #fff;
+    border-width: 0 1px 1px;
+    border-color: rgb(34 36 38 / 15%);
+  }
+}
+
+#tabs.ui-widget {
+  font-family: "Segoe UI", Frutiger, Tahoma, Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+}
+

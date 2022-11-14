@@ -1,0 +1,180 @@
+// Section Titles
+
+// EPUB Styles
+@if $type == 'epub' {
+  $section-title-font-family: $font-2 !default;
+  $section-title-font-weight: bold !default;
+
+  $section-subtitle-font-style: normal !default;
+
+  $section-author-text-transform: Uppercase !default;
+  $section-author-font-style: normal !default;
+  $section-author-font-family: $font-2 !default;
+
+  $toc-title-font-size: 2em !default;
+  $toc-title-margin-top: 0em !default;
+  $toc-title-margin-bottom: 0.5em !default;
+
+  $part-title-font-weight: bold !default;
+
+  $aphorism-align: right !default;
+  $aphorism-cite-font-style: italic !default;
+  $aphorism-cite-text-transform: normal !default;
+  $aphorism-cite-font-size: 1em !default;
+}
+
+@if $type == "web" {
+  $section-title-font-weight: bold !default;
+}
+
+// TOC Title
+$toc-base-line-height: 1em !default;
+$toc-title-font-size: 1.7em !default;
+$toc-title-margin-top: 0.5cm !default;
+$toc-title-margin-bottom: 0.6cm !default;
+
+// Front Matter Title
+$front-matter-title-margin-top: (epub: 0, prince: .65em, web: 0) !default;
+$front-matter-title-margin-bottom:( epub: 1.3em, prince: 1em, web: 2em) !default;
+
+// Section Header
+$section-header-margin-top: (epub: 3em, prince: 0.25cm, web: 3em) !default;
+$section-header-margin-bottom: (epub: 2em, prince: 0.5cm, web: 2em) !default;
+$section-header-margin-right: (epub: 0, prince: 0) !default;
+
+// Section Title
+$section-title-font-size: (epub: 2em, prince: 2em, web: 2em) !default;
+$section-title-font-weight: bold !default;
+$section-title-line-height: 1.4em !default;
+$section-title-align: left !default;
+$section-title-font-family: $font-2 !default;
+$section-title-text-transform: uppercase !default;
+$section-title-margin-bottom: (epub: 1.25em, prince: 1.5cm, web: 2em) !default;
+
+// Section Subtitle
+$section-subtitle-font-style: italic !default;
+$section-subtitle-font-weight: lighter !default;
+$section-subtitle-align: left !default;
+$section-subtitle-margin-bottom: (epub: 0, prince: 3em, web: 0) !default;
+$section-subtitle-font-size: (epub: 1.2em, prince: 0.95em, web: .95em) !default;
+
+// Section Author
+$section-author-font-size: (epub: 1.2em, prince: .85em, web: 1em) !default;
+$section-author-margin-bottom: (epub: 2em, prince: 3em, web: 0) !default;
+$section-author-font-style: italic !default;
+$section-author-align: left !default;
+$section-author-text-transform: normal !default;
+$section-author-font-family: $font-1 !default;
+
+$section-subtitle-author-spacing: (epub: 2em, prince: 0.475cm, web: 0.5em) !default;
+$section-title-subtitle-spacing: (epub: 1em, prince: 0.275cm, web: 0.5em) !default;
+$section-title-author-spacing: (epub: 2em, prince: 0.275cm, web: 1em) !default;
+
+// Part Title
+$part-number-align: left !default;
+$part-number-font-family: $font-2 !default;
+$part-number-font-weight: lighter !default;
+$part-number-letter-spacing: normal !default;
+$part-number-margin-bottom: (epub: 0.5em, prince: 1.05cm, web: 1em) !default;
+$part-number-margin-top: (epub: 1em, prince: 0.5cm, web: 0) !default;
+$part-number-font-size: (epub: 1.5em, prince: 1.5em, web: 1em) !default;
+$part-title-line-height: 1.4em !default;
+$part-title-align: left !default;
+$part-title-font-size: (epub: 2em, prince: 2em, web: 2.5em) !default;
+$part-title-margin-bottom: (epub: 0.5em, prince: 1.5cm, web: 0) !default;
+$part-title-margin-top: (epub: 1.3em, prince: 0, web: 0) !default;
+$part-title-margin-right: (epub: 0, prince: -1.75cm, web: 0) !default;
+
+// Chapters
+$chapter-number-align: left !default;
+$chapter-number-font-family: $font-2 !default;
+$chapter-number-font-weight: bold !default;
+$chapter-number-font-size: (epub: 5em, prince: 5em, web: 2em) !default;
+$chapter-number-margin-top: (epub: 1em, prince: 2.875cm, web: 0) !default;
+$chapter-number-margin-bottom: (epub: 0.5em, prince: 1.25cm, web: 0.5em) !default;
+$chapter-number-after-content: '' !default;
+$chapter-title-line-height: 1.4em !default;
+$chapter-title-margin-top:(epub: 0, prince: 1.35cm, web: 0) !default;
+$chapter-title-margin-bottom: (epub: 1.25em, prince: 0.5cm, web: 2em) !default;
+
+// Aphorism
+$aphorism-block-width: (
+  epub: 100%,
+  prince: 70%,
+  web: 70%
+) !default;
+$aphorism-margin-top: (epub: 0, prince: -2.15em, web: 0) !default;
+$aphorism-margin-bottom: (epub: 3.5565945237549em, prince: 1.4em, web: 0) !default;
+$aphorism-font-size: (epub: small, prince: 0.8em, web: 0.9em) !default;
+$aphorism-font-style: none !default;
+$aphorism-font-family: $font-2 !default;
+$aphorism-font-weight: lighter !default;
+$aphorism-line-height: 1.2em !default;
+$aphorism-margin-left: (
+  epub: auto,
+  prince: 4em,
+  web: auto
+) !default;
+$aphorism-margin-right: (
+  epub: auto,
+  prince: 4em,
+  web: auto
+) !default;
+
+$aphorism-cite-font-size: (epub: small, prince: 0.7em, web: 0.9em) !default;
+$aphorism-cite-font-style: normal !default;
+$aphorism-cite-font-variant: normal !default;
+$aphorism-cite-font-weight: lighter !default;
+$aphorism-cite-text-transform: uppercase !default;
+$aphorism-cite-align: right !default;
+$aphorism-cite-before-content: '\2014' !default;
+$aphorism-cite-font-family: $font-2 !default;
+
+// Back Matter
+$back-matter-title-margin-top:(epub: 0, prince: 2cm, web: 0) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/section-titles';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/section-titles';
+
+.front-matter-title-wrap, .part-title-wrap, .chapter-title-wrap, .back-matter-title-wrap {
+  width: 50%;
+  overflow-wrap: normal;
+}
+
+.part-title-wrap {
+  width: 100%;
+}
+
+.part-title {
+  width: 70%;
+}
+
+@if $type == 'epub' {
+  .front-matter-title-wrap, .part-title-wrap, .chapter-title-wrap, .back-matter-title-wrap {
+    width: 100%;
+    overflow-wrap: normal;
+  }
+  .part-title {
+    width: 100%;
+  }
+}
+
+@if $type == 'web' {
+  section.chapter header {
+    margin-left: 0em;
+    margin-right: 0em;
+    width: 50%;
+  }
+  
+  section.chapter .textbox header {
+    width: 100%;
+  }
+  
+
+  [data-type='author'] {
+    text-indent: 0em !important; 
+  }
+}

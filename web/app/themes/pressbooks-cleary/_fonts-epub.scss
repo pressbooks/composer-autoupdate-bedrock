@@ -1,0 +1,10 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Palatino", $serif-epub;
+$font-2: "Griffy", $serif-epub;
+$font-3: $font-1;
+
+@import "GriffyFont";

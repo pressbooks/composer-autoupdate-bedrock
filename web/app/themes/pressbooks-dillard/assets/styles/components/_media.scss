@@ -1,0 +1,50 @@
+// Media
+@if $type == 'epub'
+{
+    $image-caption-text-align: center !default;
+}
+
+@if $type == 'web'
+{
+    $image-caption-text-align: left !default;
+}
+
+//Image Wrapper
+$image-wrapper-margin-bottom: (epub: 1em, prince: 0.5em, web: 1em) !default;
+
+// Image Captions
+$image-caption-font-family: $font-1 !default;
+$image-caption-font-weight: lighter !default;
+$image-caption-font-size: 0.9em !default;
+$image-caption-line-height: (prince: 1.7em, web: 1.4em) !default;
+
+// Aligned Images
+$image-alignright-margin-left: 2em !default;
+$image-alignleft-margin-right: 2em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+@if $type == "epub" {
+    .wp-caption,
+    .wp-nocaption {
+        &.alignright {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        &.alignleft {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+      }
+}
+
+@if $type == "web" {
+    p.wp-caption-text {
+        text-indent: 0 !important;
+    }
+}
+

@@ -1,0 +1,116 @@
+// Table of Contents
+// EPUB Styles
+@if $type == 'epub' {
+  $toc-front-matter-title-font-style: italic !default;
+}
+
+// Display
+$toc-display: block !default;
+
+// Margins
+$toc-center-left-gutter: 1cm !default;
+$toc-center-right-gutter: 1cm !default;
+$toc-block-margin-top: 2em !default;
+
+// Section Titles
+$toc-section-title-font-size: 1em !default;
+
+// Parts
+$toc-part-title-font-family: $font-2 !default;
+$toc-part-title-font-weight: bold !default;
+$toc-part-title-font-size: (
+  epub: 1.2em,
+  prince: 1em,
+  web: 1em
+) !default;
+$toc-part-line-height: 1.1em !default;
+$toc-part-number-after-content: '' !default;
+$toc-part-number-font-family: $font-2 !default;
+$toc-part-number-font-weight: bold !default;
+$toc-part-number-font-size: 1em !default;
+
+// Chapters
+$toc-chapter-number-before-content: $chapter '\A0\A0' !default;
+$toc-chapter-number-after-content: '' !default;
+$toc-chapter-number-display: block !default;
+$toc-chapter-number-font-weight: bold !default;
+$toc-chapter-number-font-size: 1em !default;
+$toc-chapter-title-font-size: 0.9em !default;
+$toc-chapter-subtitle-font-size: 0.8em !default;
+$toc-chapter-margin-top: (
+  epub: 0.5em,
+  prince: 0.42em
+) !default;
+
+// Page Numbers
+$toc-page-number-font-size: 1em !default;
+$toc-page-number-display: block !default;
+
+// Front Matter
+$toc-front-matter-page-number-display: block !default;
+$toc-front-matter-page-number-font-size: 1em !default;
+$toc-front-matter-title-font-style: italic !default;
+$toc-front-matter-title-font-size: 0.9em !default;
+$toc-front-matter-subtitle-font-size: 0.9em !default;
+$toc-front-matter-line-height: (
+  epub: 1.2,
+  prince: 1.1em
+) !default;
+$toc-front-matter-margin-top: (
+  epub: 0.2em,
+  prince: 0.5em
+) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/toc';
+
+// Add custom SCSS below these imports and includes.
+// @import 'components/toc/center';
+@import 'components/toc/center';
+
+#toc .part{
+  margin-bottom: -1.5em; //Variable not available
+}
+
+#toc .chapter .chapter-subtitle {
+  display: none;
+}
+
+#toc .chapter .chapter-author  {
+  display: none;
+}
+
+#toc .front-matter .chapter-subtitle {
+  display: none;
+}
+
+#toc .front-matter .chapter-author{
+  display: none;
+}
+
+#toc .back-matter .chapter-author{
+  display: none;
+}
+
+@if $type == "epub" {
+  #toc .part{
+    margin-bottom: 0.5em; //Variable not available
+  }
+
+  #toc .chapter-subtitle {
+    display: none;
+  }
+  #toc .chapter-author  {
+    display: none;
+  }
+  .toc-chapter-title {
+    margin-bottom: 0.3em;
+  }
+
+}
+
+@if $type == "prince" {
+  #toc a span {
+    text-decoration: underline;
+  }
+}
