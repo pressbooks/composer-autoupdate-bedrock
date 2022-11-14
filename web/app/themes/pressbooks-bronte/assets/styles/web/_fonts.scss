@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "Droid Serif", "Georgia", "Times New Roman", $serif-web;
+$font-2: "Belleza", "Palatino", "Georgia", "Times New Roman", "Times", $sans-serif-web;
+$font-3: "Great Vibes", "Palatino", "Georgia", "Times New Roman", "Times", $serif-web;
+
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Droid+Serif:400,700,400italic,700italic|Belleza");

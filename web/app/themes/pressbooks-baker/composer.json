@@ -1,0 +1,20 @@
+{
+    "name": "pressbooks/pressbooks-baker",
+    "description": "Named after author Nicholson Baker, this theme has a serif body, with bold sans-serif chapter titles, and (optional) big bold chapter numbers. A good theme for contemporary fiction, genre fiction (thrillers, mysteries, SFF), and non-fiction.",
+    "type": "wordpress-theme",
+    "license": "gpl-3.0-or-later",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "genre fiction",
+        "literary",
+        "non-fiction"
+    ]
+}

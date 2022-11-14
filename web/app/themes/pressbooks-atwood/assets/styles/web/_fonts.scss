@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "Crimson Text", "Baskerville", "Times", $serif-web;
+$font-2: "Playfair Display", $sans-serif-web;
+$font-3: $font-1;
+
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic&subset=latin,latin-ext");

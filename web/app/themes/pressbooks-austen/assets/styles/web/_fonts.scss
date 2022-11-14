@@ -1,0 +1,12 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+
+$font-1: "PT Serif", "Baskerville", "Times", serif;
+$font-2: $font-1;
+$font-3: $font-1;
+$font-4: $font-1;
+
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,latin-ext,cyrillic");

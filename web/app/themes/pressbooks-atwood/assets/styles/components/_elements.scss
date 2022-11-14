@@ -1,0 +1,98 @@
+// Elements
+// EPUB Styles
+@if $type == 'epub' {
+    $hx-margin-top: 2em !default;
+  }
+
+// Body
+$body-line-height: (epub: 1.4em, prince: 1.575em, web: 1.8em) !default;
+
+// Headers
+$hx-margin-top: 1em !default;
+$hx-margin-bottom: 1em !default;
+$hx-line-height: 1.575em !default;
+
+// H1
+$h1-font-size: 0.9em !default;
+$h1-font-family: $font-2 !default;
+$h1-text-transform: uppercase !default;
+$h1-letter-spacing: 1px !default;
+$h1-word-spacing: 2px !default;
+
+// H2
+$h2-font-size: 0.9em !default;
+$h2-font-family: $font-2 !default;
+$h2-text-transform: uppercase !default;
+$h2-letter-spacing: 1px !default;
+$h2-word-spacing: 2px !default;
+
+// H3
+$h3-font-size: 1em !default;
+$h3-font-family: $font-2 !default;
+$h3-font-weight: bold !default;
+$h3-font-style: normal !default;
+
+// H4
+$h4-font-size: 1em !default;
+$h4-font-style: italic !default;
+$h4-font-weight: lighter !default;
+$h4-font-family: $font-2 !default;
+$h4-align: center !default;
+
+// H5
+$h5-font-size: 1em !default;
+$h5-font-weight: lighter !default;
+$h5-font-family: $font-2 !default;
+$h5-font-style: none !default;
+
+// H6
+$h6-font-size: 0.95em !default;
+$h6-font-style: italic !default;
+$h6-font-weight: lighter !default;
+$h6-font-family: $font-2 !default;
+$h6-margin-bottom: 1.1em !default;
+
+// Cite
+$cite-font-style: italic !default;
+$cite-font-size: 1em !default;
+$cite-text-transform: normal !default;
+$cite-font-family: $font-2 !default;
+$cite-font-variant: normal !default;
+
+// Blockquotes
+$blockquote-line-height: 1.575em !default;
+$blockquote-margin-bottom: 1.2em !default;
+
+// Tables
+$table-font-size: 0.8em !default;
+$table-font-family: $font-2 !default;
+$table-margin-top: 1em !default;
+$table-margin-bottom: 1.3em !default;
+
+$table-td-padding-top: 0.425em !default;
+$table-td-padding-right: 0.425em !default;
+$table-td-padding-bottom: 0.425em !default;
+$table-td-padding-left: 0.425em !default;
+$table-th-padding-top: 0.425em !default;
+$table-th-padding-right: 0.425em !default;
+$table-th-padding-bottom: 0.425em !default;
+$table-th-padding-left: 0.425em !default;
+
+// Lists
+$dd-font-style: normal !default;
+
+// Pre
+$pre-margin-top: 1.1em !default;
+$pre-margin-bottom: 1.1em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/elements';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/elements';
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0
+}

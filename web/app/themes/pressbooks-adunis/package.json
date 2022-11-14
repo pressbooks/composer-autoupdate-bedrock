@@ -1,0 +1,26 @@
+{
+  "name": "@pressbooks/pressbooks-adunis",
+  "description": "Named for the Syrian poet and essayist, Ali Ahmad Said Esber, known by the pen name Adunis. Suitable for white papers, discussion papers etc.",
+  "author": "Pressbooks (Book Oven Inc.)",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "node": ">= 16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pressbooks/pressbooks-adunis.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "install-build-tools": "npm install --no-save pressbooks-build-tools",
+    "fix": "npm run -s fix:styles",
+    "fix:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js --fix \"assets/styles/**/*.scss\" --syntax scss",
+    "lint": "npm run -s lint:styles",
+    "lint:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js  \"assets/styles/**/*.scss\" --syntax scss",
+    "test": "npm run -s lint"
+  },
+  "stylelint": {
+    "extends": "./node_modules/pressbooks-build-tools/config/stylelint.js"
+  }
+}

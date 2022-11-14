@@ -1,0 +1,11 @@
+@import '_font-stack-prince'; // Dynamically generated
+
+$serif-prince: serif !default;
+$sans-serif-prince: sans-serif !default;
+
+$font-1: "Crimson Text", "Baskerville", "Times", $serif-prince;
+$font-2: "Lato", "Helvetica", $sans-serif-prince;
+$font-3: $font-1;
+
+@import "CrimsonTextFont";
+@import "LatoFont";

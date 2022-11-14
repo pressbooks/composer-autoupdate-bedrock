@@ -1,0 +1,402 @@
+/*
+Theme Name: Cleary
+Theme URI: https://pressbooks.com/themes/pressbooks-cleary
+Description: Named for Beverly Cleary, this theme is suited for books for younger readers. Title font is Griffy, by Neapolitan Type.
+Tags: Genre fiction.
+Author: Pressbooks (Book Oven Inc.)
+Author URI: https://pressbooks.com
+Copyright 2011-2022 Book Oven Inc. (Pressbooks.com) code@pressbooks.com
+Version: 1.7.3
+Template: pressbooks-book
+*/
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Griffy&subset=latin,latin-ext");
+/* darkish gray */
+/* light gray */
+/*GENERAL STYLING */
+body {
+  color: #2E2E2E;
+  font-family: "PT Serif", "Georgia", serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  margin-top: 1.9em;
+  text-transform: none;
+}
+
+h1 {
+  color: inherit;
+  font-family: "Griffy", "Palatino", cursive, serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h2 {
+  color: inherit;
+  font-family: "Griffy", "Palatino", cursive, serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h3 {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h4 {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h5 {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: left;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h6 {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: left;
+  font-size: 0.95em;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+div.ugc h1 + p,
+div.ugc h2 + p,
+div.ugc h3 + p,
+div.ugc h4 + p,
+div.ugc h5 + p {
+  margin-top: 0;
+}
+
+/* SEPARATORS */
+div.ugc .section-break {
+  text-align: center;
+  text-indent: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+div.ugc .section-break-space {
+  visibility: hidden;
+  margin-top: 1em;
+  line-height: 1em;
+  margin-bottom: 0em;
+}
+
+div.ugc .section-break-page {
+  text-align: center;
+  text-indent: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  page-break-after: always;
+}
+
+/****************************************
+  TOC, Author page, Book Page
+*****************************************/
+#inline-toc h4 {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: left;
+  text-transform: none;
+}
+
+.page-title {
+  font-weight: normal;
+}
+
+/****************************************
+  Structure
+*****************************************/
+/****************************************
+  Title, Subtitle, Authors & Aphorism
+*****************************************/
+.entry-title {
+  color: inherit;
+  font-family: "Griffy", "Palatino", cursive, serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  hyphens: none;
+  -webkit-hyphens: none;
+  display: block;
+  margin-top: 2.5em;
+  margin-bottom: 3em;
+}
+
+.entry-title span {
+  color: inherit;
+  font-family: "Griffy", "Palatino", cursive, serif;
+  text-align: center;
+  font-size: 2em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  width: 15%;
+  padding-bottom: 1em;
+  border-bottom: 1px solid inherit;
+  line-height: 1;
+  font-size: 1em;
+  display: block;
+  margin-left: 45%;
+  margin-right: 45%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/*.entry-title span::after {
+  content: ". ";
+}
+
+.entry-title span::before {
+  content: "Chapter ";
+}
+*/
+.chapter_subtitle {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.chapter_author {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.chapter_subtitle + .chapter_author {
+  margin-top: -2em;
+}
+
+.aphorism {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: lighter;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-right: 40%;
+  margin-left: 0;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-right: 30%;
+  padding: 0;
+}
+
+.aphorism cite {
+  float: none;
+}
+
+.aphorism cite::before {
+  content: "\2014";
+}
+
+/*************************
+  Footnotes & Endnote
+**************************/
+.endnotes h3 {
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+}
+
+.textbox,
+.textbox2 {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: justify;
+  font-size: 0.9em;
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  line-height: 1.5em;
+  margin: 1em 0 1em 0;
+}
+
+.shaded {
+  background-color: inherit !important;
+}
+
+.book-title {
+  color: inherit;
+  font-family: "Griffy", "Palatino", cursive, serif;
+  text-align: center;
+  font-size: 3em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  hyphens: none;
+  -webkit-hyphens: none;
+  font-family: "PT Serif", "Georgia", serif !important;
+  font-weight: normal !important;
+  letter-spacing: none !important;
+  word-spacing: none !important;
+}
+
+.pullquote,
+.pullquote-left,
+.pullquote-right {
+  color: inherit;
+  font-family: "Griffy", "Palatino", cursive, serif;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+ol {
+  list-style-position: outside !important;
+}
+
+blockquote {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: justify;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  line-height: 1.2;
+}
+
+.wp-caption-text {
+  color: inherit;
+  font-family: "PT Serif", "Georgia", serif;
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+#content img {
+  max-width: 100%;
+}

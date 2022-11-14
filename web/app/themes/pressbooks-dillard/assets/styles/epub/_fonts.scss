@@ -1,0 +1,13 @@
+@import "_font-stack-epub"; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Georgia", "Times New Roman", "Times", $serif-epub;
+$font-2: "Cinzel", "Palatino", "Baskerville", "Georgia", $serif-epub;
+$font-3: "Bergamot Ornaments", fantasy;
+$font-4: "Helvetica", "Arial", $sans-serif-epub;
+$font-5: "Palatino", "Baskerville", "Georgia", $serif-epub;
+
+@import "BergamotOrnamentsFont";
+@import "CinzelFont";

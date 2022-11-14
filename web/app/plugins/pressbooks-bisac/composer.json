@@ -1,0 +1,45 @@
+{
+  "name": "pressbooks/pressbooks-bisac",
+  "description": "Adds the 2016 BISAC Subject Headings List to the Pressbooks Book Information page.",
+  "type": "wordpress-plugin",
+  "homepage": "https://github.com/pressbooks/pressbooks-bisac",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Book Oven Inc.",
+      "email": "code@pressbooks.com",
+      "homepage": "https://pressbooks.org"
+    }
+  ],
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "require": {
+    "php": "^7.4|8.0.*",
+    "composer/installers": "^2.1",
+    "league/csv": "^9.8",
+    "phpcompatibility/php-compatibility": "^9.3"
+  },
+  "require-dev": {
+    "pressbooks/coding-standards": "^1.1",
+    "yoast/phpunit-polyfills": "^1.0.1"
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit --configuration phpunit.xml"
+    ],
+    "test-coverage": [
+      "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover coverage.xml"
+    ],
+    "standards": [
+      "vendor/bin/phpcs --standard=phpcs.ruleset.xml *.php inc/ bin/"
+    ],
+    "fix": [
+      "vendor/bin/phpcbf --standard=phpcs.ruleset.xml *.php inc/ bin/"
+    ]
+  }
+}

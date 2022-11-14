@@ -1,0 +1,26 @@
+{
+  "name": "@pressbooks/pressbooks-leonard",
+  "description": "Named after Elmore Leonard, this theme is built for crime, thrillers, and mystery.",
+  "author": "Pressbooks (Book Oven Inc.)",
+  "engines": {
+    "node": ">= 14"
+  },
+  "license": "gpl-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pressbooks/pressbooks-leonard.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "install-build-tools": "npm install --no-save pressbooks-build-tools",
+    "fix": "npm run -s fix:styles",
+    "fix:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js --fix \"assets/styles/**/*.scss\" --syntax scss",
+    "lint": "npm run -s lint:styles",
+    "lint:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js  \"assets/styles/**/*.scss\" --syntax scss",
+    "test": "npm run -s lint"
+  },
+  "stylelint": {
+    "extends": "./node_modules/pressbooks-build-tools/config/stylelint.js"
+  }
+}

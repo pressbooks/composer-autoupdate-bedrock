@@ -1,0 +1,11 @@
+@import '_font-stack-epub'; // Dynamically generated
+
+$serif-epub: serif !default;
+$sans-serif-epub: sans-serif !default;
+
+$font-1: "Crimson Text", "Times New Roman", $serif-epub;
+$font-2: "Roboto Condensed", "Arial Narrow", Arial, "Helvetica Neue", Helvetica, $sans-serif-epub;
+$font-3: "Roboto Condensed", "Arial Narrow", Arial, "Helvetica Neue", Helvetica, $sans-serif-epub;
+
+@import "CrimsonTextFont";
+@import "RobotoCondensedFont";

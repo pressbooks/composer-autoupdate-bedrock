@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset>
+	<!-- Use Pressbooks Coding Standards -->
+	<rule ref="vendor/pressbooks/coding-standards">
+		<!-- Disable rules Pressbooks BISAC disagrees with -->
+		<exclude name="Squiz.Commenting"/>
+		<exclude name="Generic.Commenting"/>
+	</rule>
+	<!-- Disable Side Effects rule for bootstrapping file, extends WordPress core, cron scripts -->
+    <rule ref="PSR1.Files.SideEffects">
+        <exclude-pattern>/pressbooks-bisac.php</exclude-pattern>
+    </rule>
+	<!-- Run against the PHPCompatibility ruleset -->
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.3-7.4"/>
+</ruleset>

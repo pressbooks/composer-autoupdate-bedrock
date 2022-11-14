@@ -1,0 +1,19 @@
+{
+    "name": "pressbooks/pressbooks-adunis",
+    "description": "Named for the Syrian poet and essayist, Ali Ahmad Said Esber, known by the pen name Adunis. Suitable for white papers, discussion papers etc.",
+    "type": "wordpress-theme",
+    "license": "gpl-3.0-or-later",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "literary",
+        "nonfiction"
+    ]
+}

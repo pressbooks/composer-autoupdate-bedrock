@@ -1,0 +1,36 @@
+// Structure
+
+// Margins
+$page-margin-bottom: 1.5cm !default;
+
+// Position
+$running-content-position: 'bottom-outside' !default;
+$numbering-position: 'bottom-outside' !default;
+$first-running-content-position: 'bottom-outside' !default;
+$first-numbering-position: 'bottom-outside' !default;
+
+// Page Numbers
+$front-matter-page-number-font-size: 0.6em !default;
+$page-number-font-size: 0.6em !default;
+
+// Running Content
+$runningfoot-right-font-size: 0.6em !default;
+$runningfoot-left-font-size: 0.6em !default;
+$runningfoot-left-letter-spacing: .5px !default;
+$runningfoot-left-word-spacing: 1px !default;
+$runningfoot-right-letter-spacing: .5px !default;
+$runningfoot-right-word-spacing: 1px !default;
+$runningfoot-padding-bottom: 0.4in !default;
+$left-running-separator: '\A0\A0' !default;
+$right-running-separator: '\A0\A0' !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/structure';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/structure/general';
+@import 'components/structure/recto-verso';
+@import 'components/structure/numbering';
+@import 'components/structure/content-strings';
+@import 'components/structure/running-content';
+

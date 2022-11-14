@@ -1,0 +1,39 @@
+{
+  "records": [
+    {
+      "id": "rec7GytThG1hX9VeN",
+      "fields": {
+        "Network Name": "Test Blog Network",
+        "URL": "https://pressbooks.lib.vt.edu",
+        "Plan": "Gold",
+        "Book Themes": "Standard",
+        "Network Theme": "Aldine",
+        "Type": [
+          "PressbooksEDU"
+        ],
+        "Server": [
+          "recwQ9bX6drX41cHH"
+        ],
+        "Storage": "965.1 MB",
+        "Status": "Active",
+        "Network Managers": [],
+        "Contacts": [
+          "rec6NaYRnxps5BQGk",
+          "rec3gmN83wBBDUTyw",
+          "recDOPz56yt5CJx1V",
+          "recrgd8qA7EyNg0Lx"
+        ],
+        "Network created": [
+          "2020-01-15"
+        ],
+        "Next Invoice Date": [
+          "2020-08-07"
+        ],
+        "Revenue": [
+          9799
+        ]
+      },
+      "createdTime": "2020-01-14T18:25:37.000Z"
+    }
+  ]
+}

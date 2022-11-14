@@ -1,0 +1,41 @@
+{
+  "name": "@pressbooks/pressbooks-selfe",
+  "license": "GPL-2.0-or-later",
+  "author": "Pressbooks (Book Oven Inc.)",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "mix watch",
+    "build": "npm run production",
+    "production": "mix --production",
+    "lint": "npm run -s lint:scripts && npm run -s lint:styles",
+    "lint:scripts": "eslint \"assets/scripts/**/*.js\"",
+    "lint:styles": "stylelint \"assets/styles/**/*.scss\" --syntax scss",
+    "lint:fix-scripts": "eslint \"assets/scripts/**/*.js\" --fix"
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "devDependencies": {
+    "country-region-selector": "^0.5.1",
+    "pressbooks-build-tools": "^3.0.1",
+    "select2": "^4.0.13"
+  },
+  "dependencies": {},
+  "stylelint": {
+    "extends": "./node_modules/pressbooks-build-tools/config/stylelint.js",
+    "rules": {
+      "indentation": 2
+    }
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/pressbooks-build-tools/config/eslint.js",
+    "rules": {
+      "jsdoc/require-param-type": "off",
+      "jsdoc/require-returns": "off",
+      "jsdoc/require-param-description": "off",
+      "jsdoc/no-undefined-types": "off",
+      "jsdoc/require-returns-description": "off"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// Media
+// Image Caption
+$image-caption-font-family: $font-2 !default;
+$image-caption-line-height: (prince: 1.4em, epub: 1.4em, web: 1.4em) !default;
+
+// Interactive Content
+$interactive-content-font-style: normal !default;
+$interactive-content-margin-bottom: (prince: .5em, epub: .5em, web: .5em) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.wp-caption-text {
+    margin-top: .5em;
+    margin-bottom: 0em;
+}
+
+@if $type == 'epub' {
+    img {
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+}
+
+@if $type == 'web' {
+    .wp-caption-text {
+        text-indent: 0em !important;
+    }
+}
