@@ -1,0 +1,166 @@
+// Special Elements
+
+@if $type == 'epub' {
+  $hr-break-symbols-font-size: 1.1em !default;
+
+  $textbox-border-style: dotted !default;
+  $textbox-margin-top: 2em !default;
+  $textbox-margin-right: 2em !default;
+  $textbox-margin-bottom: 2em !default;
+  $textbox-margin-left: 2em !default;
+  $textbox-padding-top: 2em !default;
+  $textbox-padding-right: 2em !default;
+  $textbox-padding-bottom: 2em !default;
+  $textbox-padding-left: 2em !default;
+  $textbox-text-indent: 0 !default;
+
+  $edu-textbox-padding-top: 1em !default;
+  $edu-textbox-padding-right: 1em !default;
+  $edu-textbox-padding-bottom: 1em !default;
+  $edu-textbox-padding-left: 1em !default;
+  $edu-textbox-border-style: dotted !default;
+}
+
+@if $type == "web" {
+  $textbox-text-indent: 0 !default;
+  $textbox-font-size: 1em !default;
+  $textbox-line-height: 1.5em !default;
+
+  $first-character-line-height: 1.3em !default;
+}
+
+// Section Breaks
+$hr-break-symbols-font-size: 18pt !default;
+$hr-break-symbols-padding-top: (epub: 0, prince: 0, web: 0) !default;
+$hr-break-symbols-margin-top: .7em !default;
+$hr-break-symbols-margin-bottom: 1.25em !default;
+
+// Dropcap
+$first-character-font-size: 3.5em !default;
+$first-character-line-height: .7425em !default;
+$first-character-font-weight: normal !default;
+
+// Textboxes
+$textbox-font-size: 0.8em !default;
+$textbox-line-height: 1.625em !default;
+$textbox-font-weight: 300 !default;
+$textbox-text-indent: 1em !default;
+$textbox-text-align: left !default;
+$textbox-margin-top: 1.2em !default;
+$textbox-margin-bottom: 1.3em !default;
+$textbox-padding-top: 2em !default;
+$textbox-padding-right: 2em !default;
+$textbox-padding-bottom: 2em !default;
+$textbox-padding-left: 2em !default;
+$textbox-para-margin-bottom: 0 !default;
+
+// Edu Textbox
+$edu-header-font-weight: normal !default;
+$edu-textbox-margin-left: (epub: 2em, prince: 0, web: 0) !default;
+$edu-textbox-margin-right: (epub: 2em, prince: 0, web: 0) !default;
+
+// Footnotes
+$footnote-font-size: (epub: 0.8em, prince: 0.75rem, web: 0.9em) !default;
+$footnote-line-height: 1.4em !default;
+
+// PullQuotes
+$pullquote-font-family: $font-2 !default;
+$pullquote-width: 65% !default;
+$pullquote-font-size: 1.05em !default;
+$pullquote-font-weight: 300 !default;
+$pullquote-line-height: 1.3em !default;
+$pullquote-border-top-width: 0 !default;
+$pullquote-border-bottom-width: 0 !default;
+$pullquote-padding-top: 5px !default;
+$pullquote-padding-bottom: 5px !default;
+$pullquote-margin-top: 20px !default;
+$pullquote-margin-bottom: 20px !default;
+$pullquote-right-margin-top: 15px !default;
+$pullquote-right-margin-bottom: 15px !default;
+$pullquote-left-margin-top: 15px !default;
+$pullquote-left-margin-bottom: 15px !default;
+$pullquote-left-margin-left: 0 !default;
+$pullquote-right-margin-right: 0 !default;
+
+// Columns
+$column-text-indent: (epub: 0, prince: 1em, web: 0) !default;
+$column-twocolumn-font-size: 0.8em !default;
+
+// Sidebar
+$sidebar-padding-top: 1em !default;
+$sidebar-padding-right: 1em !default;
+$sidebar-padding-bottom: 1em !default;
+$sidebar-padding-left: 1em !default;
+$sidebar-margin-left: 1em !default;
+$sidebar-font-size: 0.8em !default;
+$sidebar-font-style: italic !default;
+$sidebar-line-height: 1.4em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/specials';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/specials';
+
+.sidebar ul,
+.sidebar ol {
+  padding-left: .75em;
+  margin-left: .75em;
+}
+
+.firstcharacter {
+  float: left;
+  margin-right: 3px;
+}
+
+.textbox ol,
+.textbox ul {
+  text-indent: 0;
+  padding-right: 1em;
+}
+
+@if $type == "epub" {
+  .textbox p {
+    padding-top: 10px;
+  }
+
+  .textbox ol,
+  .textbox ul {
+    margin-left: 1em;
+    padding-left: 1em;
+    text-indent: 0;
+  }
+
+  .footnotes {
+    margin-right: 1em;
+  }
+}
+
+@if $type == 'prince' {
+  .footnote {
+      letter-spacing: normal;
+      word-spacing: normal;
+      color: black;
+      text-transform: none;
+    }
+}
+
+@if $type == "web" {
+  hr.before-footnotes {
+    border-style: inset;
+    border-width: 1px;
+    width: 100%;
+  }
+
+  span.firstcharacter {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: -.5em;
+  }
+
+  .sidebar ul,
+  .sidebar ol {
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+}

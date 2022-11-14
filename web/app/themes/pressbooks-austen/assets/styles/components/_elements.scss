@@ -1,0 +1,138 @@
+// Elements
+
+@if $type == 'epub' {
+  $hx-margin-top: 2em !default;
+  $li-li-margin-top: 0 !default;
+  $ul-ul-margin-top: 0 !default;
+  $ol-ol-margin-top: 0 !default;
+
+  $blockquote-margin-left: 5% !default;
+  $blockquote-margin-right: 5% !default;
+
+  $table-font-size: 0.8em !default;
+}
+
+@if $type == 'web' {
+  $hx-line-height: 1.1em !default;
+  $hx-margin-top: 1.9em !default;
+
+  $blockquote-line-height: 1.2em !default;
+
+  $li-li-margin-top: 0 !default;
+  $ul-ul-margin-top: 0 !default;
+  $ol-ol-margin-top: 0 !default;
+}
+
+// Body
+$body-font-size: (epub: medium, prince: 11.5pt, web: 1.125rem) !default;
+$body-line-height: (epub: 1.4em, prince: 1.5em, web: 1.8em) !default;
+$para-align: (epub: justify, prince: justify, web: initial) !default;
+
+// Headers
+$hx-line-height: 1.4em !default;
+$hx-margin-top: 1em !default;
+$hx-margin-bottom: 1em !default;
+
+// H1
+$h1-font-family: $font-2 !default;
+$h1-font-size: 1em !default;
+$h1-align: center !default;
+$h1-text-transform: none !default;
+
+// H2
+$h2-font-family: $font-2 !default;
+$h2-font-size: 1em !default;
+$h2-align: center !default;
+$h2-text-transform: none !default;
+
+// H3
+$h3-font-family: $font-2 !default;
+$h3-font-size: .9em !default;
+$h3-align: center !default;
+$h3-font-style: normal !default;
+$h3-font-weight: bold !default;
+
+// H4
+$h4-font-family: $font-2 !default;
+$h4-font-size: .9em !default;
+$h4-align: center !default;
+$h4-font-style: normal !default;
+
+// H5
+$h5-font-family: $font-2 !default;
+$h5-font-size: .85em !default;
+$h5-align: center !default;
+$h5-font-style: normal !default;
+$h5-font-weight: bold !default;
+
+// H6
+$h6-font-family: $font-2 !default;
+$h6-font-size: 0.85em !default;
+$h6-align: center !default;
+
+// Cite
+$cite-font-size: 1em !default;
+$cite-text-transform: none !default;
+$cite-font-variant: normal !default;
+$cite-font-style: italic !default;
+
+// Tables
+$table-margin-top: 1em !default;
+$table-margin-bottom: 1.2em !default;
+$table-font-size: 0.9em !default;
+$table-th-padding-top: 0.37em !default;
+$table-th-padding-right: 0.37em !default;
+$table-th-padding-bottom: 0.37em !default;
+$table-th-padding-left: 0.37em !default;
+$table-td-padding-top: 0.37em !default;
+$table-td-padding-right: 0.37em !default;
+$table-td-padding-bottom: 0.37em !default;
+$table-td-padding-left: 0.37em !default;
+
+// Lists
+$dd-font-style: normal !default;
+$ul-margin-left: (epub: 1em, prince: 2em, web: 0) !default;
+$ul-padding-left: (epub: 1em, prince: 2em, web: 2em) !default;
+$ol-margin-left: (epub: 1em, prince: 2em, web: 0) !default;
+$ol-padding-left: (epub: 1em, prince: 2em, web: 2em) !default;
+
+// Blockquote
+$blockquote-line-height: 1.5em !default;
+$blockquote-margin-bottom: 1.2em !default;
+
+// Code
+$code-font-size: 1em !default;
+$code-line-height: 1.5em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/elements';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/elements';
+
+p {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.sidebar ul {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  padding-left: 1em;
+}
+
+@if $type == "epub" {
+  #title-page {
+    margin: 5%;
+  }
+}
+
+@if $type == "web" {
+  blockquote p,
+  blockquote div p{
+    line-height: 1.2em;
+    text-align: justify;
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,9 @@
+@import 'jquery-ui-tabs';
+@import 'table-contols';
+
+.table-controls {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+

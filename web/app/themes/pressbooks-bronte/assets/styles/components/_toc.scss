@@ -1,0 +1,89 @@
+@if $type == 'epub' {
+  $toc-part-number-font-weight: bold !default;
+  $toc-part-title-font-weight: bold !default;
+}
+
+// Table of Contents
+
+
+// TOC Page Number
+$toc-page-number-font-size: .9em !default;
+
+// TOC Front Matter
+$toc-front-matter-margin-top: (epub: 0.25em, prince: 0.3em) !default;
+$toc-front-matter-title-font-style: italic !default;
+
+// TOC Front Matter Subtitle
+
+
+// TOC Front Matter Author
+
+
+// TOC Part Number
+$toc-part-number-font-size: 1em !default;
+
+// TOC Part Title
+$toc-part-title-font-family: $font-2 !default;
+$toc-part-title-font-size: (epub: 1.2em, prince: 1.2em, web: 1em) !default;
+
+// TOC Chapter Number
+$toc-chapter-number-font-size: .9em !default;
+
+// TOC Chapter Title
+$toc-chapter-margin-top: (epub: 0.25em, prince: 0.75em) !default;
+$toc-chapter-title-font-size: .9em !default;
+
+// TOC Chapter Subtitle
+
+
+// TOC Chapter Author
+
+// TOC Back Matter
+$toc-back-matter-margin-top: (epub: 0.25em, prince: 0.5em) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/toc';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/toc/center';
+// @import 'components/toc/left';
+
+#toc .front-matter a::before,
+#toc .front-matter a::after,
+#toc .toc-chapter-title,
+#toc .chapter a::before,
+#toc .chapter a::after,
+#toc .back-matter a::before,
+#toc .back-matter a::after {
+  display: inline;
+}
+
+#toc .front-matter a::after,
+#toc .chapter a::after,
+#toc .back-matter a::after {
+  padding-left: .5em;
+}
+
+#toc .front-matter a::before,
+#toc .chapter a::before,
+#toc .back-matter a::before {
+  padding-right: .5em;
+}
+
+#toc .chapter .chapter-author,
+#toc .chapter .chapter-subtitle {
+  display: none;
+}
+
+#toc .part a::before {
+  margin-bottom: .5em;
+}
+
+@if $type == 'epub' {
+  #toc .part {
+    margin: 1.3em 0 0.5em;
+  }
+  #toc .front-matter + .chapter, #toc .chapter + .back-matter, #toc .part + .chapter, #toc .part + .back-matter {
+    margin-top: 0;
+  }
+}

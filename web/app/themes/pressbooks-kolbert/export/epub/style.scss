@@ -1,0 +1,734 @@
+$type: 'epub';
+@import 'mixins', 'epub-house-style';
+
+/* GENERAL DEFAULT STYLES */
+
+body {
+	font-family: $font-1;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.4em;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* BODY HEADINGS
+================= */
+
+/*  BODY HEADERS */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1em;
+  font-weight: normal;
+  text-align: left;
+}
+
+div.ugc h1, div.ugc h2, div.ugc h3, div.ugc h4, div.ugc h5, div.ugc h6 {
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+div.ugc h1 {
+	@include head1;
+}
+div.ugc h2 {
+  @include head2;
+}
+div.ugc h3 {
+  @include head3;
+}
+div.ugc h4 {
+  @include head4;
+}
+div.ugc h5 {
+  @include head5;
+}
+div.ugc h6 {
+  @include head6;
+}
+div.ugc h1 + p,
+div.ugc h2 + p,
+div.ugc h3 + p,
+div.ugc h4 + p,
+div.ugc h5 + p {
+  margin-top: 0;
+}
+
+
+/* TITLE PAGE
+================ */
+
+#title-page {
+	margin: 5%;
+	hyphens: none;
+	-webkit-hyphens: none;
+}
+
+#title-page .title {
+	@include booktitle;
+	font-size: 2em;
+  margin-top: 2em;
+}
+
+#title-page .subtitle {
+  @include booksubtitle;
+ 	color: inherit;
+  margin-top: 1em;
+  padding-top: 5px;
+}
+
+#title-page .author {
+	@include bookauthor;
+	font-size: 1em;
+	color: inherit;
+  margin-top: 2em;
+}
+
+#title-page  div.pb-publogo-wrap {
+  padding-top: 30px;
+  width: 100%;
+  text-align: left;
+}
+
+img.pb-publogo {
+  width: 10%;
+  height: auto;
+  margin-left: 0 !important;
+  margin-right: 90%;
+  margin-bottom: 0;
+  display: block;
+  float: none;
+}
+
+img.pb-publogo-wide {
+  width: 20%;
+  height: auto;
+  margin-left: 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+#title-page .publisher {
+	@include bookpublisher;
+	color: inherit;
+  margin-top: 1em;
+}
+
+#title-page .publisher-city {
+	@include bookpublishercity;
+	color: inherit;
+}
+
+/* FRONT-MATTER STYLING
+======================= */
+
+/* COPYRIGHT */
+
+#copyright-page {
+	margin: 10%;
+}
+
+#copyright-page p {
+	@include copyrighttext;
+	text-indent: 0;
+	text-align: left;
+	margin-bottom: 0.5em;
+}
+
+/* DEDICATION */
+
+div.dedication {
+	margin-top: 5em;
+	margin: 10%;
+	text-indent: 0;
+}
+
+div.dedication p {
+	@include dedicationtext;
+	text-indent: 0;
+	margin-top: 1em;
+}
+
+div.dedication .front-matter-title-wrap .front-matter-title {
+	border-bottom: 0px;
+}
+
+/* EPIGRAPH */
+
+div.epigraph {
+	@include epigraphtext;
+	margin: 10%;
+}
+
+div.epigraph p {
+	@include dedicationtext;
+	text-indent: 0;
+	margin-top: 1em;
+}
+div.epigraph .front-matter-title-wrap .front-matter-title {
+	border-bottom: 0px;
+}
+
+
+/* TABLE OF CONTENTS new
+======================= */
+
+#toc {
+	margin: 5%;
+}
+
+#toc h1 {
+	@include chaptertitle;
+	margin-bottom: 2em;
+	display: block;
+  padding-bottom: 1.5em;
+}
+#toc ul {
+	line-height: 1.2em;
+}
+#toc ul, #toc li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#toc li {
+	margin-bottom: 0.25em;
+}
+#toc ul .front-matter,
+#toc ul .back-matter {
+	margin-bottom: 0.25em;
+}
+
+#toc a {
+	border: none;
+	color: inherit;
+}
+#toc a:after {
+	font-style: normal;
+	text-decoration: none;
+}
+
+/* TOC FRONT-MATTER/BACKMATTER */
+
+#toc .front-matter {
+	@include tocfrontmattertitle;
+}
+
+#toc li.front-matter.introduction span.toc-chapter-title {
+	font-style: normal;
+}
+
+#toc .back-matter {
+	@include tocbackmattertitle;
+}
+
+#toc .front-matter + .part,
+#toc .front-matter + .chapter,
+#toc .chapter + .back-matter,
+#toc .part + .backmatter {
+	margin-top: 1.3em;
+}
+
+/* TOC PARTS */
+
+#toc .part .toc-chapter-title {
+	@include tocparttitle;
+	font-size: 1.2em;
+	margin: 1.3em 0 1.3em;
+	text-align: left;
+}
+
+/* TOC CHAPTER STYLING  */
+#toc span.toc-chapter-title {
+	@include tocchaptertitle;
+	margin-top: 0.5em;
+	display: block;
+}
+#toc span.chapter-author{
+	@include tocchapterauthor;
+	display: block;
+	padding-left: 2em;
+	margin-bottom: 0.3em;
+}
+#toc span.chapter-subtitle {
+	@include tocchaptersubtitle;
+	display: block;
+	padding-left: 2em;
+	margin-bottom: 0.3em;
+}
+#toc span.chapter-subtitle +
+span.chapter-author {
+	margin-top: -0.5em;
+	margin-bottom: 0.5em;
+}
+
+
+/* CHAPTER & PART TITLES:
+TITLES, NUMBERS, SUBTITLE, AUTHOR, APHORISM
+FONT-MATTER & BACKMATTER
+============================================= */
+/* DISPLAY NONE:
+REMOVES CHAPTER NUMBERING
+ON FRONT-MATTER + BACK-MATTER TITLES */
+
+.display-none,
+.front-matter-number,
+.back-matter-number {
+	display: none;
+}
+
+.display-none,
+.front-matter-number,
+.front-matter-number.dedication,
+.back-matter-number {
+	display: none;
+}
+
+/* FRONT-MATTER TITLES */
+
+div.front-matter-title-wrap {
+	margin-bottom: 2.5em;
+	margin-top: 3em;
+	hyphens: none;
+	-webkit-hyphens: none;
+}
+
+div.front-matter-title-wrap .front-matter-title {
+	@include frontmattertitle;
+	margin-bottom: 0.5em;
+  padding-bottom: 1.5em;
+}
+
+div.front-matter > div.ugc .short-title:first-of-type {
+	visibility: hidden; /* display:none breaks string-set: */
+	font-size: 0;
+	height: 0;
+}
+
+/* PART TITLE */
+
+div.part-title-wrap {
+	margin-top: 4em;
+	margin-bottom: 2em;
+	hyphens: none;
+	-webkit-hyphens: none;
+}
+
+div.part-title-wrap > .part-number {
+	@include partnumber;
+}
+
+div.part-title-wrap > .part-number:before {
+	text-transform: uppercase;
+content: $part + " ";
+}
+
+div.part-title-wrap > .part-title {
+	@include parttitle;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+/* CHAPTER TITLES */
+
+.chapter-title-wrap {
+	margin-bottom: 2.5em;
+	margin-top: 3em;
+}
+
+.chapter-number {
+  @include chapternumber;
+  font-size: 1em;
+  display: block;
+}
+
+.chapter-title-wrap .chapter-title {
+  @include chaptertitle;
+  font-size: 1.5em;
+  display: block;
+  margin-bottom: 0.5em;
+  padding-bottom: 1em;
+  padding-top: 0.5em;
+}
+
+div.chapter > div.ugc > .short-title:first-of-type {
+	display: none;
+}
+
+/* CHAPTER SUBTITLES, CHAPTER AUTHOR & APHORIMS  */
+
+div.ugc.chapter-ugc > .chapter-subtitle {
+	@include chaptersubtitle;
+}
+
+div.ugc.chapter-ugc .chapter-author {
+	@include chapterauthor;
+}
+
+div.ugc > .chapter-subtitle {
+  margin: -1em 0em 2em 0em;
+}
+
+div.ugc .chapter-author {
+  padding-top: 0.2em;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+}
+
+div.ugc > .chapter-subtitle, div.ugc .chapter-author {
+  hyphens: none;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-indent: 0;
+}
+
+div.ugc.chapter-ugc .aphorism {
+  @include chapteraphorism;
+  margin-right: 30%;
+  text-indent: 0em;
+  margin-bottom: 2em;
+}
+
+.aphorism cite {
+	display: block;
+}
+
+.aphorism cite::before {
+	content: "–";
+}
+
+/* BACK-MATTER TITLES */
+
+div.back-matter-title-wrap {
+	margin-bottom: 2.5em;
+	margin-top: 3em;
+	hyphens: none;
+}
+
+div.back-matter-title-wrap .back-matter-title {
+	@include backmattertitle;
+}
+
+.short-title {
+	display: none;
+}
+
+/*  PARAGRAPHS & BODY TEXT
+ ========================== */
+
+p {
+	font-family: $font-1;
+	line-height: 1.4em;
+	margin: 0;
+	text-indent: 1em;
+}
+p + p {
+	text-indent: 1em;
+	margin-top: 0;
+}
+div.ugc p.indent {
+	line-height: 1.4em;
+	margin: 0;
+	text-indent: 1.5em;
+}
+div.ugc p.nonindent,
+p.nonindent,
+.nonindent   {
+	line-height: 1.4em;
+	margin: 0;
+	text-indent: 0;
+}
+
+p.no-indent,
+.no-indent {
+	line-height: 1.4em;
+	text-indent: 0;
+	margin-top: 1em;
+}
+
+div.front-matter p.no-indent,
+.no-indent {
+	line-height: 1.4em;
+	text-indent: 0;
+	margin-top: 1em;
+}
+
+div.back-matter p.no-indent,
+.no-indent {
+	line-height: 1.4em;
+	text-indent: 0;
+	margin-top: 1em;
+}
+
+p.hanging-indent,
+.hanging-indent {
+	line-height: 1.4em;
+	text-indent: 0;
+	margin: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+/* TABLES */
+
+table {
+	font-size: 0.8em;
+	display: block;
+	margin: 25px 0;
+	page-break-inside: avoid;
+}
+table caption {
+	text-align: left;
+}
+table caption span {
+	font-style: italic;
+}
+thead th {
+	font-weight: lighter;
+}
+thead th span {
+	font-family: sans-serif;
+	font-weight: bold;
+}
+table span {
+	font-weight: bold;
+}
+td {
+	border-bottom: 1px dotted #000;
+	padding: 5px;
+}
+
+/* DEFINITION LISTS */
+
+dt {
+	font-weight: lighter;
+	font-size: 0.9em;
+	color: #0197B2;
+	text-transform: uppercase;
+	margin: 20px 0;
+}
+
+dd {
+	font-weight: lighter;
+	font-style: italic;
+	font-size: 0.85em;
+	margin: 20px 0;
+}
+
+dt, dd {
+	display: inline;
+	margin: 0;
+}
+
+dd:after {
+	content: "\A";
+	white-space: pre;
+}
+
+/* ORDERED AND UNORDERED LISTS */
+
+ul {
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+ol {
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+li {
+	font-family: $font-1;
+}
+
+div.ucg p + ul {
+	margin-top: 1em;
+}
+
+div.ucg p + ol {
+	margin-top: 1em;
+}
+
+/* BLOCKQUOTES */
+
+.blockquote,
+blockquote {
+	@include blockquotetext;
+	margin: 1em 5% 1em 5%;
+}
+
+.bq_2,
+blockquote.bq_2 {
+	@include blockquotetext;
+	font-style: italic;
+	margin: 1em 5% 1em 5%;
+}
+
+.bq_2 p,
+blockquote.bq_2 p {
+	text-align: left;
+	hyphens: none;
+	-webkit-hyphens: none;
+}
+
+p.bl_nonindent {
+	margin: 0 1em 0;
+	text-indent: 0;
+}
+p.bl_indent {
+	margin: 0 1em 0;
+	text-indent: 1.5em;
+}
+
+
+/* SEPARATORS */
+
+hr {
+	margin: 10px auto;
+	text-align: center;
+	width: 20%;
+}
+
+/* SPECIAL */
+
+cite {
+	font-weight: normal;
+}
+
+/* SPECIAL STYLING
+======================= */
+
+/* ASIDES, PULLQUOTES */
+
+aside {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	margin: 2em 10%;
+	padding: 10px 0;
+	text-indent: 0;
+}
+
+.pullquote {
+	@include pullquotetext;
+	border: 1px solid #000;
+	border-width: 1px 0;
+	margin: 15px 15px 15px 0;
+	padding: 5px 0;
+	text-align: center;
+	width: 45%;
+	display: block;
+}
+
+.pullquote-left {
+	@include pullquotetext;
+	border-width: 1px 0;
+	float: left;
+	margin: 15px 15px 15px 0;
+	padding: 5px 0;
+	text-align: center;
+	width: 45%;
+}
+.pullquote-right {
+	@include pullquotetext;
+	border: 1px solid;
+	border-width: 1px 0;
+	float: right;
+	margin: 15px 0 15px 15px;
+	padding: 5px 0;
+	text-align: center;
+	width: 45%;
+	display: block;
+}
+
+/* TEXTBOXES & DARK BACKGROUNDS */
+
+div.textbox {
+	@include textboxtext;
+	border: 1px dotted;
+	margin: 2em 2em 2em 2em;
+	padding: 2em;
+}
+
+div.textbox.shaded {
+	@include textboxtext;
+}
+.textbox p {
+	margin: 10px;
+	padding: 10px;
+}
+div.textbox blockquote,
+div.textbox .blockquote {
+	font-size: 0.9em;
+	font-style: normal;
+	padding: 0 0 0 0.1%;
+}
+.textbox {
+  @include textboxtext;
+  background-color: $color6;
+  border-color: $color6;
+  margin: 1em 0 1em 0;
+}
+.textbox.shaded {
+    @include textboxtext;
+}
+
+/* FOOTNOTES  */
+
+.footnotes {
+	display: block;
+	font-size: 0.8em;
+	margin: 1em 0.5em 2em 2em;
+}
+
+.footnotes-wrap {
+	list-style: none;
+	display: block;
+	margin: 10px 10px 10px 40px;
+}
+
+.footnotes p + p {
+	text-indent: 0;
+	text-align: left;
+}
+.footnotes .footnotes-wrap p {
+}
+.footnotes p a {
+	display: block;
+	text-decoration: none;
+}
+
+/* BACK-MATTER
+=================*/
+
+/* BIBLIOGRAPHY */
+
+#bibliography .ugc p  {
+	text-indent: 0;
+	margin-bottom: 1em;
+}
+
+/* INDEX  */
+
+.index .ugc {
+	text-align: left;
+}
+.index .ugc  div {
+	margin-bottom: 4em;
+}
+.index .ugc  p {
+	font-size: 0.9em;
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+	text-align: left;
+}
+.index .ugc  p.sub-entry {
+	padding-left: 2.5em;
+}
+
+//IMAGES
+
+@import "epub-images";
+
+@import "mobi-house-style";

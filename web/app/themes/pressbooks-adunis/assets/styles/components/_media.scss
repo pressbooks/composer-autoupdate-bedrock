@@ -1,0 +1,59 @@
+// Media
+@if $type == 'epub' {
+  $image-caption-text-align: center !default;
+}
+
+// Image Caption
+$image-caption-font-family: $font-2 !default;
+$image-caption-line-height: (prince: 1.4em, epub: 1.4em, web: 1.4em) !default;
+$image-caption-margin-top: (epub: 0.5em, prince: 0.3em, web: 0.5em) !default;
+$image-caption-padding-bottom: 1.5em !default;
+
+// Interactive Content
+$interactive-content-font-size: 0.9em !default;
+$interactive-content-font-style: italic !default;
+$interactive-content-text-indent: 0 !default;
+$interactive-content-line-height: 1.3em !default;
+$interactive-content-margin-bottom: (prince: .5em, epub: .5em, web: .5em) !default;
+$interactive-content-padding-top: 1cm !default;
+$interactive-content-padding-right: 1cm !default;
+$interactive-content-padding-bottom: 2em !default;
+$interactive-content-padding-left: 1cm !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/media';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/media';
+
+.interactive-content p{
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: .5em;
+  padding-bottom: 2em;
+}
+
+@if $type == 'epub' {
+    img {
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+
+    div.wp-caption-text {
+      font-size: 0.8em !important;
+    }
+
+    .interactive-content p{
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      padding: 10px;
+    }
+}
+
+@if $type == 'web' {
+  .wp-video {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}

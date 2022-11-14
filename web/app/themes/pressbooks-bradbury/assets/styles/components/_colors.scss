@@ -1,0 +1,18 @@
+// Colors
+
+$color-3: black !default;
+$color-4:#eee !default; //shaded
+$color-5:#525252 !default;
+$color-6: #e6e6e6 !default;
+
+$part-number-color: $color-5 !default;
+
+$chapter-number-color: $color-5 !default;
+
+$textbox-border-color: $color-5 !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';

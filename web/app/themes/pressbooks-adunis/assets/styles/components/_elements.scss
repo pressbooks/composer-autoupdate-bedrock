@@ -1,0 +1,266 @@
+// Elements
+@if $type == 'epub' {
+  $cite-font-variant: none !default;
+  $cite-text-transform: normal !default;
+
+  $hx-margin-top: 2em !default;
+  $hx-margin-bottom: 1em !default;
+
+  $h1-font-size: 1.3em !default;
+  $h2-font-size: 1.3em !default;
+
+  $h4-margin-top: 2em !default;
+  $h5-margin-top: 2em !default;
+  $h6-margin-top: 2em !default;
+
+  $h6-font-weight: normal !default;
+
+  $ul-ul-margin-top: 0 !default;
+  $ol-ol-margin-top: 0 !default;
+  $li-li-margin-top: 0 !default;
+
+  $table-th-padding-top: 5px !default;
+  $table-th-padding-right: 5px !default;
+  $table-th-padding-bottom: 5px !default;
+  $table-th-padding-left: 5px !default;
+  $table-td-padding-top: 5px !default;
+  $table-td-padding-right: 5px !default;
+  $table-td-padding-bottom: 5px !default;
+  $table-td-padding-left: 5px !default;
+  $table-line-height: 1.1em;
+}
+
+@if $type == 'web' {
+  $hx-margin-top: 2em !default;
+  $hx-margin-bottom: 1em !default;
+  $h4-margin-top: 2em !default;
+  $h5-margin-top: 2em !default;
+  $h6-margin-top: 2em !default;
+
+  $h6-font-weight: normal !default;
+
+  $ul-ul-margin-top: 0 !default;
+  $ol-ol-margin-top: 0 !default;
+  $li-li-margin-top: 0 !default;
+
+  $code-font-size: 1.2em !default;
+  $code-line-height: 1.4em !default;
+
+  $table-font-size: 0.9em !default;
+  $table-th-padding-top: 5px !default;
+  $table-th-padding-right: 5px !default;
+  $table-th-padding-bottom: 5px !default;
+  $table-th-padding-left: 5px !default;
+  $table-td-padding-top: 5px !default;
+  $table-td-padding-right: 5px !default;
+  $table-td-padding-bottom: 5px !default;
+  $table-td-padding-left: 5px !default;
+
+  $blockquote-margin-bottom: 3em !default;
+  $blockquote-font-size: 1em !default;
+  $blockquote-line-height: 1.2em !default;
+}
+
+// Body
+$body-font-size: (epub: medium, prince: 10.5pt, web: 1.125rem) !default;
+$body-line-height: (epub: 1.4em, prince: 1.4em, web: 1.5em) !default;
+
+// Headers
+$hx-line-height: 1.2em !default;
+$hx-margin-top: 1.5em !default;
+$hx-margin-bottom: .75em !default;
+
+// H1
+$h1-font-size: 1.335em !default;
+$h1-align: center !default;
+$h1-font-weight: lighter !default;
+$h1-font-family: $font-2 !default;
+
+// H2
+$h2-font-size: 1.3em !default;
+$h2-align: center !default;
+$h2-font-weight: lighter !default;
+$h2-font-family: $font-2 !default;
+
+// H3
+$h3-font-style: normal !default;
+$h3-font-weight: normal !default;
+$h3-font-size: 1.2em !default;
+$h3-align: center !default;
+$h3-font-weight: normal !default;
+$h3-font-family: $font-2 !default;
+
+// H4
+$h4-margin-top: 1em !default;
+$h4-font-style: italic !default;
+$h4-font-weight: lighter !default;
+$h4-align: center !default;
+$h4-text-transform: none !default;
+$h4-font-size: 1.25em !default;
+$h4-font-family: $font-2 !default;
+
+// H5
+$h5-margin-top: 1.5em !default;
+$h5-font-style: italic !default;
+$h5-font-weight: normal !default;
+$h5-align: center !default;
+$h5-font-size: 1.15em !default;
+$h5-font-family: $font-2 !default;
+
+// H6
+$h6-margin-top: 1.5em !default;
+$h6-margin-bottom: 1.5em !default;
+$h6-font-style: normal !default;
+$h6-font-weight: bold !default;
+$h6-align: center !default;
+$h6-font-size: 1em !default;
+$h6-font-family: $font-2 !default;
+$h6-text-transform: none !default;
+
+// Cite
+$cite-font-size: 1em !default;
+$cite-font-style: italic !default;
+$cite-text-transform: none !default;
+$cite-font-variant: none !default;
+
+// Tables
+$table-font-family: $font-2 !default;
+$table-margin-top: 1em !default;
+$table-margin-bottom: 1.2em !default;
+$table-border-width: 0 !default;
+$table-font-size: 0.8em !default;
+$table-th-padding-top: 0.55em !default;
+$table-th-padding-right: 0.55em !default;
+$table-th-padding-bottom: 0.55em !default;
+$table-th-padding-left: 0.55em !default;
+$table-td-padding-top: 0.55em !default;
+$table-td-padding-right: 0.55em !default;
+$table-td-padding-bottom: 0.55em !default;
+$table-td-padding-left: 0.55em !default;
+$table-tr-border-bottom-width: (epub: 1px, prince: .5px, web: .5px) !default;
+$table-tr-border-bottom-style: (epub: dotted, prince: dotted, web: dotted) !default;
+$table-caption-font-weight: 300 !default;
+
+// Lists
+$ol-margin-left: (epub: 1em, prince: 1em, web: 0) !default;
+$ol-padding-left: (epub: 1em, prince: 2em, web: 2em) !default;
+$ul-margin-left: (epub: 1em, prince: 1em, web: 0) !default;
+$ul-padding-left: (epub: 1em, prince: 1em, web: 2em) !default;
+$dd-font-style: normal !default;
+
+// Blockquote
+$blockquote-font-family: $font-2 !default;
+$blockquote-font-size: .95em !default;
+$blockquote-font-weight: lighter !default;
+$blockquote-line-height: 1.4em !default;
+$blockquote-margin-bottom: 1.15em !default;
+$blockquote-margin-top: 1.15em !default;
+$blockquote-margin-right: 1em !default;
+$blockquote-margin-left: 1em !default;
+
+// Code
+$code-font-size: 1em !default;
+$code-line-height: 1.1em !default;
+
+// Pre
+$pre-line-height: 1.4em !default;
+$pre-margin-bottom: 1.1em !default;
+$pre-margin-top: 1.1em !default;
+
+// Sup/Sub
+$sub-font-size: 0.825em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/elements';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/elements';
+
+p {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+cite {
+  font-family: $font-1;
+}
+
+blockquote cite,
+.blockquote cite {
+  margin-top: 1em;
+  border-top: 0.3pt solid #333;
+  display: block;
+  float: right;
+  font-size: .85em;
+  font-variant: small-caps;
+  font-style: normal;
+  font-weight: lighter;
+  font-family: $font-3;
+}
+
+blockquote {
+  font-weight: lighter;
+  padding-bottom: 2em;
+}
+
+blockquote p {
+  font-weight: lighter;
+}
+
+table {
+  width: 100%;
+}
+
+table caption {
+  text-align: left;
+  font-size: 1.1em;
+}
+
+@if $type == "epub" {
+
+  p {
+    text-align: inherit;
+  }
+
+  ol.decimal {
+    margin-left: 0em;
+    padding-left: 0em;
+  }
+
+  div.blockquote {
+    padding-bottom: 2em;
+  }
+}
+
+@if $type == "web" {
+  p {
+    text-align: inherit;
+  }
+
+  main * + p {
+    margin-top: 0;
+  }
+
+  blockquote p,
+  blockquote div,
+  blockquote div p {
+    text-align: justify !important;
+    font-size: 1em;
+    font-weight: lighter !important;
+    line-height: 1.2em;
+  }
+
+  blockquote cite,
+  .blockquote cite {
+  font-size: .85em !important;
+  font-variant: small-caps;
+  font-style: normal !important;
+  font-weight: lighter !important;
+  font-family: $font-3;
+}
+
+  p.indent {
+    text-indent: 1em;
+  }
+}

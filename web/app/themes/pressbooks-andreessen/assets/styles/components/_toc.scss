@@ -1,0 +1,93 @@
+// Table of Contents
+
+// EPUB Styling
+@if $type == 'epub' {
+  $toc-chapter-margin-top: 0em !default;
+}
+
+// TOC
+$toc-block-margin-top: (epub: .5em, prince: 1.5em) !default;
+
+$toc-base-line-height: (epub: 1.2, prince: 1.2em) !default;
+
+$toc-center-subsection-width: 50% !default;
+
+$toc-section-margin-top: 0.5em !default;
+
+// TOC Front Matter
+$toc-front-matter-title-font-size: 1em !default;
+$toc-front-matter-page-number-font-size: 1em !default;
+$toc-front-matter-margin-top: (epub: 0.25em, prince: 0.5em) !default;
+
+// TOC Part Number
+$toc-part-number-font-size: 1em !default;
+$toc-part-number-font-family: $font-1 !default;
+$toc-part-number-text-transform: uppercase !default;
+$toc-part-number-font-weight: normal !default;
+
+// TOC Part Title
+$toc-part-title-font-family: $font-2 !default;
+$toc-part-title-text-transform: uppercase !default;
+$toc-part-title-font-weight: bold !default;
+$toc-part-title-font-size: (epub: .9em, prince: .9em, web: 1em) !default;
+
+// TOC Chapter
+$toc-chapter-margin-top: (epub: 0.5em, prince: 1em) !default;
+
+// TOC Chapter Title
+$toc-chapter-title-font-size: 1em !default;
+
+// TOC Chapter Number
+$toc-chapter-number-font-size: 1em !default;
+$toc-chapter-number-font-weight: bold !default;
+
+// TOC Chapter Subtitle
+$toc-chapter-subtitle-margin-top: (epub: 0em, prince: 0em, web: 0.4em) !default;
+$toc-chapter-subtitle-font-size: 0.9em !default;
+$toc-chapter-subtitle-font-style: italic !default;
+
+// TOC Chapter Author
+$toc-chapter-author-font-size: 0.9em !default;
+$toc-chapter-author-font-style: normal !default;
+$toc-chapter-author-margin-top: (epub: 0em, prince: 0em, web: 0.4em) !default;
+
+// TOC Left
+$toc-left-chapter-number-after-content: '.\A0\A0\A0\A0' !default;
+$toc-left-margin-left: 1cm !default;
+
+// TOC Page Numbers
+$toc-page-number-font-size: 1em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/toc';
+
+// Add custom SCSS below these imports and includes.
+// @import 'components/toc/center';
+@import 'components/toc/left';
+
+#toc .part {
+  width: 72.5%;
+  line-height: 1.3em;
+  margin-bottom: -0.1em;
+}
+
+#toc .part a::before {
+  font-weight: normal !important;
+}
+
+.toc-chapter-title {
+  line-height: 1.2em;
+  width: 73% !important;
+}
+
+@if $type == 'epub' {
+
+  .toc-chapter-title {
+    width: 100% !important;
+    margin-top: .4em;
+  }
+
+  #toc .part .toc-chapter-title {
+    margin-bottom: 0.5em;
+  }
+}

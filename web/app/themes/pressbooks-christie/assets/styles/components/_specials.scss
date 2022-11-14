@@ -1,0 +1,157 @@
+// Special Elements
+// EPUB Styles
+@if $type == 'epub' {
+    $textbox-border-width: 1px !default;
+    $textbox-border-style: dotted !default;
+    $textbox-margin-right: 2em !default;
+    $textbox-margin-left: 2em !default;
+    $textbox-margin-top: 2em !default;
+    $textbox-margin-bottom: 2em !default;
+    $textbox-padding-top: 2em !default;
+    $textbox-padding-bottom: 2em !default;
+    $textbox-padding-right: 2em !default;
+    $textbox-padding-left: 2em !default;
+
+    $hr-break-symbols-font-size: 1em !default;
+}
+
+// Section Breaks
+$hr-margin-top: 0.7em !default;
+$hr-margin-bottom: 0.9em !default;
+
+$hr-break-symbols-font-size: 1.5em !default;
+$hr-break-symbols-margin-bottom: 1.25em !default;
+
+$section-break-space-margin-top: 0em !default;
+
+$section-break-space-margin-top: 1em !default;
+$section-break-space-margin-bottom: 1em !default;
+
+// Footnotes
+$footnote-indent: 1em !default;
+$footnote-block-margin-top: 1em !default;
+$footnote-line-height: 1.4em !default;
+$footnote-font-size: (
+  epub: 0.9em,
+  prince: 0.75rem,
+  web: 0.9em
+) !default;
+
+// Dropcaps
+$first-character-font-size: 260% !default;
+$first-character-font-weight: lighter !default;
+
+// Textboxes
+$textbox-font-family: $font-2 !default;
+$textbox-font-size: .8em !default;
+$textbox-margin-bottom: 1.35em !default;
+$textbox-padding-top: 0.8em !default;
+$textbox-padding-bottom: 0.8em !default;
+$textbox-padding-right: 0.8em !default;
+$textbox-padding-left: 0.8em !default;
+$textbox-line-height: 1.625em !default;
+$textbox-border-width: 0.085em !default;
+$textbox-margin-top: 1.2em !default;
+$textbox-para-margin-bottom: 0em !default;
+$textbox-header-font-size: 1.2em !default;
+$textbox-header-margin-top: 1em !default;
+$textbox-header-margin-bottom: 1.25em !default;
+
+$textbox-header-font-size: 1.425em !default;
+$textbox-header-margin-top: 2em !default;
+$textbox-header-margin-bottom: -2em !default;
+
+$textbox-ul-margin-top: 1em !default;
+$textbox-ul-margin-bottom: 0.75em !default;
+$textbox-li-margin-left: 0.75em !default;
+
+$edu-header-font-size-multiplier: 1.4 !default;
+$edu-textbox-padding-bottom: 1.1em !default;
+$edu-textbox-padding-top: 1em !default;
+
+// Pullquotes
+$pullquote-font-family: $font-2 !default;
+$pullquote-font-size: 1em !default;
+$pullquote-font-weight: normal !default;
+$pullquote-line-height: 1.3em !default;
+$pullquote-left-margin-left: 0em !default;
+$pullquote-right-margin-right: 0em !default;
+$pullquote-margin-top: 1.3043478260869565em !default;
+$pullquote-margin-bottom: 1.3043478260869565em !default;
+$pullquote-padding-top: 0.32608695652173914em !default;
+$pullquote-padding-bottom: 0.32608695652173914em !default;
+$pullquote-border-top: 1px solid black !default;
+$pullquote-border-top-width: 1px !default;
+$pullquote-border-top-style: solid !default;
+$pullquote-border-top-color: black !default;
+$pullquote-border-bottom: 1px solid black !default;
+$pullquote-border-bottom-width: 1px !default;
+$pullquote-border-bottom-style: solid !default;
+$pullquote-border-bottom-color: black !default;
+
+// Columns
+$column-margin-top: 1.3em !default;
+$column-twocolumn-font-size: 0.8em !default;
+
+// Sidebars
+$sidebar-font-size: 0.8em !default;
+$sidebar-padding-top: 1em !default;
+$sidebar-padding-right: 0.75em !default;
+$sidebar-padding-bottom: 1em !default;
+$sidebar-padding-left: 0.75em !default;
+$sidebar-margin-left: 0.75em !default;
+
+// Code
+$code-font-size: 1em !default;
+$code-line-height: 1.1em !default;
+
+// Dropcaps
+$first-character-font-family: $font-2 !default;
+$first-character-font-size: 2.6em !default;
+$first-character-font-style: normal !default;
+$first-character-font-weight: bold !default;
+$first-character-line-height: 1em !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/specials';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/specials';
+
+.textbox p {
+    text-indent: 1em;
+}
+
+.pullquote {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pullquote-left {
+    margin-top: 0.9782608695652174em;
+    margin-right: 0.9782608695652174em;
+    margin-bottom: 0.9782608695652174em;
+}
+
+.pullquote-right {
+    margin-top: 0.9782608695652174em;
+    margin-left: 0.9782608695652174em;
+    margin-bottom: 0.9782608695652174em;
+}
+
+.pullquote.shaded {
+    background-color: #d8d8d8;
+ }
+
+ .firstcharacter {
+    float: left;
+    padding-right: 2.5px;
+    margin-right: 0px;
+    margin-top: 1.5px;
+    margin-bottom: -14px;
+}
+
+@if $type == 'epub' {
+  // TODO
+}

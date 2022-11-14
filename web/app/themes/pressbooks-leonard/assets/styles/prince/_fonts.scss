@@ -1,0 +1,11 @@
+@import '_font-stack-prince'; // Dynamically generated
+
+$serif-prince: serif !default;
+$sans-serif-prince: sans-serif !default;
+
+$font-1: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times", $serif-prince;
+$font-2: "Special Elite", "Georgia", "Times New Roman", "Times", $serif-prince;
+$font-3: "Special Elite", "Georgia", "Times New Roman", "Times", $serif-prince;
+
+@import "SortsMillGoudyFont";
+@import "SpecialEliteFont";

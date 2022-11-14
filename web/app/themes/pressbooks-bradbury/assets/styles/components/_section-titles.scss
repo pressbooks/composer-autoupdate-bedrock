@@ -1,0 +1,122 @@
+// Section Titles
+@if $type == 'epub' {
+    $aphorism-cite-text-transform: none !default;
+    $aphorism-cite-font-style: italic !default;
+}
+
+@else if $type == "web" {
+    $section-title-text-transform: none !default;
+
+    $aphorism-line-height: 1.4em !default;
+
+    $aphorism-cite-text-transform: normal !default;
+    $aphorism-cite-font-style: italic !default;
+}
+
+// Section Header
+$section-header-margin-top:  (epub: 3em, prince: 2.0cm, web: 3em) !default;
+$section-header-margin-bottom:  (epub: 2em, prince: 1.95cm, web: 5.5em) !default;
+
+// Section Title
+$section-title-font-weight: 300 !default;
+$section-title-font-family: $font-2 !default;
+$section-title-align: left !default;
+$section-title-text-transform: normal !default;
+$section-title-font-size: (epub: 1.5em, prince: 2em, web: 1.5em) !default;
+$section-title-margin-bottom: (epub: .5em, prince: .5em, web: .5em) !default;
+$section-title-padding-bottom: (epub: 1.5em, prince: 1.5em, web: 1.5em) !default;
+
+// Section Space
+$section-title-subtitle-spacing: (epub: .5em, prince: 1.5em, web: 3em) !default;
+$section-subtitle-author-spacing: (epub: 0.5em, prince: .5em, web: 0.5em) !default;
+$section-title-author-spacing:  (epub: 1.5em, prince: 1.5em, web: 3em) !default;
+
+// Section Subtitle
+$section-subtitle-font-size: (epub: 1.25em, prince: 1.25em, web: 1.25em) !default;
+$section-subtitle-font-style: normal !default;
+$section-subtitle-letter-spacing: normal !default;
+$section-subtitle-word-spacing: normal !default;
+$section-subtitle-align: left !default;
+$section-subtitle-margin-bottom: (epub: 0, prince: -2.25em, web: 0) !default;
+
+// Section Author
+$section-author-align: left !default;
+$section-author-text-transform: none !default;
+$section-author-font-size: (epub: 1.25em, prince: 1.25em, web: 1.25em) !default;
+$section-author-margin-bottom: (epub: 2em, prince: -1em, web: 0) !default;
+$section-author-font-weight: bold !default;
+
+// Aphorism
+$aphorism-font-family: $font-2 !default;
+$aphorism-font-weight: 300 !default;
+$aphorism-font-style: normal !default;
+$aphorism-font-size: (epub: small, prince: 1em, web: 1em) !default;
+$aphorism-margin-top: (epub: 0, prince: 0, web: -2em) !default;
+$aphorism-margin-bottom: (epub: 2em, prince: 1.75em, web: 3em) !default;
+$aphorism-margin-left: (epub: 5%, prince: 5%, web: 1em) !default;
+$aphorism-margin-right: (epub: 5%, prince: 5%, web: 1em) !default;
+
+$aphorism-cite-font-style: normal !default;
+$aphorism-cite-font-weight: 300 !default;
+$aphorism-cite-text-transform: uppercase !default;
+$aphorism-cite-font-size: (epub: 1em, prince: 0.7em, web: 1em) !default;
+
+// TOC Title
+$toc-title-margin-left: (epub: 0, prince: 1cm, web: 0) !default;
+$toc-title-margin-top: (epub: 1em, prince: 2.0cm, web: 3em) !default;
+$toc-title-margin-bottom: $section-header-margin-bottom !default;
+
+// Part Number
+$part-number-font-size: (epub: 1.5em, prince: 1.5em, web: 1em) !default;
+$part-number-font-family: $font-2 !default;
+$part-number-font-weight: 300 !default;
+$part-number-before-content: '[PART ' !default;
+$part-number-after-content: ']' !default;
+$part-number-border-bottom-style: none !default;
+$part-number-border-bottom-color: none !default;
+$part-number-align: left !default;
+$part-number-padding-bottom: (epub: 1em, prince: 0em, web: 1em) !default;
+$part-number-margin-bottom: (epub: 1em, prince: 1.25em, web: 1em) !default;
+
+// Part Title
+$part-title-font-size:(epub: 2em, prince: 2.5em, web: 2.5em) !default;
+$part-title-font-weight: bold !default;
+$part-title-align: left !default;
+$part-title-font-size:(epub: 1.75em, prince: 2em, web: 2em) !default;
+$part-title-text-transform: none !default;
+$part-title-margin-top: (epub: 0, prince: .5em, web: 0) !default;
+
+// Chapter Number
+$chapter-number-font-family: $font-2 !default;
+$chapter-number-align: left !default;
+$chapter-number-text-transform: uppercase !default;
+$chapter-number-font-size: (epub: 1.5em, prince: 1.5em, web: 1em) !default;
+$chapter-number-font-weight: lighter !default;
+$chapter-number-before-content: '[' !default;
+$chapter-number-after-content: ']' !default;
+$chapter-number-margin-top: (epub: 0.2em, prince: 1em, web: 0.2em) !default;
+$chapter-number-padding-bottom: (epub: 0.2em, prince: 0.2em, web: 0.75em) !default;
+$chapter-number-margin-bottom: (epub: 1em, prince: 1em, web: 0em) !default;
+
+// Chapter Title
+$chapter-title-margin-top:(epub: 0, prince: 0, web: 0) !default;
+$chapter-title-margin-bottom: (epub: .5em, prince: .5em, web: .5em) !important !default;
+$chapter-title-padding-bottom: (epub: 1.5em, prince: 1.5em, web: 1.5em) !default;
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/section-titles';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/section-titles';
+
+.aphorism cite,
+blockquote.aphorism cite {
+    padding-top: 0;
+}
+
+// TODO: Remove after https://github.com/pressbooks/pressbooks-book/pull/501 is released.
+@if $type == 'web'{
+    [data-type='author'] {
+        text-indent: 0em !important;
+    }
+}

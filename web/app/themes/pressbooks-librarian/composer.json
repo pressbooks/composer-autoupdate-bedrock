@@ -1,0 +1,42 @@
+{
+  "name": "pressbooks/pressbooks-librarian",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "Pressbooks root theme for Bibliolabs, based on <a href='https://roots.io/sage'>Sage</a>.",
+  "homepage": "https://github.com/pressbooks/pressbooks-librarian/",
+  "authors": [
+    {
+      "name": "Book Oven Inc.",
+      "email": "code@pressbooks.com",
+      "homepage": "https://github.com/pressbooks"
+    }
+  ],
+  "keywords": [
+    "pressbooks"
+  ],
+  "support": {
+    "issues": "https://github.com/pressbooks/pressbooks-librarian/issues"
+  },
+  "require": {
+    "php": "^7.4|8.0.*",
+    "composer/installers": "^2",
+    "phpcompatibility/php-compatibility": "^9.3"
+  },
+  "require-dev": {
+    "pressbooks/coding-standards": "^1.1"
+  },
+  "scripts": {
+    "standards": [
+      "vendor/bin/phpcs --standard=phpcs.ruleset.xml *.php lib/"
+    ],
+    "fix": [
+      "vendor/bin/phpcbf --standard=phpcs.ruleset.xml *.php lib/"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

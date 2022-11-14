@@ -1,0 +1,50 @@
+{
+  "name": "pressbooks/pressbooks-plugins-config",
+  "description": "A Pressbooks plugin which allows to configure third party plugins.",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/pressbooks/pressbooks-plugins-config",
+  "authors": [
+    {
+      "name": "Book Oven Inc.",
+      "email": "code@pressbooks.com",
+      "homepage": "https://pressbooks.com"
+    }
+  ],
+  "keywords": [
+    "pressbooks plugins config"
+  ],
+  "support": {
+    "email": "code@pressbooks.com",
+    "issues": "https://github.com/pressbooks/pressbooks-plugins-config/issues",
+    "docs": "https://github.com/pressbooks/pressbooks-plugins-config/wiki"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "require": {
+    "php": "^7.4|8.0.*",
+    "composer/installers": "^2",
+    "phpcompatibility/php-compatibility": "^9.3"
+  },
+  "require-dev": {
+    "pressbooks/coding-standards": "^1.1"
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit --configuration phpunit.xml"
+    ],
+    "test-coverage": [
+      "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover coverage.xml"
+    ],
+    "standards": [
+      "vendor/bin/phpcs --standard=phpcs.ruleset.xml *.php inc/"
+    ],
+    "fix": [
+      "vendor/bin/phpcbf --standard=phpcs.ruleset.xml *.php inc/"
+    ]
+  }
+}

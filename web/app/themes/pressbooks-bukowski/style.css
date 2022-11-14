@@ -1,0 +1,382 @@
+/*
+Theme Name: Bukowski
+Theme URI: https://pressbooks.com/themes/pressbooks-bukowski
+Description: Named for poet, drinker, post-office clerk, novelist, and lowlife laureate, Charles Bukowski. We've used a title font that might have been scrawled on the back of bar napkin, not quite appropriately called Covered By Your Grace, by Kimberly Geswein; and PT Serif by Paratype for the body.
+Tags: Genre Fiction
+Author: Pressbooks (Book Oven Inc.)
+Author URI: https://pressbooks.com
+Copyright 2011-2019 Book Oven Inc. (Pressbooks.com) code@pressbooks.com
+Version: 1.7.4
+Template: pressbooks-book
+*/
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Covered+By+Your+Grace|Droid+Serif:400,400italic,700,700italic&subset=latin,latin-ext");
+/* $color2: #D61331; /* titles, headers, captions, pullquotes */
+/*GENERAL STYLING */
+body {
+  font-family: "PT Serif", "Droid Serif", "Times", serif;
+  font-size: 1.1em;
+  line-height: 1.5;
+  font-weight: normal;
+  color: #2E2E2E;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Serif", "Droid Serif", "Times", serif;
+  line-height: 1.1;
+  margin-top: 1.9em;
+  font-weight: normal;
+  text-align: left;
+}
+
+h1 {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h2 {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  font-size: 1.8em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h3 {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  font-size: 1.66em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h4 {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h5 {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  font-size: 1.33em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+h6 {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: left;
+  font-size: 1.17em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  page-break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+div.ugc h1 + p,
+div.ugc h2 + p,
+div.ugc h3 + p,
+div.ugc h4 + p,
+div.ugc h5 + p {
+  margin-top: 0;
+}
+
+/* SEPARATORS */
+div.ugc h3.section-break {
+  text-align: center;
+  text-indent: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+div.ugc h3.section-break-space {
+  visibility: hidden;
+  margin-top: 1em;
+  line-height: 1;
+  margin-bottom: 0em;
+}
+
+div.ugc h3.section-break-page {
+  text-align: center;
+  text-indent: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  page-break-after: always;
+}
+
+/****************************************
+  TOC, Author page, Book Page
+*****************************************/
+#inline-toc h4 {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: left;
+  text-transform: none;
+}
+
+.page-title {
+  font-weight: normal;
+}
+
+/****************************************
+  Structure
+*****************************************/
+/****************************************
+  Title, Subtitle, Authors & Aphorism
+*****************************************/
+.entry-title {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: center;
+  font-size: 3em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  margin-left: 0;
+  margin-right: 0;
+  hyphens: none;
+  -webkit-hyphens: none;
+  padding-bottom: 2em;
+  display: block;
+}
+
+.entry-title span {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: center;
+  font-size: 3em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-right: 45%;
+  margin-left: 45%;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid;
+  font-size: 0.75em;
+  display: block;
+}
+
+.chapter_subtitle {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.chapter_author {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.chapter_subtitle + .chapter_author {
+  margin-top: -2em;
+}
+
+.aphorism {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: left;
+  font-size: 1em;
+  font-weight: lighter;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-right: 30%;
+  padding: 0;
+}
+
+.aphorism cite {
+  float: none;
+}
+
+.aphorism cite::before {
+  content: "\2014";
+}
+
+/*************************
+  Footnotes & Endnote
+**************************/
+.endnotes h3 {
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+}
+
+.textbox,
+.textbox2 {
+  color: inherit;
+  font-family: "PT Serif", "Droid Serif", "Times", serif;
+  text-align: justify;
+  font-size: 0.9em;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  line-height: 1.5;
+  margin: 1em 0 1em 0;
+}
+
+.shaded {
+  background-color: #D8D8D8 !important;
+}
+
+.book-title {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: center;
+  font-size: 3em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  font-variant: normal;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  font-family: "PT Serif", "Droid Serif", "Times", serif !important;
+  font-weight: normal !important;
+  letter-spacing: none !important;
+  word-spacing: none !important;
+}
+
+.pullquote,
+.pullquote-left,
+.pullquote-right {
+  color: inherit;
+  font-family: "Covered By Your Grace", "Baskerville", "Droid Serif", serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+ol {
+  list-style-position: outside !important;
+}
+
+blockquote {
+  color: inherit;
+  font-family: "PT Serif", "Droid Serif", "Times", serif;
+  text-align: justify;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+}
+
+.wp-caption-text {
+  color: inherit;
+  font-family: "PT Serif", "Droid Serif", "Times", serif;
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: none;
+  word-spacing: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+#content img {
+  max-width: 100%;
+}

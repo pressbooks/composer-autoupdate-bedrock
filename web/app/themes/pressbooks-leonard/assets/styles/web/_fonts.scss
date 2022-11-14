@@ -1,0 +1,10 @@
+@import '_font-stack-web'; // Dynamically generated
+
+$serif-web: serif !default;
+$sans-serif-web: sans-serif !default;
+
+$font-1: "Georgia", "Times New Roman", $serif-web;
+$font-2: "Special Elite", "Palatino", "Georgia", "Times New Roman", "Times", $serif-web;
+$font-3: "Special Elite", "Palatino", "Georgia", "Times New Roman", "Times", $serif-web;
+
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");

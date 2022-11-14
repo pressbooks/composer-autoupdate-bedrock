@@ -1,0 +1,27 @@
+{
+  "name": "pressbooks/pressbooks-clarke",
+  "description": "Named after Arthur C. Clarke, this is a simple book theme, with some light modern touches. Good for fiction and non-fiction. Body font is Tinos; headers Lato.",
+  "type": "wordpress-theme",
+  "require": {
+    "composer/installers": "^2"
+  },
+  "require-dev": {
+  },
+  "archive": {
+    "exclude": [
+      ".github"
+    ]
+  },
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Pressbooks (Book Oven Inc.)",
+      "email": "code@pressbooks.com"
+    }
+  ],
+  "keywords": [
+      "academic",
+      "nonfiction",
+      "textbook"
+    ]
+}

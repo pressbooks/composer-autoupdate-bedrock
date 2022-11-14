@@ -1,0 +1,19 @@
+{
+    "name": "pressbooks/pressbooks-christie",
+    "description": "Named after Agatha Christie, this theme is perfect for mysteries, memoirs, romance. Readable fonts and some nice design flourishes after chapter titles.",
+    "type": "wordpress-theme",
+    "license": "gpl-3.0-or-later",
+    "require": {
+        "composer/installers": "^2"
+    },
+    "authors": [
+        {
+            "name": "Pressbooks (Book Oven Inc.)",
+            "email": "code@pressbooks.com"
+        }
+    ],
+    "keywords": [
+        "genre fiction",
+        "literary"
+    ]
+}

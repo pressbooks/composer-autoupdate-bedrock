@@ -1,0 +1,11 @@
+// Colors
+
+// Override variables above this line, using the !default flag to allow further overrides.
+@import 'variables/colors';
+
+// Add custom SCSS below these imports and includes.
+@import 'components/colors';
+
+.pullquote.shaded {
+    background-color: #d8d8d8;
+}

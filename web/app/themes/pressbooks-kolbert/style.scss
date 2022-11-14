@@ -1,0 +1,188 @@
+$type: 'web';
+
+@import 'mixins', 'tables', 'textboxes';
+
+/* GENERAL STYLING */
+
+#content {
+  font-family: $font-1;
+  font-size: 1.2em;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #2e2e2e;
+
+  .entry-content a {
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-1;
+    line-height: 1.1;
+    margin-top: 1.9em;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  h1 {
+    @include head1;
+  }
+
+  h2 {
+    @include head2;
+  }
+
+  h3 {
+    @include head3;
+  }
+
+  h4 {
+    @include head4;
+  }
+
+  h5 {
+    @include head5;
+  }
+
+  h6 {
+    @include head6;
+  }
+
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p {
+    margin-top: 0;
+  }
+
+  /* SEPARATORS */
+
+  .section-break {
+    text-align: center;
+    text-indent: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .section-break-space {
+    visibility: hidden;
+    margin-top: 1em;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  .section-break-page {
+    text-align: center;
+    text-indent: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    page-break-after: always;
+  }
+
+  /****************************************
+  Structure
+*****************************************/
+
+  /****************************************
+  Title, Subtitle, Authors & Aphorism
+*****************************************/
+  .entry-title {
+    @include chaptertitle;
+
+    padding-bottom: 2em;
+    display: block;
+  }
+
+  .entry-title span {
+    @include chapternumber;
+
+    font-size: 0.75em;
+    display: block;
+  }
+
+  .chapter_subtitle {
+    @include chaptersubtitle;
+
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+
+  .chapter_author {
+    @include chapterauthor;
+
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+
+  .chapter_subtitle + .chapter_author {
+    margin-top: -2em;
+  }
+
+  .aphorism {
+    @include chapteraphorism;
+
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-right: 30%;
+    padding: 0;
+  }
+
+  .aphorism cite {
+    float: none;
+  }
+
+  .aphorism cite::before {
+    content: '\2014';
+  }
+
+  /*************************
+  Footnotes & Endnote
+**************************/
+  .endnotes h3 {
+    text-align: left;
+    text-indent: 0;
+    text-transform: none;
+  }
+
+  .textbox,
+  .textbox2 {
+    @include textboxtext;
+
+    line-height: 1.5;
+    margin: 1em 0;
+  }
+
+  .shaded {
+    background-color: $color6 !important;
+  }
+
+  @include textboxes();
+  @include tables();
+
+  .pullquote,
+  .pullquote-left,
+  .pullquote-right {
+    @include pullquotetext;
+  }
+
+  ol {
+    list-style-position: outside !important;
+  }
+
+  blockquote {
+    @include blockquotetext;
+  }
+
+  .wp-caption-text {
+    @include wpcaptiontext;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
