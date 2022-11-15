@@ -2,14 +2,11 @@ name: "Auto merge"
 on:
   pull_request:
     branches: [main]
-  workflow_dispatch:
       
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Github debug
-        run: echo ${{ github.event.pull_request.title }}
       - name: automerge
         if: startsWith(github.event.pull_request.title, 'Composer update with') 
         uses: actions/github-script@0.2.0
