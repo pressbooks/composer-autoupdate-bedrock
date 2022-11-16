@@ -7,9 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
+      - name: Merge composer update PRs
         if: startsWith(github.event.pull_request.title, 'Composer update with') 
         uses: actions/github-script@0.2.0
+        env:
+          GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
         with:
           script: |
             github.pullRequests.createReview({
@@ -23,4 +25,3 @@ jobs:
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number
             })
-          github-token: ${{github.token}}
