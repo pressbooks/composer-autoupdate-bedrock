@@ -1,4 +1,4 @@
-name: Pressbooks Auto updater
+name: Pressbooks composer updater
 
 on:
   workflow_call:
