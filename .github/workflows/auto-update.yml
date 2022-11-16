@@ -27,4 +27,6 @@ jobs:
         uses: kawax/composer-update-action@v2
         env:
           GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
+          GIT_NAME: Pressbooks 🤖
+          GIT_EMAIL: ops@pressbooks.com
           COMPOSER_PACKAGES: 'pressbooks/*'
