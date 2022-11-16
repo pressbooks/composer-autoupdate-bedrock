@@ -1,14 +1,14 @@
 name: "Auto merge"
 on:
- pull_request_target:
-  types: [opened]
-      
+  pull_request_target:
+    types: [opened]
+
 jobs:
   automerge:
+    if: startsWith(github.event.pull_request.title, 'Composer update with')
     runs-on: ubuntu-latest
     steps:
       - name: Merge composer update PRs
-        if: startsWith(github.event.pull_request.title, 'Composer update with') 
         uses: actions/github-script@0.2.0
         env:
           GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
