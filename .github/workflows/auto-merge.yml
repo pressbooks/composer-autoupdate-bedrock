@@ -25,4 +25,4 @@ jobs:
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number
             })
-          github-token: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
+          github-token: ${{github.token}}
