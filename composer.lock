@@ -4099,12 +4099,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pressbooks/pressbooks.git",
-                "reference": "487b69c720187a3d387b67f568b2f1098e01919f"
+                "reference": "b676ea006329ccff0f5c0493a084c960830e53f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pressbooks/pressbooks/zipball/487b69c720187a3d387b67f568b2f1098e01919f",
-                "reference": "487b69c720187a3d387b67f568b2f1098e01919f",
+                "url": "https://api.github.com/repos/pressbooks/pressbooks/zipball/b676ea006329ccff0f5c0493a084c960830e53f6",
+                "reference": "b676ea006329ccff0f5c0493a084c960830e53f6",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4184,7 +4184,7 @@
                 "issues": "https://github.com/pressbooks/pressbooks/issues/",
                 "source": "https://github.com/pressbooks/pressbooks/"
             },
-            "time": "2022-11-16T16:34:45+00:00"
+            "time": "2022-11-16T17:45:46+00:00"
         },
         {
             "name": "pressbooks/pressbooks-adunis",
