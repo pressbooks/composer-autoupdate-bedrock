@@ -1,8 +1,6 @@
 name: Pressbooks Auto updater
 
 on:
-  schedule:
-    - cron: '*/5 * * * *' #UTC
   workflow_call:
 
 jobs:
