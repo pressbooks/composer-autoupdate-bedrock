@@ -4035,16 +4035,16 @@
         },
         {
             "name": "pressbooks/pb-cli",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pressbooks/pb-cli.git",
-                "reference": "17c72b14234b4505b360728d7a2622629a3527f6"
+                "reference": "e529ae31833f73a36b2fa226453ca4aa96766f6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pressbooks/pb-cli/zipball/17c72b14234b4505b360728d7a2622629a3527f6",
-                "reference": "17c72b14234b4505b360728d7a2622629a3527f6",
+                "url": "https://api.github.com/repos/pressbooks/pb-cli/zipball/e529ae31833f73a36b2fa226453ca4aa96766f6d",
+                "reference": "e529ae31833f73a36b2fa226453ca4aa96766f6d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4054,7 +4054,7 @@
                 ]
             },
             "require": {
-                "php": "^7.4|8.0.*"
+                "php": "^8.0"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^2.1",
@@ -4089,9 +4089,9 @@
             "homepage": "https://github.com/pressbooks/pb-cli/",
             "support": {
                 "issues": "https://github.com/pressbooks/pb-cli/issues",
-                "source": "https://github.com/pressbooks/pb-cli/tree/3.0.1"
+                "source": "https://github.com/pressbooks/pb-cli/tree/3.1.0"
             },
-            "time": "2022-10-19T16:02:31+00:00"
+            "time": "2022-11-16T16:49:09+00:00"
         },
         {
             "name": "pressbooks/pressbooks",
@@ -4099,12 +4099,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pressbooks/pressbooks.git",
-                "reference": "497e2514286909dc8923cf5191807aeeff9759f2"
+                "reference": "487b69c720187a3d387b67f568b2f1098e01919f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pressbooks/pressbooks/zipball/497e2514286909dc8923cf5191807aeeff9759f2",
-                "reference": "497e2514286909dc8923cf5191807aeeff9759f2",
+                "url": "https://api.github.com/repos/pressbooks/pressbooks/zipball/487b69c720187a3d387b67f568b2f1098e01919f",
+                "reference": "487b69c720187a3d387b67f568b2f1098e01919f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4133,7 +4133,7 @@
                 "masterminds/html5": "^2.6",
                 "maxbanton/cwh": "^2.0",
                 "monolog/monolog": "^2.2",
-                "php": "^7.4|8.0.*",
+                "php": "^8.0|8.1.*",
                 "phpcompatibility/php-compatibility": "^9.3",
                 "pressbooks/mix": "^2.1",
                 "pressbooks/pb-cli": "^3",
@@ -4184,7 +4184,7 @@
                 "issues": "https://github.com/pressbooks/pressbooks/issues/",
                 "source": "https://github.com/pressbooks/pressbooks/"
             },
-            "time": "2022-11-14T13:53:43+00:00"
+            "time": "2022-11-16T16:34:45+00:00"
         },
         {
             "name": "pressbooks/pressbooks-adunis",
