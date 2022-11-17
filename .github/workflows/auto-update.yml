@@ -19,7 +19,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           tools: composer
-          extensions: redis
+          extensions: :redis
           php-version: ${{ matrix.php }}
       - name: Add HTTP basic auth credentials
         run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
