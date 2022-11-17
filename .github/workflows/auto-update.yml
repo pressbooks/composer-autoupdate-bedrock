@@ -19,20 +19,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           tools: composer
-          extensions: :redis
           php-version: ${{ matrix.php }}
-      - name: Install redis
-        run: |
-          curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-          echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
-          sudo apt-get update
-          sudo apt-get install redis valgrind libzstd-dev liblz4-dev
-      - name: Build phpredis
-        run: |
-          phpize
-          ./configure --enable-redis-lzf --enable-redis-zstd --enable-redis-igbinary --enable-redis-msgpack --enable-redis-lz4 --with-liblz4
-          sudo make -j$(nproc) install
-          echo 'extension = redis.so' | sudo tee -a $(php --ini | grep 'Scan for additional .ini files' | awk '{print $7}')/90-redis.ini
       - name: Add HTTP basic auth credentials
         run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
       - name: composer update action
