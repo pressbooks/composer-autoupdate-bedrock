@@ -1,0 +1,12 @@
+name: 'Composer Autoupdate Trigger'
+description: 'Triggers a Composer Autoupdate workflow in a Bedrock repository'
+inputs:
+  triggered-by:
+    description: 'The name of the repository that triggered this workflow'
+    required: true
+outputs:
+  workflow_id:
+    description: 'The ID of the workflow that was triggered'
+runs:
+  using: 'node16'
+  main: 'index.js'
