@@ -3,3 +3,4 @@
 vendor/*
 web/*
 auth.json
+node_modules/*
