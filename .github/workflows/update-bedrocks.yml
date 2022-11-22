@@ -1,0 +1,19 @@
+name: "Trigger Bedrock composer updates"
+on:
+  workflow_call:
+
+jobs:
+  bedrock_updates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PAT_FOR_GITHUB_ACTIONS }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: '${{ github.repository_owner }}',
+              repo: '${{ secrets.BEDROCK_1_REPO }}',
+              workflow_id: 'autoupdate.yml',
+              ref: 'main'
+            })
+
