@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.TEMPORAL_PAT }}
+          github-token: ${{ github.token }}
           script: |
             await github.rest.actions.createWorkflowDispatch({
               owner: '${{ github.repository_owner }}'  ,
