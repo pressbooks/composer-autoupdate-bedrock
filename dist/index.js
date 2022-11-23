@@ -11043,7 +11043,7 @@ try {
         auth: token,
     });
     console.log(`Triggered by ${trigger}!`);
-    for (let repo in reposToCallAction) {
+    for (const repo of reposToCallAction) {
         console.log(`Calling createWorkflowDispatch on ${repo}`);
         octokit.rest.actions.createWorkflowDispatch({
             owner: 'pressbooks',
