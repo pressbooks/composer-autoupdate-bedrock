@@ -73,3 +73,28 @@ jobs:
           token: ${{ secrets.ORGANIZATION_PAT }}
 
 ```
+
+### Development
+
+In order to submit a new version of this action, you need to create a new tag in the format `vX.X` and push it to the repository or update an existing tag.
+
+You should compile the code before pushing the tag, to do that you need to run the following command:
+
+```bash
+ncc build index.js --license licenses.txt
+```
+
+This will create a new folder called `dist` with the compiled code bundling node_modules dependencies.
+
+#### Pushing a new version
+
+```bash
+git commit -m "feat: new version"
+git tag -a -m "feat: feature description" v1.7
+git push --follow-tags
+```
+#### Using the new version in a plugin
+
+```yaml
+  uses: pressbooks/composer-autoupdate-bedrock@vX.X    
+```
