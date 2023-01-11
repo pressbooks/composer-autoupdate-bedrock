@@ -11032,7 +11032,6 @@ const core = __nccwpck_require__(8890);
 const { Octokit } = __nccwpck_require__(8790);
 
 const reposToDispatchComposerUpdate = [
-    'uses-updater',
     'pressbooksedu-golden-bedrock',
     'client-bedrock',
     'pressbookspublic-bedrock',
