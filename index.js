@@ -22,7 +22,7 @@ try {
             owner: 'pressbooks',
             repo: repo,
             workflow_id: 'autoupdate.yml',
-            ref: 'development',
+            ref: 'dev',
         }).then((response) => {
             console.log(`Github API response: ${response}`);
         });
