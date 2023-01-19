@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Bedrock Composer Update
-        uses: pressbooks/composer-autoupdate-bedrock@v1.6
+        uses: pressbooks/composer-autoupdate-bedrock@v1
         with:
           triggered-by: ${{ github.repository }}
           token: ${{ secrets.ORGANIZATION_PAT }}
@@ -76,7 +76,7 @@ jobs:
 
 ### Development
 
-In order to submit a new version of this action, you need to create a new tag in the format `vX.X` and push it to the repository or update an existing tag.
+In order to submit a new version of this action, you need to create a new tag in the format `vX` and push it to the repository or update an existing tag.
 
 You should compile the code before pushing the tag, to do that you need to run the following command:
 
@@ -90,11 +90,11 @@ This will create a new folder called `dist` with the compiled code bundling node
 
 ```bash
 git commit -m "feat: new version"
-git tag -a -m "feat: feature description" v1.7
+git tag -a -m "feat: feature description" v1
 git push --follow-tags
 ```
 #### Using the new version in a plugin
 
 ```yaml
-  uses: pressbooks/composer-autoupdate-bedrock@vX.X    
+  uses: pressbooks/composer-autoupdate-bedrock@vX    
 ```
