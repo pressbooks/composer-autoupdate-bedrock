@@ -1,4 +1,4 @@
-name: Lint Theme Styles
+name: Lint and Build assets
 on:
   workflow_call:
 jobs:
@@ -14,6 +14,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install
-      - run: npm run install-build-tools
-      - run: npm test
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+      - name: Lint
+        run: npm ci && npm test
+      - name: Build assets
+        run: npm run build --if-present
