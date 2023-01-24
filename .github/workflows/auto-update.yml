@@ -28,4 +28,5 @@ jobs:
           GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
           GIT_NAME: Pressbooks 🤖
           GIT_EMAIL: ops@pressbooks.com
+          APP_SINGLE_BRANCH: true
           COMPOSER_PACKAGES: 'pressbooks/*'
