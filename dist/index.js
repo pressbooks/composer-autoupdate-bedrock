@@ -11032,7 +11032,7 @@ const core = __nccwpck_require__(1041);
 const { Octokit } = __nccwpck_require__(4428);
 
 const reposToDispatchComposerUpdate = [
-    'uses-bedrock'
+    'uses-updater'
 ];
 
 try {
