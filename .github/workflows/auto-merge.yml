@@ -4,7 +4,7 @@ on:
 
 jobs:
   automerge:
-    if: startsWith(github.event.pull_request.title, 'Composer update with')
+    if: startsWith(github.event.pull_request.title, 'Composer update')
     runs-on: ubuntu-latest
     steps:
       - name: Approve Composer auto update PRs
