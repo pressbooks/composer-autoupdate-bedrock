@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Setup PHP with Composer
         uses: shivammathur/setup-php@v2
         with:
