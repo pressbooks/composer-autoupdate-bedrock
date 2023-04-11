@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const { Octokit } = require("@octokit/action");
+const {Octokit} = require("@octokit/action");
 
 const reposToDispatchComposerUpdate = [
     'uses-updater'
@@ -8,6 +8,10 @@ const reposToDispatchComposerUpdate = [
 try {
     const trigger = core.getInput('triggered-by');
     const token = core.getInput('token');
+    let branch = core.getInput('branch');
+    if (branch === 'production') {
+        branch = 'staging';
+    }
     const octokit = new Octokit({
         auth: token,
     });
@@ -18,7 +22,7 @@ try {
             owner: 'pressbooks',
             repo: repo,
             workflow_id: 'autoupdate.yml',
-            ref: 'dev',
+            ref: branch,
         }).then((response) => {
             console.log(`Github API response: ${response}`);
         });
