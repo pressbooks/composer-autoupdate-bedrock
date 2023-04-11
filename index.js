@@ -11,7 +11,7 @@ try {
     let branch = core.getInput('branch');
     if (branch === 'production') {
         branch = 'staging';
-    }
+    }``
     const octokit = new Octokit({
         auth: token,
     });
