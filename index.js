@@ -9,9 +9,7 @@ try {
     const trigger = core.getInput('triggered-by');
     const token = core.getInput('token');
     let branch = core.getInput('branch');
-    if (branch === 'production') {
-        branch = 'staging';
-    }
+    branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
     const octokit = new Octokit({
         auth: token,
     });
