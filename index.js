@@ -11,11 +11,12 @@ try {
     let branch = core.getInput('branch');
     if (branch === 'production') {
         branch = 'staging';
-    }``
+    }
     const octokit = new Octokit({
         auth: token,
     });
     console.log(`Triggered by ${trigger}!`);
+    console.log(`on branch ${branch}!`);
     for (const repo of reposToDispatchComposerUpdate) {
         console.log(`Calling createWorkflowDispatch on ${repo}`);
         octokit.rest.actions.createWorkflowDispatch({
