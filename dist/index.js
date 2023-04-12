@@ -11032,7 +11032,11 @@ const core = __nccwpck_require__(8890);
 const {Octokit} = __nccwpck_require__(8790);
 
 const reposToDispatchComposerUpdate = [
-    'uses-updater'
+    'pressbooksedu-golden-bedrock',
+    'client-bedrock',
+    'pressbookspublic-bedrock',
+    'pressbookspub-bedrock',
+    'wisc-bedrock',
 ];
 
 try {
@@ -11044,7 +11048,6 @@ try {
         auth: token,
     });
     console.log(`Triggered by ${trigger}!`);
-    console.log(`on branch ${branch}!`);
     for (const repo of reposToDispatchComposerUpdate) {
         console.log(`Calling createWorkflowDispatch on ${repo}`);
         octokit.rest.actions.createWorkflowDispatch({
