@@ -7,7 +7,7 @@ jobs:
     if: startsWith(github.event.pull_request.title, 'Composer update with')
     runs-on: ubuntu-latest
     steps:
-      - name: Merge composer update PRs
+      - name: Merge Composer auto update PRs
         uses: actions/github-script@v6
         env:
           GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}

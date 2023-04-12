@@ -71,6 +71,7 @@ jobs:
         with:
           triggered-by: ${{ github.repository }}
           token: ${{ secrets.ORGANIZATION_PAT }}
+          branch: ${{ github.ref }}
 
 ```
 

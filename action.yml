@@ -7,6 +7,9 @@ inputs:
   token:
     description: 'The GitHub token to use for the triggered workflow'
     required: true
+  branch:
+    description: 'The GitHub branch to use for the triggered workflow'
+    required: true
 outputs:
   workflow_id:
     description: 'The ID of the workflow that was triggered'
