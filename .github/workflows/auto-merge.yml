@@ -19,10 +19,20 @@ jobs:
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number,
               event: 'APPROVE'
-            })
-            github.rest.pulls.merge({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number
+            }).then(() => {
+              github.rest.pulls.listReviews({
+                owner: context.payload.repository.owner.login,
+                repo: context.payload.repository.name,
+                pull_number: context.payload.pull_request.number
+              }).then((reviews) => {
+                const approvingReviews = reviews.data.filter(review => review.state === 'APPROVED')
+                if (approvingReviews.length > 0) {
+                  github.rest.pulls.merge({
+                    owner: context.payload.repository.owner.login,
+                    repo: context.payload.repository.name,
+                    pull_number: context.payload.pull_request.number
+                  })
+                }
+              })
             })
           github-token: ${{github.token}}
