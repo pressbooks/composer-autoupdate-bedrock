@@ -4,10 +4,15 @@ on:
 
 jobs:
   automerge:
-    if: startsWith(github.event.pull_request.title, 'Composer update with')
     runs-on: ubuntu-latest
     steps:
+      - name: Check Pull Request Title
+        id: title-check
+        run:
+          echo "::set-output name=shouldMerge::${{ startsWith(github.event.pull_request.title, 'chore: Composer update with') }}"
+
       - name: Merge Composer auto update PRs
+        if: steps.title-check.outputs.shouldMerge == 'true'
         uses: actions/github-script@v6
         env:
           GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
