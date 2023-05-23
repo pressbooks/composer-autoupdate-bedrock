@@ -6,7 +6,7 @@ const reposToDispatchComposerUpdate = [
     'client-bedrock',
     'pressbookspublic-bedrock',
     'pressbookspub-bedrock',
-    'wisc-bedrock',
+    'wisc-bedrock'
 ];
 
 try {
@@ -19,7 +19,7 @@ try {
     });
     console.log(`Triggered by ${trigger}!`);
     for (const repo of reposToDispatchComposerUpdate) {
-        console.log(`Calling createWorkflowDispatch on ${repo}`);   
+        console.log(`Calling createWorkflowDispatch on ${repo}`);
         octokit.rest.actions.createWorkflowDispatch({
             owner: 'pressbooks',
             repo: repo,
