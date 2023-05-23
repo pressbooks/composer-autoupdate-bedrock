@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: Check Pull Request Title
         id: title-check
-        run:
-          echo "::set-output name=shouldMerge::${{ startsWith(github.event.pull_request.title, 'chore: Composer update with') }}"
+        run: |
+          echo "##[set-output name=shouldMerge;]$(echo ${{ github.event.pull_request.title }} | grep -q '^chore: Composer update with' && echo true || echo false)"
 
       - name: Merge Composer auto update PRs
         if: steps.title-check.outputs.shouldMerge == 'true'
