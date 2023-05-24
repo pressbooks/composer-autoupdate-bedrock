@@ -3,10 +3,8 @@ const {Octokit} = require("@octokit/action");
 
 const reposToDispatchComposerUpdate = [
     'pressbooksedu-golden-bedrock',
-    'client-bedrock',
     'pressbookspublic-bedrock',
-    'pressbookspub-bedrock',
-    'wisc-bedrock'
+    'pressbookspub-bedrock'
 ];
 
 try {
