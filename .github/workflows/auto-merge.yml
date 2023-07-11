@@ -9,7 +9,40 @@ jobs:
       - name: Check Pull Request Title
         id: title-check
         run: |
-          echo "shouldMerge=$(echo ${{ github.event.pull_request.title }} | grep -q '^chore: Composer update with' && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "shouldMerge=$(echo ${{ github.event.pull_request.title }} | grep -Eq '^chore(l10n|i18n)?: update languages|^chore: Composer update with' && echo true || echo false)" >> $GITHUB_OUTPUT
+
+      - name: Wait for checks to complete
+        if: steps.title-check.outputs.shouldMerge == 'true'
+        uses: actions/github-script@v6
+        env:
+          GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
+        with:
+          result-encoding: string
+          script: |
+            const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+            async function waitForChecks() {
+              while (true) {
+                const response = await github.rest.checks.listForRef({
+                  owner: context.payload.repository.owner.login,
+                  repo: context.payload.repository.name,
+                  ref: context.payload.pull_request.head.ref
+                });
+                // Filter out checks that are not completed and not the current check
+                const checks = response.data.check_runs.filter(check => {
+            return check.status !== 'completed' && check.name !== 'automerge / automerge';
+            });
+                if (checks.length === 0) {
+                  console.log('All checks completed.');
+                  break;
+                }
+                console.log('Waiting for checks to complete...');
+                await wait(10000); // Wait for 10 seconds
+              }
+            }
+
+            return waitForChecks();
+          github-token: ${{github.token}}
 
       - name: Merge Composer auto update PRs
         if: steps.title-check.outputs.shouldMerge == 'true'
