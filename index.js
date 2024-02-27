@@ -1,9 +1,8 @@
 const core = require('@actions/core');
-// const {Octokit} = require("@octokit/action");
 const { Octokit: ActionOctokit } = require("@octokit/action");
 const { Octokit: RestOctokit } = require("@octokit/rest");
 const isGitHubActions = process.env.GITHUB_ACTION;
-// const bedrockBranchTarget = ['lti-development','dev','staging','production']
+
 const bedrockBranchTarget = {};
 bedrockBranchTarget['dev'] = ['dev','lti-development'];
 bedrockBranchTarget['staging'] = ['staging'];
@@ -19,8 +18,8 @@ async function trigger() {
       // Use core.getInput if in GitHub Actions, otherwise use a default value or environment variable
       const trigger = isGitHubActions ? core.getInput('triggered-by') : process.env.INPUT_TRIGGERED_BY || 'default-trigger';
       const token = isGitHubActions ? core.getInput('token') : process.env.INPUT_TOKEN || 'default-token';
-      const branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
-      // branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
+      let branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
+      branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
 
       const actionOctokit = new ActionOctokit({
           auth: token,
@@ -30,16 +29,20 @@ async function trigger() {
 
       console.log(`Triggered by ${trigger}!`);
       for (const repo of reposToDispatchComposerUpdate) {
+        console.log(`Calling createWorkflowDispatch on ${repo.name}`);
         for (const branchValue of bedrockBranchTarget[branch])
-          console.log(`Calling createWorkflowDispatch on ${repo} in branch ${branchValue}`);
-          // actionOctokit.rest.actions.createWorkflowDispatch({
-          //     owner: 'pressbooks',
-          //     repo: repo,
-          //     workflow_id: 'autoupdate.yml',
-          //     ref: branch,
-          // }).then((response) => {
-          //     console.log(`Github API response: ${response}`);
-          // });
+          console.log(`in branch ${branchValue}`);
+          actionOctokit.rest.actions.createWorkflowDispatch({
+              owner: 'pressbooks',
+              repo: repo,
+              workflow_id: 'autoupdate.yml',
+              ref: branchValue,
+              inputs: {
+                package: trigger,
+              }
+          }).then((response) => {
+              console.log(`Github API response: ${response}`);
+          });
       }
   } catch (error) {
       core.setFailed(error.message);
