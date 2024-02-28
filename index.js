@@ -2,11 +2,12 @@ const core = require('@actions/core');
 const { Octokit: ActionOctokit } = require("@octokit/action");
 const { Octokit: RestOctokit } = require("@octokit/rest");
 const isGitHubActions = process.env.GITHUB_ACTION;
+const bedrockBranchTarget = {
+  'dev': ['dev', 'lti-development'],
+  'staging': ['staging'],
+  'production': ['production']
+};
 
-const bedrockBranchTarget = {};
-bedrockBranchTarget['dev'] = ['test-development'];
-bedrockBranchTarget['staging'] = ['staging'];
-bedrockBranchTarget['production'] = ['production'];
 
 trigger();
 
@@ -32,17 +33,19 @@ async function trigger() {
         console.log(`Calling createWorkflowDispatch on ${repo.name}`);
         for (const branchValue of bedrockBranchTarget[branch])
           console.log(`in branch ${branchValue}`);
-          actionOctokit.rest.actions.createWorkflowDispatch({
-              owner: 'pressbooks',
-              repo: repo,
-              workflow_id: 'autoupdate.yml',
-              ref: branchValue,
-              inputs: {
-                package: trigger,
-              }
-          }).then((response) => {
-              console.log(`Github API response: ${response}`);
-          });
+          if (await checkComposerPackage(trigger,'pressbooks',repo, 'composer.json', branchValue)) {
+            actionOctokit.rest.actions.createWorkflowDispatch({
+                owner: 'pressbooks',
+                repo: repo,
+                workflow_id: 'autoupdate.yml',
+                ref: branchValue,
+                inputs: {
+                  package: trigger,
+                }
+            }).then((response) => {
+                console.log(`Github API response: ${response}`);
+            });
+          }
       }
   } catch (error) {
       core.setFailed(error.message);
@@ -80,5 +83,36 @@ async function listBedrockRepos(organization) {
     return bedrockRepos;
   } catch (error) {
     console.error('Error fetching repositories:', error);
+  }
+}
+
+async function checkComposerPackage(packageName, owner, repo, path, branch) {
+  try {
+
+    const restOctokit = new RestOctokit({
+      auth: token,
+    });
+
+    // Fetch the content of composer.json from the repository
+    const { data } = await restOctokit.repos.getContent({
+      owner,
+      repo,
+      path,
+      ref: branch,
+    });
+
+    // GitHub API returns the content in base64 encoding
+    const content = Buffer.from(data.content, 'base64').toString();
+
+    // Parse the JSON content
+    const composerJson = JSON.parse(content);
+
+    // Check if the package exists in the 'require' section
+    const packageFound = composerJson.require && composerJson.require[packageName] !== undefined;
+
+    console.log(`Package ${packageName} found: ${packageFound}`);
+    return packageFound;
+  } catch (error) {
+    console.error('Error fetching composer.json:', error.message);
   }
 }
