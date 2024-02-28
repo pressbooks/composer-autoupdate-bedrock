@@ -14833,6 +14833,7 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+const fetch = __nccwpck_require__(2460);
 const core = __nccwpck_require__(6024);
 const {
   Octokit: ActionOctokit
@@ -14865,6 +14866,9 @@ async function trigger() {
 
     const actionOctokit = new ActionOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
 
     const reposToDispatchComposerUpdate = await listBedrockRepos(owner);
@@ -14910,6 +14914,9 @@ async function listBedrockRepos(organization) {
 
     const restOctokit = new RestOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
 
     // Fetch all repositories for the organization
@@ -14939,6 +14946,9 @@ async function checkComposerPackage(packageName, owner, repo, path, branch, toke
 
     const restOctokit = new RestOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
 
     // Fetch the content of composer.json from the repository
@@ -14971,6 +14981,9 @@ async function checkBranchExists(repo, branch, token) {
   try {
     const restOctokit = new RestOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
     // Attempt to get the branch
     const {

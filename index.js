@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const core = require('@actions/core');
 const {
   Octokit: ActionOctokit
@@ -30,6 +31,9 @@ async function trigger() {
 
     const actionOctokit = new ActionOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
 
     const reposToDispatchComposerUpdate = await listBedrockRepos(owner);
@@ -75,6 +79,9 @@ async function listBedrockRepos(organization) {
 
     const restOctokit = new RestOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
 
     // Fetch all repositories for the organization
@@ -104,6 +111,9 @@ async function checkComposerPackage(packageName, owner, repo, path, branch, toke
 
     const restOctokit = new RestOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
 
     // Fetch the content of composer.json from the repository
@@ -136,6 +146,9 @@ async function checkBranchExists(repo, branch, token) {
   try {
     const restOctokit = new RestOctokit({
       auth: token,
+      request: {
+        fetch: fetch,
+      },
     });
     // Attempt to get the branch
     const {
