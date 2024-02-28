@@ -51,7 +51,7 @@ async function trigger() {
             console.log('dispatched')
             actionOctokit.rest.actions.createWorkflowDispatch({
                 owner: owner,
-                repo: repo,
+                repo: repo.name,
                 workflow_id: 'autoupdate.yml',
                 ref: branchValue,
                 inputs: {
