@@ -1,7 +1,13 @@
 const core = require('@actions/core');
-const { Octokit: ActionOctokit } = require("@octokit/action");
-const { Octokit: RestOctokit } = require("@octokit/rest");
+const {
+  Octokit: ActionOctokit
+} = require("@octokit/action");
+const {
+  Octokit: RestOctokit
+} = require("@octokit/rest");
 const isGitHubActions = process.env.GITHUB_ACTION;
+// const isGitHubActions = false;
+const owner = 'pressbooks';
 const bedrockBranchTarget = {
   'dev': ['dev', 'lti-development'],
   'staging': ['staging'],
@@ -13,29 +19,34 @@ trigger();
 
 async function trigger() {
   try {
-      // Check if running in GitHub Actions environment
-      // const isGitHubActions = process.env.GITHUB_ACTION || false;
+    // Check if running in GitHub Actions environment
+    // const isGitHubActions = process.env.GITHUB_ACTION || false;
 
-      // Use core.getInput if in GitHub Actions, otherwise use a default value or environment variable
-      const trigger = isGitHubActions ? core.getInput('triggered-by') : process.env.INPUT_TRIGGERED_BY || 'default-trigger';
-      const token = isGitHubActions ? core.getInput('token') : process.env.INPUT_TOKEN || 'default-token';
-      let branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
-      branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
+    // Use core.getInput if in GitHub Actions, otherwise use a default value or environment variable
+    const trigger = isGitHubActions ? core.getInput('triggered-by') : process.env.INPUT_TRIGGERED_BY || 'default-trigger';
+    const token = isGitHubActions ? core.getInput('token') : process.env.INPUT_TOKEN || 'default-token';
+    let branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
+    branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
 
-      const actionOctokit = new ActionOctokit({
-          auth: token,
-      });
+    const actionOctokit = new ActionOctokit({
+      auth: token,
+    });
 
-      const reposToDispatchComposerUpdate = await listBedrockRepos("pressbooks");
+    const reposToDispatchComposerUpdate = await listBedrockRepos(owner);
 
-      console.log(`Triggered by ${trigger}!`);
-      for (const repo of reposToDispatchComposerUpdate) {
+    console.log(`Triggered by ${trigger}!`);
+    for (repo of reposToDispatchComposerUpdate) {
+      if (repo.name === 'testing-bedrock') {
         console.log(`Calling createWorkflowDispatch on ${repo.name}`);
-        for (const branchValue of bedrockBranchTarget[branch])
+        for (branchValue of bedrockBranchTarget[branch]) {
           console.log(`in branch ${branchValue}`);
-          if (await checkComposerPackage(trigger,'pressbooks',repo, 'composer.json', branchValue)) {
+          if (
+            await checkBranchExists(repo.name, branchValue, token) &&
+            await checkComposerPackage(trigger, 'pressbooks', repo.name, 'composer.json', branchValue, token)
+          ) {
+            console.log('dispatched')
             actionOctokit.rest.actions.createWorkflowDispatch({
-                owner: 'pressbooks',
+                owner: owner,
                 repo: repo,
                 workflow_id: 'autoupdate.yml',
                 ref: branchValue,
@@ -46,9 +57,11 @@ async function trigger() {
                 console.log(`Github API response: ${response}`);
             });
           }
+        }
       }
+    }
   } catch (error) {
-      core.setFailed(error.message);
+    core.setFailed(error.message);
   }
 }
 
@@ -86,7 +99,7 @@ async function listBedrockRepos(organization) {
   }
 }
 
-async function checkComposerPackage(packageName, owner, repo, path, branch) {
+async function checkComposerPackage(packageName, owner, repo, path, branch, token) {
   try {
 
     const restOctokit = new RestOctokit({
@@ -94,7 +107,9 @@ async function checkComposerPackage(packageName, owner, repo, path, branch) {
     });
 
     // Fetch the content of composer.json from the repository
-    const { data } = await restOctokit.repos.getContent({
+    const {
+      data
+    } = await restOctokit.repos.getContent({
       owner,
       repo,
       path,
@@ -114,5 +129,34 @@ async function checkComposerPackage(packageName, owner, repo, path, branch) {
     return packageFound;
   } catch (error) {
     console.error('Error fetching composer.json:', error.message);
+  }
+}
+
+async function checkBranchExists(repo, branch, token) {
+  try {
+    const restOctokit = new RestOctokit({
+      auth: token,
+    });
+    // Attempt to get the branch
+    const {
+      data
+    } = await restOctokit.rest.repos.getBranch({
+      owner,
+      repo,
+      branch,
+    });
+
+    // If the request is successful, the branch exists
+    console.log(`Branch ${branch} exists in ${owner}/${repo}`);
+    return true;
+  } catch (error) {
+    // If the branch is not found, GitHub API throws a 404 error
+    if (error.status === 404) {
+      console.log(`Branch ${branch} does not exist in ${owner}/${repo}`);
+    } else {
+      // Log other errors
+      console.error(`Error checking branch existence: ${error.message}`);
+    }
+    return false;
   }
 }
