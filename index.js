@@ -4,7 +4,7 @@ const { Octokit: RestOctokit } = require("@octokit/rest");
 const isGitHubActions = process.env.GITHUB_ACTION;
 
 const bedrockBranchTarget = {};
-bedrockBranchTarget['dev'] = ['dev','lti-development'];
+bedrockBranchTarget['dev'] = ['test-development'];
 bedrockBranchTarget['staging'] = ['staging'];
 bedrockBranchTarget['production'] = ['production'];
 
