@@ -4,3 +4,4 @@ vendor/*
 web/*
 auth.json
 node_modules/*
+run.sh

@@ -2,6 +2,14 @@ name: Pressbooks composer updater
 
 on:
   workflow_call:
+    inputs:
+      package:
+        required: true
+        type: string
+        
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   composer_update_job:
@@ -30,4 +38,4 @@ jobs:
           GIT_EMAIL: ops@pressbooks.com
           APP_SINGLE_BRANCH: 1
           GIT_COMMIT_PREFIX: 'chore: '
-          COMPOSER_PACKAGES: 'pressbooks/*'
+          COMPOSER_PACKAGES: ${{github.event.inputs.package}}
