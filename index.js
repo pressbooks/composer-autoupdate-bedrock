@@ -38,27 +38,25 @@ async function dispatchWorkflow() {
 
     console.log(`Triggered by ${trigger}!`);
     for (repo of reposToDispatchComposerUpdate) {
-      if (repo.name === 'testing-bedrock') {
-        console.log(`Calling createWorkflowDispatch on ${repo.name}`);
-        for (branchValue of bedrockBranchTarget[branch]) {
-          console.log(`in branch ${branchValue}`);
-          if (
-            await checkBranchExists(repo.name, branchValue) &&
-            await checkComposerPackage(trigger, 'pressbooks', repo.name, 'composer.json', branchValue)
-          ) {
-            console.log('dispatched')
-            actionOctokit.rest.actions.createWorkflowDispatch({
-                owner: owner,
-                repo: repo.name,
-                workflow_id: 'autoupdate.yml',
-                ref: branchValue,
-                inputs: {
-                  package: trigger,
-                }
-            }).then((response) => {
-                console.log(`Github API response: ${response}`);
-            });
-          }
+      console.log(`Calling createWorkflowDispatch on ${repo.name}`);
+      for (branchValue of bedrockBranchTarget[branch]) {
+        console.log(`in branch ${branchValue}`);
+        if (
+          await checkBranchExists(repo.name, branchValue) &&
+          await checkComposerPackage(trigger, 'pressbooks', repo.name, 'composer.json', branchValue)
+        ) {
+          console.log('dispatched')
+          actionOctokit.rest.actions.createWorkflowDispatch({
+              owner: owner,
+              repo: repo.name,
+              workflow_id: 'autoupdate.yml',
+              ref: branchValue,
+              inputs: {
+                package: trigger,
+              }
+          }).then((response) => {
+              console.log(`Github API response: ${response}`);
+          });
         }
       }
     }
