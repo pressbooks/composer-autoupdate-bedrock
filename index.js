@@ -1,13 +1,9 @@
 const fetch = require('node-fetch');
 const core = require('@actions/core');
-const {
-  Octokit: ActionOctokit
-} = require("@octokit/action");
-const {
-  Octokit: RestOctokit
-} = require("@octokit/rest");
-const isGitHubActions = process.env.GITHUB_ACTION;
-// const isGitHubActions = false;
+const { Octokit: ActionOctokit } = require("@octokit/action");
+const { Octokit: RestOctokit } = require("@octokit/rest");
+
+const isGitHubActions = process.env.GITHUB_ACTION || false;
 const owner = 'pressbooks';
 const bedrockBranchTarget = {
   'dev': ['dev', 'lti-development'],
@@ -15,27 +11,29 @@ const bedrockBranchTarget = {
   'production': ['production']
 };
 
+const trigger = isGitHubActions ? core.getInput('triggered-by') : process.env.INPUT_TRIGGERED_BY || 'default-trigger';
+const token = isGitHubActions ? core.getInput('token') : process.env.INPUT_TOKEN || 'default-token';
+let branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
+branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
 
-trigger();
+const actionOctokit = new ActionOctokit({
+  auth: token,
+  request: {
+    fetch: fetch,
+  },
+});
 
-async function trigger() {
+const restOctokit = new RestOctokit({
+  auth: token,
+  request: {
+    fetch: fetch,
+  },
+});
+
+dispatchWorkflow();
+
+async function dispatchWorkflow() {
   try {
-    // Check if running in GitHub Actions environment
-    // const isGitHubActions = process.env.GITHUB_ACTION || false;
-
-    // Use core.getInput if in GitHub Actions, otherwise use a default value or environment variable
-    const trigger = isGitHubActions ? core.getInput('triggered-by') : process.env.INPUT_TRIGGERED_BY || 'default-trigger';
-    const token = isGitHubActions ? core.getInput('token') : process.env.INPUT_TOKEN || 'default-token';
-    let branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
-    branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
-
-    const actionOctokit = new ActionOctokit({
-      auth: token,
-      request: {
-        fetch: fetch,
-      },
-    });
-
     const reposToDispatchComposerUpdate = await listBedrockRepos(owner);
 
     console.log(`Triggered by ${trigger}!`);
@@ -45,8 +43,8 @@ async function trigger() {
         for (branchValue of bedrockBranchTarget[branch]) {
           console.log(`in branch ${branchValue}`);
           if (
-            await checkBranchExists(repo.name, branchValue, token) &&
-            await checkComposerPackage(trigger, 'pressbooks', repo.name, 'composer.json', branchValue, token)
+            await checkBranchExists(repo.name, branchValue) &&
+            await checkComposerPackage(trigger, 'pressbooks', repo.name, 'composer.json', branchValue)
           ) {
             console.log('dispatched')
             actionOctokit.rest.actions.createWorkflowDispatch({
@@ -75,28 +73,17 @@ async function listBedrockRepos(organization) {
     let page = 1;
     let reposResponse = [];
 
-    const token = isGitHubActions ? core.getInput('token') : process.env.INPUT_TOKEN || 'default-token';
-
-    const restOctokit = new RestOctokit({
-      auth: token,
-      request: {
-        fetch: fetch,
-      },
-    });
-
-    // Fetch all repositories for the organization
     do {
       reposResponse = await restOctokit.rest.repos.listForOrg({
         org: organization,
-        type: 'private', // Adjust this as needed
+        type: 'private',
         per_page: 100,
         page,
       });
       allRepos.push(...reposResponse.data);
       page++;
-    } while (reposResponse.data.length === 100); // GitHub API pagination max is 100 items
+    } while (reposResponse.data.length === 100);
 
-    // Filter repositories by name pattern *-bedrock
     const bedrockRepos = allRepos.filter(repo => repo.name.endsWith('-bedrock'));
 
     console.log('Repositories ending with -bedrock:', bedrockRepos.map(repo => repo.name));
@@ -106,33 +93,17 @@ async function listBedrockRepos(organization) {
   }
 }
 
-async function checkComposerPackage(packageName, owner, repo, path, branch, token) {
+async function checkComposerPackage(packageName, owner, repo, path, branch) {
   try {
-
-    const restOctokit = new RestOctokit({
-      auth: token,
-      request: {
-        fetch: fetch,
-      },
-    });
-
-    // Fetch the content of composer.json from the repository
-    const {
-      data
-    } = await restOctokit.repos.getContent({
+    const { data } = await restOctokit.repos.getContent({
       owner,
       repo,
       path,
       ref: branch,
     });
 
-    // GitHub API returns the content in base64 encoding
     const content = Buffer.from(data.content, 'base64').toString();
-
-    // Parse the JSON content
     const composerJson = JSON.parse(content);
-
-    // Check if the package exists in the 'require' section
     const packageFound = composerJson.require && composerJson.require[packageName] !== undefined;
 
     console.log(`Package ${packageName} found: ${packageFound}`);
@@ -142,32 +113,20 @@ async function checkComposerPackage(packageName, owner, repo, path, branch, toke
   }
 }
 
-async function checkBranchExists(repo, branch, token) {
+async function checkBranchExists(repo, branch) {
   try {
-    const restOctokit = new RestOctokit({
-      auth: token,
-      request: {
-        fetch: fetch,
-      },
-    });
-    // Attempt to get the branch
-    const {
-      data
-    } = await restOctokit.rest.repos.getBranch({
+    const { data } = await restOctokit.rest.repos.getBranch({
       owner,
       repo,
       branch,
     });
 
-    // If the request is successful, the branch exists
     console.log(`Branch ${branch} exists in ${owner}/${repo}`);
     return true;
   } catch (error) {
-    // If the branch is not found, GitHub API throws a 404 error
     if (error.status === 404) {
       console.log(`Branch ${branch} does not exist in ${owner}/${repo}`);
     } else {
-      // Log other errors
       console.error(`Error checking branch existence: ${error.message}`);
     }
     return false;
