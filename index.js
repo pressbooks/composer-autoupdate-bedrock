@@ -45,7 +45,7 @@ async function dispatchWorkflow() {
           await checkBranchExists(repo.name, branchValue) &&
           await checkComposerPackage(trigger, 'pressbooks', repo.name, 'composer.json', branchValue)
         ) {
-          console.log('dispatched')
+          console.log(`Dispatched update on ${repo.name} in branch ${branchValue} for ${trigger} package`)
           actionOctokit.rest.actions.createWorkflowDispatch({
               owner: owner,
               repo: repo.name,

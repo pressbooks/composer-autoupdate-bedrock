@@ -31,7 +31,7 @@ on:
 
 jobs:
   composer_update_job:
-    uses: pressbooks/composer-autoupdate-bedrock/.github/workflows/auto-update.yml@v1
+    uses: pressbooks/composer-autoupdate-bedrock/.github/workflows/auto-update.yml@main
     secrets: inherit
 ```
 
@@ -45,7 +45,7 @@ on:
 
 jobs:
   automerge:
-    uses: pressbooks/composer-autoupdate-bedrock/.github/workflows/auto-merge.yml@v1
+    uses: pressbooks/composer-autoupdate-bedrock/.github/workflows/auto-merge.yml@main
     secrets: inherit
 ```
 
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Bedrock Composer Update
-        uses: pressbooks/composer-autoupdate-bedrock@v1
+        uses: pressbooks/composer-autoupdate-bedrock@main
         with:
           triggered-by: ${{ github.repository }}
           token: ${{ secrets.ORGANIZATION_PAT }}
@@ -98,4 +98,10 @@ git push --follow-tags
 
 ```yaml
   uses: pressbooks/composer-autoupdate-bedrock@vX    
+```
+
+or if always using the latest version
+
+```yaml
+  uses: pressbooks/composer-autoupdate-bedrock@main   
 ```
