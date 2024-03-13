@@ -1,5 +1,8 @@
-export INPUT_TRIGGERED_BY="manual"
-export INPUT_TOKEN=""
+export INPUT_TRIGGERED_BY="pressbooks/fake-plugin"
 export INPUT_BRANCH="refs/heads/dev"
-export GITHUB_ACTION="false"
+export GITHUB_ACTION=""
+export AWS_SQS_ARN_DEV="arn:aws:sns:ca-central-1:525254634044:GithubRepoUpdates.fifo"
+export AWS_SQS_ARN_PROD="prod"
+export AWS_ACCESS_KEY_ID=""
+export process.env.AWS_SECRET_ACCESS_KEY=""
 node ../index.js
