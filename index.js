@@ -1,9 +1,9 @@
 const AWS = require('aws-sdk');
-const core = require('@actions/core');
+// const core = require('@actions/core');
 
-const isGitHubActions = process.env.GITHUB_ACTION || false;
-const trigger = isGitHubActions ? core.getInput('triggered-by') : process.env.INPUT_TRIGGERED_BY || 'default-trigger';
-let branch = isGitHubActions ? core.getInput('branch') : process.env.INPUT_BRANCH || 'refs/heads/dev';
+// const isGitHubActions = process.env.GITHUB_ACTION || false;
+const trigger = process.env.INPUT_TRIGGERED_BY || 'default-trigger';
+let branch = process.env.INPUT_BRANCH || 'refs/heads/dev';
 branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
 
 let topicArn =  (branch === 'dev') ? process.env.AWS_SQS_ARN_DEV : process.env.AWS_SQS_ARN_PROD;
