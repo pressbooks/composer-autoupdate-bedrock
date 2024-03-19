@@ -1,6 +1,11 @@
 name: Pressbooks composer updater
 
 on:
+  workflow_call:
+    inputs:
+      packages:
+        required: true
+        type: string
   workflow_dispatch:
     inputs:
       packages:
