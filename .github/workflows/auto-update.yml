@@ -35,7 +35,7 @@ jobs:
       - name: Add HTTP basic auth credentials
         run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
       - name: composer update action
-        uses: kawax/composer-update-action@master
+        uses: pressbooks/composer-update-action@master
         env:
           GITHUB_TOKEN: ${{secrets.PAT_FOR_GITHUB_ACTIONS}}
           GIT_NAME: Pressbooks 🤖
