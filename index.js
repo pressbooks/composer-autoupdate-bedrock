@@ -1,15 +1,9 @@
 const AWS = require('aws-sdk');
 
 const trigger = process.env.INPUT_TRIGGERED_BY || 'default-trigger';
-console.log(process.env.INPUT_TRIGGERED_BY);
-let branch = process.env.INPUT_BRANCH || 'refs/heads/dev';
-console.log(process.env.INPUT_BRANCH);
-console.log(branch);
+let branch = process.env.BRANCH || 'refs/heads/dev';
 branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
-console.log(branch);
-console.log(branch === 'dev');
 const topicArn =  (branch === 'dev') ? process.env.AWS_SNS_ARN_DEV : process.env.AWS_SNS_ARN_STAGING;
-console.log(topicArn);
 const message = {"Message": trigger};
 
 const params = {
@@ -27,10 +21,10 @@ AWS.config.update({
 const sns = new AWS.SNS({apiVersion: '2010-03-31'});
 
 console.log("params: ", params);
-// sns.publish(params, function(err, data) {
-//   if (err) {
-//     console.error("Error sending message: ", err);
-//   } else {
-//     console.log("Message sent successfully: ", data.MessageId);
-//   }
-// });
+sns.publish(params, function(err, data) {
+  if (err) {
+    console.error("Error sending message: ", err);
+  } else {
+    console.log("Message sent successfully: ", data.MessageId);
+  }
+});
