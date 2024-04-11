@@ -2,8 +2,8 @@ const AWS = require('aws-sdk');
 
 const trigger = process.env.INPUT_TRIGGERED_BY || 'default-trigger';
 console.log(process.env.INPUT_TRIGGERED_BY);
-let branch = process.env.BRANCH || 'refs/heads/dev';
-console.log(process.env.BRANCH);
+let branch = process.env.INPUT_BRANCH || 'refs/heads/dev';
+console.log(process.env.INPUT_BRANCH);
 console.log(branch);
 branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
 console.log(branch);
