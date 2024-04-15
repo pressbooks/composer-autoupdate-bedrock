@@ -90,7 +90,7 @@ jobs:
               AWS_SNS_ARN_DEV: ${{ secrets.AWS_SQS_ARN_DEV }}
               AWS_SNS_ARN_STAGING: ${{ secrets.AWS_SQS_ARN_STAGING }}
               INPUT_TRIGGERED_BY: ${{ github.repository }}
-              INPUT_BRANCH: ${{ github.ref }}
+              BRANCH: ${{ github.ref }}
 
 ```
 
