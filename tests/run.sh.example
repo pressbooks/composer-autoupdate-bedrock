@@ -1,5 +1,5 @@
 export INPUT_TRIGGERED_BY="pressbooks/fake-plugin"
-export INPUT_BRANCH="refs/heads/dev"
+export BRANCH="refs/heads/dev"
 export AWS_SNS_ARN_DEV=""
 export AWS_SNS_ARN_STAGING=""
 export AWS_ACCESS_KEY_ID=""
