@@ -14,7 +14,10 @@ jobs:
       - name: Check Pull Request Title
         id: title-check
         run: |
-          echo "shouldMerge=$(echo ${{ github.event.pull_request.title }} | grep -Eq ${{ inputs.pr_title_pattern }} && echo true || echo false)" >> $GITHUB_OUTPUT
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_TITLE_PATTERN="${{ inputs.pr_title_pattern }}"
+          shouldMerge=$(echo "$PR_TITLE" | grep -Eq "$PR_TITLE_PATTERN" && echo 'true' || echo 'false')
+          echo "shouldMerge=$shouldMerge" >> $GITHUB_OUTPUT
 
       - name: Wait for checks to complete
         if: steps.title-check.outputs.shouldMerge == 'true'
