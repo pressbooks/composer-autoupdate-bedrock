@@ -1,7 +1,14 @@
-name: Pressbooks auto merge
+name: Auto merge workflow
 on:
   workflow_call:
-
+    inputs:
+      pr_title_pattern:
+        required: false
+        type: string
+        default: '^(chore(l10n|i18n)?: update languages|^chore: Composer update with)'
+    secrets:
+      github_token:
+        required: true
 jobs:
   automerge:
     runs-on: ubuntu-latest
@@ -9,7 +16,7 @@ jobs:
       - name: Check Pull Request Title
         id: title-check
         run: |
-          echo "shouldMerge=$(echo ${{ github.event.pull_request.title }} | grep -Eq '^chore(l10n|i18n)?: update languages|^chore: Composer update with' && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "shouldMerge=$(echo ${{ github.event.pull_request.title }} | grep -Eq ${{ inputs.pr_title_pattern }} && echo true || echo false)" >> $GITHUB_OUTPUT
 
       - name: Wait for checks to complete
         if: steps.title-check.outputs.shouldMerge == 'true'
