@@ -8,9 +8,9 @@ This action sends a message to a AWS SNS Topic to trigger a composer update work
 
 **Required** The repo that triggers the action.
 
-### `BRANCH`
+### `REF`
 
-**Required** The branch ref that triggers the action.
+**Required** The REF that triggers the action.
 
 ### `AWS_ACCESS_KEY_ID`
 
@@ -90,7 +90,7 @@ jobs:
               AWS_SNS_ARN_DEV: ${{ secrets.AWS_SQS_ARN_DEV }}
               AWS_SNS_ARN_STAGING: ${{ secrets.AWS_SQS_ARN_STAGING }}
               INPUT_TRIGGERED_BY: ${{ github.repository }}
-              BRANCH: ${{ github.ref }}
+              REF: ${{ github.ref }}
 
 ```
 
