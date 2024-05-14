@@ -1,6 +1,6 @@
 # Composer auto update action
 
-This action sends a message to a AWS SNS Topic to trigger a composer update workflow in each bedrock.
+This action sends a message to an AWS SNS Topic to trigger a composer update workflow in each bedrock.
 
 ## Input: Environment variables
 
@@ -10,7 +10,7 @@ This action sends a message to a AWS SNS Topic to trigger a composer update work
 
 ### `REF`
 
-**Required** The REF that triggers the action.
+**Required** The REF that triggers the action, it could be `refs/heads/dev` or `*.*.*`.
 
 ### `AWS_ACCESS_KEY_ID`
 
@@ -34,36 +34,12 @@ This action sends a message to a AWS SNS Topic to trigger a composer update work
 
 All Bedrock repos should contain two workflows:
 
-* `autoupdate.yml`: This workflow is triggered by a AWS Lambda Function. It runs the `composer update` command and open a pull request to the `default` branch.
-* `automerge.yml`: This workflow is triggered by the `autoupdate.yml` workflow. It merges the pull request to the `dev` branch.
+* `trigger-bedrock-updates.yml`: This workflow is triggered by a AWS Lambda Function. It runs the `composer update` command and open a pull request to the `default` branch.
+* `auto-merge.yml`: This workflow is triggered by the `autoupdate.yml` workflow. It merges the pull request to the `target` branch.
 
-### autoupdate.yml
+Those workflows would use reusable workflows to avoid duplication.
 
-```yaml
-name: Pressbooks composer update
-
-on:
- workflow_dispatch:
-
-jobs:
-  composer_update_job:
-    uses: pressbooks/composer-autoupdate-bedrock/.github/workflows/auto-update.yml@main
-    secrets: inherit
-```
-
-### autoupdate.yml
-
-```yaml
-name: Pressbooks auto merge
-on:
-  pull_request_target:
-    types: [ opened ]
-
-jobs:
-  automerge:
-    uses: pressbooks/composer-autoupdate-bedrock/.github/workflows/auto-merge.yml@main
-    secrets: inherit
-```
+See: [Pressbooks Reusable Workflows](https://github.com/pressbooks/reusable-workflows) for more information.
 
 ## 2. Configure plugin repos
 
