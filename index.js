@@ -8,7 +8,7 @@ if (ref === 'refs/heads/dev') {
   ref = 'dev';
   message = {"Message": trigger};
 } else {
-  tag = ref
+  tag = ref;
   ref = 'staging';
   message = {"Message": trigger + ':' + tag};
 }
