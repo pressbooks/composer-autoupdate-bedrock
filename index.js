@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 
 const trigger = process.env.INPUT_TRIGGERED_BY || 'default-trigger';
-let ref = process.env.ref || 'refs/heads/dev';
+let ref = process.env.REF || 'refs/heads/dev';
 let tag = '';
 let message;
 if (ref === 'refs/heads/dev') {
