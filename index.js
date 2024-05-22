@@ -1,10 +1,18 @@
 const AWS = require('aws-sdk');
 
 const trigger = process.env.INPUT_TRIGGERED_BY || 'default-trigger';
-let branch = process.env.BRANCH || 'refs/heads/dev';
-branch === 'refs/heads/production' ? branch = 'staging' : branch = 'dev';
-const topicArn =  (branch === 'dev') ? process.env.AWS_SNS_ARN_DEV : process.env.AWS_SNS_ARN_STAGING;
-const message = {"Message": trigger};
+let ref = process.env.REF || 'refs/heads/dev';
+let tag = '';
+let message;
+if (ref === 'refs/heads/dev') {
+  ref = 'dev';
+  message = {"Message": trigger};
+} else {
+  tag = ref;
+  ref = 'staging';
+  message = {"Message": trigger + ':' + tag};
+}
+const topicArn =  (ref === 'dev') ? process.env.AWS_SNS_ARN_DEV : process.env.AWS_SNS_ARN_STAGING;
 
 const params = {
   Message: JSON.stringify(message),
